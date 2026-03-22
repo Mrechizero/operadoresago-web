@@ -27,6 +27,16 @@ export const metadata: Metadata = {
       'Implementamos infraestructura tecnológica confiable para empresas.',
     type: 'website',
     locale: 'es_MX',
+    url: 'https://web.operadoresago.com',
+    siteName: 'Operadores AGO',
+    images: [
+      {
+        url: '/social-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Operadores AGO - Telecomunicaciones',
+      },
+    ],
   },
 }
 
