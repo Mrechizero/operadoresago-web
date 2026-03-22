@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  operadoresago-web:
+    build: .
+    container_name: operadoresago-web
+    ports:
+      - "3005:3005"
+    restart: unless-stopped
