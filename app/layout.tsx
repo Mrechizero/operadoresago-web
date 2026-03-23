@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: 'Operadores AGO',
     images: [
       {
-        url: '/social-image.png',
+        url: 'public/social-image.png',
         width: 1200,
         height: 630,
         alt: 'Operadores AGO - Telecomunicaciones',
