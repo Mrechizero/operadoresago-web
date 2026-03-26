@@ -62,7 +62,7 @@ export default function ProcessSection() {
         {/* Timeline */}
         <div className="relative">
           {/* Connecting line (desktop only) */}
-          <div className="hidden lg:block absolute top-[3.25rem] left-[12.5%] right-[12.5%] h-px bg-border z-0" />
+          <div className="hidden lg:block absolute top-13 left-[12.5%] right-[12.5%] h-px bg-border z-0" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative z-10">
             {steps.map((step, i) => (

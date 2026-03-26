@@ -133,33 +133,38 @@ const cardVariants = {
 
 export default function ServicesSection() {
   return (
-    <section id="servicios" className="py-24 lg:py-32 relative">
-      {/* Section glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-[linear-gradient(to_right,transparent,oklch(0.55_0.2_250/0.6),transparent)]" />
+    <section id="servicios" className="py-20 sm:py-24 lg:py-32 relative">
+      {/* Section glow - versión corregida */}
+      <div 
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[clamp(250px,80%,800px)] h-px" 
+        style={{
+          background: 'linear-gradient(to right, transparent, oklch(0.55 0.2 250 / 0.6), transparent)'
+        }}
+      />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-4">
+          <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3 sm:mb-4">
             Lo que hacemos
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-5">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3 sm:mb-5 px-4">
             Nuestros Servicios
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4">
             Soluciones especializadas de telecomunicaciones diseñadas para cubrir cada necesidad
             tecnológica de su empresa, desde conectividad hasta automatización.
           </p>
         </motion.div>
 
         {/* Categories */}
-        <div className="space-y-16">
+        <div className="space-y-12 sm:space-y-16">
           {categories.map((cat, ci) => (
             <div key={cat.label}>
               {/* Category header */}
@@ -168,14 +173,14 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5 }}
-                className="flex items-center gap-4 mb-8"
+                className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8"
               >
                 <div
-                  className="h-px flex-1 max-w-[40px]"
+                  className="h-px flex-1 max-w-7.5 sm:max-w-10"
                   style={{ background: cat.color }}
                 />
                 <span
-                  className="text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border"
+                  className="text-[10px] sm:text-xs font-bold tracking-widest uppercase px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border"
                   style={{
                     color: cat.color,
                     borderColor: `${cat.color}44`,
@@ -190,14 +195,14 @@ export default function ServicesSection() {
                 />
               </motion.div>
 
-              {/* Service cards */}
+              {/* Service cards - versión responsive corregida */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: '-60px' }}
                 className={`
-                  grid gap-4
+                  grid gap-4 sm:gap-5
                   ${cat.services.length === 2 ? 'grid-cols-1 sm:grid-cols-2' : ''}
                   ${cat.services.length === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : ''}
                   ${cat.services.length === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : ''}
@@ -208,7 +213,7 @@ export default function ServicesSection() {
                     key={svc.name}
                     variants={cardVariants}
                     whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                    className="group relative rounded-2xl border border-border bg-card p-6 cursor-default overflow-hidden hover:border-[oklch(0.55_0.2_250/0.5)] transition-all duration-300 hover:shadow-[0_8px_40px_oklch(0.55_0.2_250/0.12)]"
+                    className="group relative rounded-2xl border border-border bg-card p-5 sm:p-6 cursor-default overflow-hidden hover:border-[oklch(0.55_0.2_250/0.5)] transition-all duration-300 hover:shadow-[0_8px_40px_oklch(0.55_0.2_250/0.12)]"
                   >
                     {/* Hover glow layer */}
                     <div
@@ -220,7 +225,7 @@ export default function ServicesSection() {
 
                     {/* Icon */}
                     <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
+                      className="w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-5 transition-all duration-300 group-hover:scale-110"
                       style={{
                         background: `${cat.color}18`,
                         border: `1px solid ${cat.color}30`,
@@ -228,24 +233,24 @@ export default function ServicesSection() {
                       }}
                     >
                       <svc.icon
-                        className="w-5 h-5"
+                        className="w-4 h-4 sm:w-4.5 sm:h-4.5 lg:w-5 lg:h-5"
                         style={{ color: cat.color }}
                       />
                     </div>
 
-                    <h3 className="font-semibold text-foreground text-base mb-2 leading-tight">
+                    <h3 className="font-semibold text-foreground text-sm sm:text-base mb-1.5 sm:mb-2 leading-tight">
                       {svc.name}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                       {svc.description}
                     </p>
 
                     {/* Arrow */}
                     <div
-                      className="mt-4 flex items-center gap-1 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1"
+                      className="mt-3 sm:mt-4 flex items-center gap-1 text-[10px] sm:text-xs font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1"
                       style={{ color: cat.color }}
                     >
-                      Saber más <ArrowRight className="w-3 h-3" />
+                      Saber más <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                     </div>
                   </motion.div>
                 ))}
@@ -260,17 +265,17 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-16 text-center"
         >
-          <p className="text-muted-foreground mb-5">
+          <p className="text-muted-foreground text-sm sm:text-base mb-4 sm:mb-5 px-4">
             ¿Necesitas una solución a medida? Contáctanos y diseñamos el proyecto ideal para tu empresa.
           </p>
           <a
             href="#contacto"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.35)] hover:shadow-[0_0_36px_oklch(0.55_0.2_250/0.55)] group"
+            className="inline-flex items-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.35)] hover:shadow-[0_0_36px_oklch(0.55_0.2_250/0.55)] group"
           >
             Solicitar cotización
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
       </div>

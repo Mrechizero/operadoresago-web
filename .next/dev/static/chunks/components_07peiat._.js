@@ -914,17 +914,20 @@ const cardVariants = {
 function ServicesSection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "servicios",
-        className: "py-24 lg:py-32 relative",
+        className: "py-20 sm:py-24 lg:py-32 relative",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-[linear-gradient(to_right,transparent,oklch(0.55_0.2_250/0.6),transparent)]"
+                className: "absolute top-0 left-1/2 -translate-x-1/2 w-[clamp(250px,80%,800px)] h-px",
+                style: {
+                    background: 'linear-gradient(to right, transparent, oklch(0.55 0.2 250 / 0.6), transparent)'
+                }
             }, void 0, false, {
                 fileName: "[project]/components/services-section.tsx",
                 lineNumber: 138,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-7xl mx-auto px-6 lg:px-8",
+                className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                         initial: {
@@ -942,40 +945,40 @@ function ServicesSection() {
                         transition: {
                             duration: 0.6
                         },
-                        className: "text-center mb-16",
+                        className: "text-center mb-12 sm:mb-16",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-primary text-xs font-semibold tracking-widest uppercase mb-4",
+                                className: "text-primary text-xs font-semibold tracking-widest uppercase mb-3 sm:mb-4",
                                 children: "Lo que hacemos"
                             }, void 0, false, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 149,
+                                lineNumber: 154,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-5",
+                                className: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3 sm:mb-5 px-4",
                                 children: "Nuestros Servicios"
                             }, void 0, false, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 152,
+                                lineNumber: 157,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed",
+                                className: "text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4",
                                 children: "Soluciones especializadas de telecomunicaciones diseñadas para cubrir cada necesidad tecnológica de su empresa, desde conectividad hasta automatización."
                             }, void 0, false, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 155,
+                                lineNumber: 160,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/services-section.tsx",
-                        lineNumber: 142,
+                        lineNumber: 147,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "space-y-16",
+                        className: "space-y-12 sm:space-y-16",
                         children: categories.map((cat, ci)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -994,20 +997,20 @@ function ServicesSection() {
                                         transition: {
                                             duration: 0.5
                                         },
-                                        className: "flex items-center gap-4 mb-8",
+                                        className: "flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "h-px flex-1 max-w-[40px]",
+                                                className: "h-px flex-1 max-w-7.5 sm:max-w-10",
                                                 style: {
                                                     background: cat.color
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services-section.tsx",
-                                                lineNumber: 173,
+                                                lineNumber: 178,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border",
+                                                className: "text-[10px] sm:text-xs font-bold tracking-widest uppercase px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border",
                                                 style: {
                                                     color: cat.color,
                                                     borderColor: `${cat.color}44`,
@@ -1016,7 +1019,7 @@ function ServicesSection() {
                                                 children: cat.label
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services-section.tsx",
-                                                lineNumber: 177,
+                                                lineNumber: 182,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1026,13 +1029,13 @@ function ServicesSection() {
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services-section.tsx",
-                                                lineNumber: 187,
+                                                lineNumber: 192,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services-section.tsx",
-                                        lineNumber: 166,
+                                        lineNumber: 171,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1044,7 +1047,7 @@ function ServicesSection() {
                                             margin: '-60px'
                                         },
                                         className: `
-                  grid gap-4
+                  grid gap-4 sm:gap-5
                   ${cat.services.length === 2 ? 'grid-cols-1 sm:grid-cols-2' : ''}
                   ${cat.services.length === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : ''}
                   ${cat.services.length === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : ''}
@@ -1057,7 +1060,7 @@ function ServicesSection() {
                                                         duration: 0.2
                                                     }
                                                 },
-                                                className: "group relative rounded-2xl border border-border bg-card p-6 cursor-default overflow-hidden hover:border-[oklch(0.55_0.2_250/0.5)] transition-all duration-300 hover:shadow-[0_8px_40px_oklch(0.55_0.2_250/0.12)]",
+                                                className: "group relative rounded-2xl border border-border bg-card p-5 sm:p-6 cursor-default overflow-hidden hover:border-[oklch(0.55_0.2_250/0.5)] transition-all duration-300 hover:shadow-[0_8px_40px_oklch(0.55_0.2_250/0.12)]",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none",
@@ -1066,87 +1069,87 @@ function ServicesSection() {
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services-section.tsx",
-                                                        lineNumber: 214,
+                                                        lineNumber: 219,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110",
+                                                        className: "w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-5 transition-all duration-300 group-hover:scale-110",
                                                         style: {
                                                             background: `${cat.color}18`,
                                                             border: `1px solid ${cat.color}30`,
                                                             boxShadow: `0 0 0 0 ${cat.color}00`
                                                         },
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(svc.icon, {
-                                                            className: "w-5 h-5",
+                                                            className: "w-4 h-4 sm:w-4.5 sm:h-4.5 lg:w-5 lg:h-5",
                                                             style: {
                                                                 color: cat.color
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services-section.tsx",
-                                                            lineNumber: 230,
+                                                            lineNumber: 235,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services-section.tsx",
-                                                        lineNumber: 222,
+                                                        lineNumber: 227,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                        className: "font-semibold text-foreground text-base mb-2 leading-tight",
+                                                        className: "font-semibold text-foreground text-sm sm:text-base mb-1.5 sm:mb-2 leading-tight",
                                                         children: svc.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services-section.tsx",
-                                                        lineNumber: 236,
+                                                        lineNumber: 241,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-muted-foreground text-sm leading-relaxed",
+                                                        className: "text-muted-foreground text-xs sm:text-sm leading-relaxed",
                                                         children: svc.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services-section.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 244,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "mt-4 flex items-center gap-1 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1",
+                                                        className: "mt-3 sm:mt-4 flex items-center gap-1 text-[10px] sm:text-xs font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1",
                                                         style: {
                                                             color: cat.color
                                                         },
                                                         children: [
                                                             "Saber más ",
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                                className: "w-3 h-3"
+                                                                className: "w-2.5 h-2.5 sm:w-3 sm:h-3"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services-section.tsx",
-                                                                lineNumber: 248,
+                                                                lineNumber: 253,
                                                                 columnNumber: 33
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services-section.tsx",
-                                                        lineNumber: 244,
+                                                        lineNumber: 249,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, svc.name, true, {
                                                 fileName: "[project]/components/services-section.tsx",
-                                                lineNumber: 207,
+                                                lineNumber: 212,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/services-section.tsx",
-                                        lineNumber: 194,
+                                        lineNumber: 199,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, cat.label, true, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 164,
+                                lineNumber: 169,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/services-section.tsx",
-                        lineNumber: 162,
+                        lineNumber: 167,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1164,44 +1167,44 @@ function ServicesSection() {
                         transition: {
                             duration: 0.6
                         },
-                        className: "mt-16 text-center",
+                        className: "mt-12 sm:mt-16 text-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-muted-foreground mb-5",
+                                className: "text-muted-foreground text-sm sm:text-base mb-4 sm:mb-5 px-4",
                                 children: "¿Necesitas una solución a medida? Contáctanos y diseñamos el proyecto ideal para tu empresa."
                             }, void 0, false, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 265,
+                                lineNumber: 270,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: "#contacto",
-                                className: "inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.35)] hover:shadow-[0_0_36px_oklch(0.55_0.2_250/0.55)] group",
+                                className: "inline-flex items-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.35)] hover:shadow-[0_0_36px_oklch(0.55_0.2_250/0.55)] group",
                                 children: [
                                     "Solicitar cotización",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                        className: "w-4 h-4 group-hover:translate-x-1 transition-transform"
+                                        className: "w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform"
                                     }, void 0, false, {
                                         fileName: "[project]/components/services-section.tsx",
-                                        lineNumber: 273,
+                                        lineNumber: 278,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 268,
+                                lineNumber: 273,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/services-section.tsx",
-                        lineNumber: 258,
+                        lineNumber: 263,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/services-section.tsx",
-                lineNumber: 140,
+                lineNumber: 145,
                 columnNumber: 7
             }, this)
         ]
@@ -1268,7 +1271,7 @@ const reasons = [
 function WhyUsSection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "por-que-nosotros",
-        className: "py-24 lg:py-32 relative overflow-hidden",
+        className: "py-20 sm:py-24 lg:py-32 relative overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,oklch(0.55_0.2_250/0.06),transparent)]"
@@ -1278,7 +1281,7 @@ function WhyUsSection() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-7xl mx-auto px-6 lg:px-8",
+                className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                         initial: {
@@ -1296,10 +1299,10 @@ function WhyUsSection() {
                         transition: {
                             duration: 0.6
                         },
-                        className: "text-center mb-16",
+                        className: "text-center mb-12 sm:mb-16",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-primary text-xs font-semibold tracking-widest uppercase mb-4",
+                                className: "text-primary text-xs font-semibold tracking-widest uppercase mb-3 sm:mb-4",
                                 children: "Nuestra ventaja"
                             }, void 0, false, {
                                 fileName: "[project]/components/why-us-section.tsx",
@@ -1307,7 +1310,7 @@ function WhyUsSection() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-5",
+                                className: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3 sm:mb-5 px-4",
                                 children: "¿Por qué elegirnos?"
                             }, void 0, false, {
                                 fileName: "[project]/components/why-us-section.tsx",
@@ -1315,7 +1318,7 @@ function WhyUsSection() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed",
+                                className: "text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4",
                                 children: "Somos el socio tecnológico que tu empresa necesita para crecer sin límites de conectividad."
                             }, void 0, false, {
                                 fileName: "[project]/components/why-us-section.tsx",
@@ -1329,7 +1332,7 @@ function WhyUsSection() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid sm:grid-cols-2 lg:grid-cols-4 gap-6",
+                        className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6",
                         children: reasons.map((r, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                 initial: {
                                     opacity: 0,
@@ -1347,7 +1350,7 @@ function WhyUsSection() {
                                     duration: 0.5,
                                     delay: i * 0.1
                                 },
-                                className: "group relative rounded-2xl border border-border bg-card p-7 hover:border-primary/40 hover:shadow-[0_8px_48px_oklch(0.55_0.2_250/0.1)] transition-all duration-300",
+                                className: "group relative rounded-2xl border border-border bg-card p-5 sm:p-6 lg:p-7 hover:border-primary/40 hover:shadow-[0_8px_48px_oklch(0.55_0.2_250/0.1)] transition-all duration-300",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_at_top_left,oklch(0.55_0.2_250/0.05),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
@@ -1357,10 +1360,10 @@ function WhyUsSection() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mb-6",
+                                        className: "mb-4 sm:mb-5 lg:mb-6",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-4xl font-bold text-primary",
+                                                className: "text-3xl sm:text-4xl font-bold text-primary",
                                                 children: r.stat
                                             }, void 0, false, {
                                                 fileName: "[project]/components/why-us-section.tsx",
@@ -1368,7 +1371,7 @@ function WhyUsSection() {
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "ml-2 text-xs text-muted-foreground uppercase tracking-wider",
+                                                className: "ml-1.5 sm:ml-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider",
                                                 children: r.statLabel
                                             }, void 0, false, {
                                                 fileName: "[project]/components/why-us-section.tsx",
@@ -1382,33 +1385,33 @@ function WhyUsSection() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-10 h-10 rounded-xl bg-primary/15 border border-primary/25 flex items-center justify-center mb-4",
+                                        className: "w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/15 border border-primary/25 flex items-center justify-center mb-3 sm:mb-4",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(r.icon, {
-                                            className: "w-5 h-5 text-primary"
+                                            className: "w-4 h-4 sm:w-5 sm:h-5 text-primary"
                                         }, void 0, false, {
                                             fileName: "[project]/components/why-us-section.tsx",
-                                            lineNumber: 86,
+                                            lineNumber: 88,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/why-us-section.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 87,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "font-bold text-foreground text-lg mb-3",
+                                        className: "font-bold text-foreground text-base sm:text-lg mb-2 sm:mb-3 leading-tight",
                                         children: r.title
                                     }, void 0, false, {
                                         fileName: "[project]/components/why-us-section.tsx",
-                                        lineNumber: 89,
+                                        lineNumber: 91,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-muted-foreground text-sm leading-relaxed",
+                                        className: "text-muted-foreground text-xs sm:text-sm leading-relaxed",
                                         children: r.description
                                     }, void 0, false, {
                                         fileName: "[project]/components/why-us-section.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 94,
                                         columnNumber: 15
                                     }, this)
                                 ]
@@ -1488,7 +1491,7 @@ const steps = [
 function ProcessSection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "proceso",
-        className: "py-24 lg:py-32 relative",
+        className: "py-20 sm:py-24 lg:py-32 relative",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-0 left-0 right-0 h-px bg-[linear-gradient(to_right,transparent,oklch(0.55_0.2_250/0.3),transparent)]"
@@ -1498,7 +1501,7 @@ function ProcessSection() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-7xl mx-auto px-6 lg:px-8",
+                className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                         initial: {
@@ -1516,10 +1519,10 @@ function ProcessSection() {
                         transition: {
                             duration: 0.6
                         },
-                        className: "text-center mb-16",
+                        className: "text-center mb-12 sm:mb-16",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-primary text-xs font-semibold tracking-widest uppercase mb-4",
+                                className: "text-primary text-xs font-semibold tracking-widest uppercase mb-3 sm:mb-4",
                                 children: "Metodología"
                             }, void 0, false, {
                                 fileName: "[project]/components/process-section.tsx",
@@ -1527,7 +1530,7 @@ function ProcessSection() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-5",
+                                className: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3 sm:mb-5 px-4",
                                 children: "Nuestro proceso de trabajo"
                             }, void 0, false, {
                                 fileName: "[project]/components/process-section.tsx",
@@ -1535,8 +1538,8 @@ function ProcessSection() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed",
-                                children: "Un proceso estructurado que garantiza resultados superiores en cada proyecto, sin importar su escala o complejidad."
+                                className: "text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4",
+                                children: "Un proceso estructuido que garantiza resultados superiores en cada proyecto, sin importar su escala o complejidad."
                             }, void 0, false, {
                                 fileName: "[project]/components/process-section.tsx",
                                 lineNumber: 56,
@@ -1552,14 +1555,14 @@ function ProcessSection() {
                         className: "relative",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "hidden lg:block absolute top-[3.25rem] left-[12.5%] right-[12.5%] h-px bg-border z-0"
+                                className: "hidden lg:block absolute top-13 left-[12.5%] right-[12.5%] h-px bg-border z-0"
                             }, void 0, false, {
                                 fileName: "[project]/components/process-section.tsx",
                                 lineNumber: 65,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "grid lg:grid-cols-4 gap-8 relative z-10",
+                                className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative z-10",
                                 children: steps.map((step, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                         initial: {
                                             opacity: 0,
@@ -1577,15 +1580,15 @@ function ProcessSection() {
                                             duration: 0.5,
                                             delay: i * 0.12
                                         },
-                                        className: "flex flex-col items-center text-center lg:text-left lg:items-start",
+                                        className: "flex flex-col items-center text-center lg:items-start lg:text-left",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "relative mb-6",
+                                                className: "relative mb-4 sm:mb-5 lg:mb-6",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "w-16 h-16 rounded-2xl bg-card border border-border flex items-center justify-center group hover:border-primary/50 hover:bg-primary/10 transition-all duration-300",
+                                                        className: "w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-card border border-border flex items-center justify-center group hover:border-primary/50 hover:bg-primary/10 transition-all duration-300",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(step.icon, {
-                                                            className: "w-7 h-7 text-primary"
+                                                            className: "w-6 h-6 sm:w-7 sm:h-7 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/process-section.tsx",
                                                             lineNumber: 80,
@@ -1611,7 +1614,7 @@ function ProcessSection() {
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "font-bold text-foreground text-xl mb-3",
+                                                className: "font-bold text-foreground text-lg sm:text-xl mb-2 sm:mb-3",
                                                 children: step.title
                                             }, void 0, false, {
                                                 fileName: "[project]/components/process-section.tsx",
@@ -1619,11 +1622,11 @@ function ProcessSection() {
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-muted-foreground text-sm leading-relaxed",
+                                                className: "text-muted-foreground text-xs sm:text-sm leading-relaxed max-w-xs mx-auto lg:mx-0",
                                                 children: step.description
                                             }, void 0, false, {
                                                 fileName: "[project]/components/process-section.tsx",
-                                                lineNumber: 88,
+                                                lineNumber: 90,
                                                 columnNumber: 17
                                             }, this)
                                         ]
@@ -1658,45 +1661,46 @@ function ProcessSection() {
                         transition: {
                             duration: 0.6
                         },
-                        className: "mt-16 rounded-2xl border border-primary/25 bg-[oklch(0.55_0.2_250/0.07)] backdrop-blur-sm p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-6",
+                        className: "mt-12 sm:mt-16 rounded-2xl border border-primary/25 bg-[oklch(0.55_0.2_250/0.07)] backdrop-blur-sm p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-center lg:text-left",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-xl lg:text-2xl font-bold text-foreground mb-2",
+                                        className: "text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-1 sm:mb-2",
                                         children: "Comencemos con el análisis de tu empresa"
                                     }, void 0, false, {
                                         fileName: "[project]/components/process-section.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 107,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-muted-foreground",
+                                        className: "text-muted-foreground text-sm sm:text-base",
                                         children: "Sin costo y sin compromiso. Nuestros ingenieros evalúan tu infraestructura actual."
                                     }, void 0, false, {
                                         fileName: "[project]/components/process-section.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 110,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/process-section.tsx",
-                                lineNumber: 102,
+                                lineNumber: 106,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: "#contacto",
-                                className: "shrink-0 px-7 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.35)] whitespace-nowrap",
+                                className: "shrink-0 px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.35)] whitespace-nowrap",
                                 children: "Agendar evaluación"
                             }, void 0, false, {
                                 fileName: "[project]/components/process-section.tsx",
-                                lineNumber: 110,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/process-section.tsx",
-                        lineNumber: 95,
+                        lineNumber: 99,
                         columnNumber: 9
                     }, this)
                 ]
@@ -1994,6 +1998,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/mail.js [app-client] (ecmascript) <export default as Mail>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-client] (ecmascript) <export default as MapPin>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-check.js [app-client] (ecmascript) <export default as CheckCircle2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-alert.js [app-client] (ecmascript) <export default as AlertCircle>");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -2004,23 +2009,30 @@ const contactInfo = [
     {
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"],
         label: 'Teléfono',
-        value: '+52 (000) 000-0000'
+        value: '+52 (771) 318-9879',
+        href: 'tel:+527713189879'
     },
     {
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"],
         label: 'Correo electrónico',
-        value: 'contacto@operadoresago.com'
+        value: 'admin@operadoresago.com',
+        href: 'mailto:admin@operadoresago.com'
     },
     {
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"],
         label: 'Ubicación',
-        value: 'México'
+        value: 'México',
+        href: '#'
     }
 ];
+// URL de Google Apps Script - REEMPLAZA CON TU URL REAL
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/TU_ID_AQUI/exec';
 function ContactSection() {
     _s();
     const [submitted, setSubmitted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const formRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         nombre: '',
         empresa: '',
@@ -2028,40 +2040,123 @@ function ContactSection() {
         correo: '',
         mensaje: ''
     });
+    const [errors, setErrors] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
     const handleChange = (e)=>{
+        const { name, value } = e.target;
         setForm((prev)=>({
                 ...prev,
-                [e.target.name]: e.target.value
+                [name]: value
             }));
+        // Limpiar error del campo cuando el usuario empieza a escribir
+        if (errors[name]) {
+            setErrors((prev)=>({
+                    ...prev,
+                    [name]: undefined
+                }));
+        }
+    };
+    const validateForm = ()=>{
+        const newErrors = {};
+        // Validar nombre
+        if (!form.nombre.trim()) {
+            newErrors.nombre = 'El nombre es requerido';
+        } else if (form.nombre.trim().length < 2) {
+            newErrors.nombre = 'El nombre debe tener al menos 2 caracteres';
+        }
+        // Validar empresa
+        if (!form.empresa.trim()) {
+            newErrors.empresa = 'La empresa es requerida';
+        } else if (form.empresa.trim().length < 2) {
+            newErrors.empresa = 'La empresa debe tener al menos 2 caracteres';
+        }
+        // Validar correo
+        const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+        if (!form.correo.trim()) {
+            newErrors.correo = 'El correo electrónico es requerido';
+        } else if (!emailRegex.test(form.correo.trim())) {
+            newErrors.correo = 'Ingresa un correo electrónico válido';
+        }
+        // Validar mensaje
+        if (!form.mensaje.trim()) {
+            newErrors.mensaje = 'El mensaje es requerido';
+        } else if (form.mensaje.trim().length < 10) {
+            newErrors.mensaje = 'Por favor proporciona más detalles (mínimo 10 caracteres)';
+        }
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
     };
     const handleSubmit = async (e)=>{
         e.preventDefault();
+        if (!validateForm()) {
+            return;
+        }
         setLoading(true);
-        // Simulate async submit
-        await new Promise((r)=>setTimeout(r, 1200));
-        setLoading(false);
-        setSubmitted(true);
+        setError('');
+        try {
+            // Enviar a Google Apps Script
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    nombre: form.nombre.trim(),
+                    empresa: form.empresa.trim(),
+                    telefono: form.telefono.trim(),
+                    correo: form.correo.trim(),
+                    mensaje: form.mensaje.trim(),
+                    timestamp: new Date().toISOString()
+                })
+            });
+            // Con no-cors, no podemos leer la respuesta, asumimos éxito
+            setSubmitted(true);
+            setForm({
+                nombre: '',
+                empresa: '',
+                telefono: '',
+                correo: '',
+                mensaje: ''
+            });
+        } catch (err) {
+            console.error('Error al enviar:', err);
+            setError('Ocurrió un error al enviar el mensaje. Por favor intenta nuevamente o contáctanos directamente por teléfono.');
+        } finally{
+            setLoading(false);
+        }
+    };
+    const resetForm = ()=>{
+        setSubmitted(false);
+        setForm({
+            nombre: '',
+            empresa: '',
+            telefono: '',
+            correo: '',
+            mensaje: ''
+        });
+        setErrors({});
+        setError('');
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "contacto",
-        className: "py-24 lg:py-32 relative",
+        className: "py-20 sm:py-24 lg:py-32 relative",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-0 left-0 right-0 h-px bg-[linear-gradient(to_right,transparent,oklch(0.55_0.2_250/0.3),transparent)]"
             }, void 0, false, {
                 fileName: "[project]/components/contact-section.tsx",
-                lineNumber: 39,
+                lineNumber: 153,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,oklch(0.55_0.2_250/0.06),transparent)]"
             }, void 0, false, {
                 fileName: "[project]/components/contact-section.tsx",
-                lineNumber: 40,
+                lineNumber: 154,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-7xl mx-auto px-6 lg:px-8",
+                className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                         initial: {
@@ -2079,40 +2174,40 @@ function ContactSection() {
                         transition: {
                             duration: 0.6
                         },
-                        className: "text-center mb-14",
+                        className: "text-center mb-10 sm:mb-14",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-primary text-xs font-semibold tracking-widest uppercase mb-4",
+                                className: "text-primary text-xs font-semibold tracking-widest uppercase mb-3 sm:mb-4",
                                 children: "Hablemos"
                             }, void 0, false, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 50,
+                                lineNumber: 164,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-5",
+                                className: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3 sm:mb-5 px-4",
                                 children: "Solicita tu cotización"
                             }, void 0, false, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 53,
+                                lineNumber: 167,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed",
+                                className: "text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4",
                                 children: "Cuéntanos sobre tu proyecto. Nuestros ingenieros se pondrán en contacto contigo en menos de 24 horas para diseñar la solución ideal."
                             }, void 0, false, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 56,
+                                lineNumber: 170,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/contact-section.tsx",
-                        lineNumber: 43,
+                        lineNumber: 157,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid lg:grid-cols-5 gap-10 lg:gap-14 items-start",
+                        className: "grid lg:grid-cols-5 gap-8 lg:gap-14 items-start",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                 initial: {
@@ -2129,101 +2224,102 @@ function ContactSection() {
                                 transition: {
                                     duration: 0.6
                                 },
-                                className: "lg:col-span-2 space-y-6",
+                                className: "lg:col-span-2 space-y-5 sm:space-y-6",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "rounded-2xl border border-border bg-card p-7 space-y-6",
+                                        className: "rounded-2xl border border-border bg-card p-5 sm:p-6 lg:p-7 space-y-5 sm:space-y-6",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "font-bold text-foreground text-lg",
+                                                className: "font-bold text-foreground text-base sm:text-lg",
                                                 children: "Información de contacto"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/contact-section.tsx",
-                                                lineNumber: 72,
+                                                lineNumber: 186,
                                                 columnNumber: 15
                                             }, this),
-                                            contactInfo.map(({ icon: Icon, label, value })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-start gap-4",
+                                            contactInfo.map(({ icon: Icon, label, value, href })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                    href: href,
+                                                    className: "flex items-start gap-3 sm:gap-4 group hover:translate-x-0.5 transition-transform duration-200",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "w-10 h-10 rounded-xl bg-primary/15 border border-primary/25 flex items-center justify-center shrink-0",
+                                                            className: "w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/15 border border-primary/25 flex items-center justify-center shrink-0 group-hover:bg-primary/25 transition-colors",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
-                                                                className: "w-4 h-4 text-primary"
+                                                                className: "w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 76,
+                                                                lineNumber: 196,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 75,
+                                                            lineNumber: 195,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-xs text-muted-foreground uppercase tracking-wider mb-0.5",
+                                                                    className: "text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider mb-0.5",
                                                                     children: label
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 79,
+                                                                    lineNumber: 199,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-foreground font-medium text-sm",
+                                                                    className: "text-foreground font-medium text-xs sm:text-sm break-all",
                                                                     children: value
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 80,
+                                                                    lineNumber: 202,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 78,
+                                                            lineNumber: 198,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, label, true, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 74,
+                                                    lineNumber: 190,
                                                     columnNumber: 17
                                                 }, this))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/contact-section.tsx",
-                                        lineNumber: 71,
+                                        lineNumber: 185,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "rounded-2xl border border-primary/25 bg-[oklch(0.55_0.2_250/0.07)] p-7",
+                                        className: "rounded-2xl border border-primary/25 bg-[oklch(0.55_0.2_250/0.07)] p-5 sm:p-6 lg:p-7",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-foreground font-semibold mb-2",
+                                                className: "text-foreground font-semibold text-sm sm:text-base mb-1 sm:mb-2",
                                                 children: "Respuesta garantizada"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/contact-section.tsx",
-                                                lineNumber: 87,
+                                                lineNumber: 211,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-muted-foreground text-sm leading-relaxed",
+                                                className: "text-muted-foreground text-xs sm:text-sm leading-relaxed",
                                                 children: "Respondemos todas las solicitudes en un plazo máximo de 24 horas hábiles. Para urgencias llámanos directamente."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/contact-section.tsx",
-                                                lineNumber: 88,
+                                                lineNumber: 214,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/contact-section.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 210,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 64,
+                                lineNumber: 178,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2252,71 +2348,88 @@ function ContactSection() {
                                         opacity: 1,
                                         scale: 1
                                     },
-                                    className: "rounded-2xl border border-primary/30 bg-[oklch(0.55_0.2_250/0.08)] p-12 text-center",
+                                    className: "rounded-2xl border border-primary/30 bg-[oklch(0.55_0.2_250/0.08)] p-8 sm:p-12 text-center",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
-                                            className: "w-14 h-14 text-primary mx-auto mb-5"
+                                            className: "w-12 h-12 sm:w-14 sm:h-14 text-primary mx-auto mb-4 sm:mb-5"
                                         }, void 0, false, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 109,
+                                            lineNumber: 235,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-2xl font-bold text-foreground mb-3",
+                                            className: "text-xl sm:text-2xl font-bold text-foreground mb-2 sm:mb-3",
                                             children: "Mensaje enviado con éxito"
                                         }, void 0, false, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 236,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-muted-foreground leading-relaxed",
+                                            className: "text-muted-foreground text-sm sm:text-base leading-relaxed px-2",
                                             children: "Gracias por contactarnos. Un asesor de Operadores AGO se comunicará contigo en las próximas 24 horas."
                                         }, void 0, false, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 113,
+                                            lineNumber: 239,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            onClick: ()=>{
-                                                setSubmitted(false);
-                                                setForm({
-                                                    nombre: '',
-                                                    empresa: '',
-                                                    telefono: '',
-                                                    correo: '',
-                                                    mensaje: ''
-                                                });
-                                            },
-                                            className: "mt-7 px-6 py-2.5 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all text-sm",
+                                            onClick: resetForm,
+                                            className: "mt-6 sm:mt-7 px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all text-xs sm:text-sm",
                                             children: "Enviar otro mensaje"
                                         }, void 0, false, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 117,
+                                            lineNumber: 243,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/contact-section.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 230,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                    ref: formRef,
                                     onSubmit: handleSubmit,
-                                    className: "rounded-2xl border border-border bg-card p-7 lg:p-9 space-y-5",
+                                    className: "rounded-2xl border border-border bg-card p-5 sm:p-6 lg:p-9 space-y-4 sm:space-y-5",
+                                    noValidate: true,
                                     children: [
+                                        error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center gap-2 rounded-xl bg-destructive/10 border border-destructive/30 p-3 sm:p-4",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
+                                                    className: "w-4 h-4 sm:w-5 sm:h-5 text-destructive shrink-0"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/contact-section.tsx",
+                                                    lineNumber: 260,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-destructive text-xs sm:text-sm",
+                                                    children: error
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/contact-section.tsx",
+                                                    lineNumber: 261,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/contact-section.tsx",
+                                            lineNumber: 259,
+                                            columnNumber: 19
+                                        }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "grid sm:grid-cols-2 gap-5",
+                                            className: "grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "space-y-1.5",
+                                                    className: "space-y-1",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                             htmlFor: "nombre",
-                                                            className: "text-xs font-semibold text-muted-foreground uppercase tracking-wider",
+                                                            className: "text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider",
                                                             children: "Nombre completo *"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 131,
+                                                            lineNumber: 267,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2327,28 +2440,36 @@ function ContactSection() {
                                                             value: form.nombre,
                                                             onChange: handleChange,
                                                             placeholder: "Juan Pérez",
-                                                            className: "w-full rounded-xl border border-border bg-secondary/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all"
+                                                            className: `w-full rounded-xl border ${errors.nombre ? 'border-destructive focus:ring-destructive/40' : 'border-border focus:ring-primary/40'} bg-secondary/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:border-transparent transition-all`
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 134,
+                                                            lineNumber: 270,
                                                             columnNumber: 21
+                                                        }, this),
+                                                        errors.nombre && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-destructive text-[10px] sm:text-xs mt-1",
+                                                            children: errors.nombre
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/contact-section.tsx",
+                                                            lineNumber: 283,
+                                                            columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 130,
+                                                    lineNumber: 266,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "space-y-1.5",
+                                                    className: "space-y-1",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                             htmlFor: "empresa",
-                                                            className: "text-xs font-semibold text-muted-foreground uppercase tracking-wider",
+                                                            className: "text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider",
                                                             children: "Empresa *"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 146,
+                                                            lineNumber: 287,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2359,37 +2480,45 @@ function ContactSection() {
                                                             value: form.empresa,
                                                             onChange: handleChange,
                                                             placeholder: "Mi Empresa S.A. de C.V.",
-                                                            className: "w-full rounded-xl border border-border bg-secondary/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all"
+                                                            className: `w-full rounded-xl border ${errors.empresa ? 'border-destructive focus:ring-destructive/40' : 'border-border focus:ring-primary/40'} bg-secondary/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:border-transparent transition-all`
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 149,
+                                                            lineNumber: 290,
                                                             columnNumber: 21
+                                                        }, this),
+                                                        errors.empresa && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-destructive text-[10px] sm:text-xs mt-1",
+                                                            children: errors.empresa
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/contact-section.tsx",
+                                                            lineNumber: 303,
+                                                            columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 145,
+                                                    lineNumber: 286,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 265,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "grid sm:grid-cols-2 gap-5",
+                                            className: "grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "space-y-1.5",
+                                                    className: "space-y-1",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                             htmlFor: "telefono",
-                                                            className: "text-xs font-semibold text-muted-foreground uppercase tracking-wider",
+                                                            className: "text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider",
                                                             children: "Teléfono"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 164,
+                                                            lineNumber: 310,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2399,28 +2528,28 @@ function ContactSection() {
                                                             value: form.telefono,
                                                             onChange: handleChange,
                                                             placeholder: "+52 (000) 000-0000",
-                                                            className: "w-full rounded-xl border border-border bg-secondary/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all"
+                                                            className: "w-full rounded-xl border border-border bg-secondary/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-transparent transition-all"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 167,
+                                                            lineNumber: 313,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 309,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "space-y-1.5",
+                                                    className: "space-y-1",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                             htmlFor: "correo",
-                                                            className: "text-xs font-semibold text-muted-foreground uppercase tracking-wider",
+                                                            className: "text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider",
                                                             children: "Correo electrónico *"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 178,
+                                                            lineNumber: 324,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2431,67 +2560,83 @@ function ContactSection() {
                                                             value: form.correo,
                                                             onChange: handleChange,
                                                             placeholder: "juan@empresa.com",
-                                                            className: "w-full rounded-xl border border-border bg-secondary/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all"
+                                                            className: `w-full rounded-xl border ${errors.correo ? 'border-destructive focus:ring-destructive/40' : 'border-border focus:ring-primary/40'} bg-secondary/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:border-transparent transition-all`
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 181,
+                                                            lineNumber: 327,
                                                             columnNumber: 21
+                                                        }, this),
+                                                        errors.correo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-destructive text-[10px] sm:text-xs mt-1",
+                                                            children: errors.correo
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/contact-section.tsx",
+                                                            lineNumber: 340,
+                                                            columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 177,
+                                                    lineNumber: 323,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 308,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-1.5",
+                                            className: "space-y-1",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                     htmlFor: "mensaje",
-                                                    className: "text-xs font-semibold text-muted-foreground uppercase tracking-wider",
+                                                    className: "text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider",
                                                     children: "Cuéntanos sobre tu proyecto *"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 195,
+                                                    lineNumber: 346,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                                                     id: "mensaje",
                                                     name: "mensaje",
                                                     required: true,
-                                                    rows: 5,
+                                                    rows: 4,
                                                     value: form.mensaje,
                                                     onChange: handleChange,
                                                     placeholder: "Describe tus necesidades de telecomunicaciones, la cantidad de usuarios, ubicaciones, etc.",
-                                                    className: "w-full rounded-xl border border-border bg-secondary/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all resize-none"
+                                                    className: `w-full rounded-xl border ${errors.mensaje ? 'border-destructive focus:ring-destructive/40' : 'border-border focus:ring-primary/40'} bg-secondary/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:border-transparent transition-all resize-none`
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 198,
+                                                    lineNumber: 349,
                                                     columnNumber: 19
+                                                }, this),
+                                                errors.mensaje && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-destructive text-[10px] sm:text-xs mt-1",
+                                                    children: errors.mensaje
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/contact-section.tsx",
+                                                    lineNumber: 362,
+                                                    columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 194,
+                                            lineNumber: 345,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             type: "submit",
                                             disabled: loading,
-                                            className: "w-full flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-[0.99] disabled:opacity-70 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.35)] hover:shadow-[0_0_36px_oklch(0.55_0.2_250/0.55)] group",
+                                            className: "w-full flex items-center justify-center gap-2.5 px-5 sm:px-7 py-3 sm:py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-[0.99] disabled:opacity-70 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.35)] hover:shadow-[0_0_36px_oklch(0.55_0.2_250/0.55)] group",
                                             children: loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "w-4 h-4 border-2 border-primary-foreground/40 border-t-primary-foreground rounded-full animate-spin"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 217,
+                                                        lineNumber: 373,
                                                         columnNumber: 23
                                                     }, this),
                                                     "Enviando..."
@@ -2500,50 +2645,50 @@ function ContactSection() {
                                                 children: [
                                                     "Enviar solicitud",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
-                                                        className: "w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                                                        className: "w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 223,
+                                                        lineNumber: 379,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true)
                                         }, void 0, false, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 210,
+                                            lineNumber: 366,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/contact-section.tsx",
-                                    lineNumber: 125,
+                                    lineNumber: 251,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 96,
+                                lineNumber: 222,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/contact-section.tsx",
-                        lineNumber: 62,
+                        lineNumber: 176,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/contact-section.tsx",
-                lineNumber: 42,
+                lineNumber: 156,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/contact-section.tsx",
-        lineNumber: 38,
+        lineNumber: 152,
         columnNumber: 5
     }, this);
 }
-_s(ContactSection, "t07svg+zhZdsPS9+P3Y4Q4F33J0=");
+_s(ContactSection, "GFvlJ8IoSyyfXFHETcBBCgUk/G4=");
 _c = ContactSection;
 var _c;
 __turbopack_context__.k.register(_c, "ContactSection");
