@@ -429,7 +429,7 @@ function HeroSection() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute bottom-0 left-0 right-0 h-48 bg-[linear-gradient(to_top,oklch(0.07_0.01_250),transparent)]"
+                        className: "absolute bottom-0 left-0 right-0 h-32 sm:h-48 bg-[linear-gradient(to_top,oklch(0.07_0.01_250),transparent)]"
                     }, void 0, false, {
                         fileName: "[project]/components/hero-section.tsx",
                         lineNumber: 29,
@@ -442,7 +442,7 @@ function HeroSection() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20",
+                className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "max-w-4xl mx-auto text-center",
@@ -460,17 +460,17 @@ function HeroSection() {
                                     duration: 0.6,
                                     delay: 0.1
                                 },
-                                className: "inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[oklch(0.55_0.2_250/0.4)] bg-[oklch(0.55_0.2_250/0.1)] backdrop-blur-sm mb-8",
+                                className: "inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[oklch(0.55_0.2_250/0.4)] bg-[oklch(0.55_0.2_250/0.1)] backdrop-blur-sm mb-6 sm:mb-8",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "w-2 h-2 rounded-full bg-primary animate-pulse"
+                                        className: "w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary animate-pulse"
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
                                         lineNumber: 41,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-primary text-xs font-semibold tracking-widest uppercase",
+                                        className: "text-primary text-[10px] sm:text-xs font-semibold tracking-widest uppercase whitespace-nowrap",
                                         children: "Soluciones Empresariales de Alto Nivel"
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
@@ -496,12 +496,12 @@ function HeroSection() {
                                     duration: 0.7,
                                     delay: 0.2
                                 },
-                                className: "text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-balance leading-tight mb-6",
+                                className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-balance leading-[1.2] sm:leading-tight mb-4 sm:mb-6",
                                 children: [
                                     "Soluciones en",
                                     ' ',
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-primary [text-shadow:0_0_40px_oklch(0.55_0.2_250/0.6)]",
+                                        className: "text-primary [text-shadow:0_0_40px_oklch(0.55_0.2_250/0.6)] whitespace-nowrap",
                                         children: "Telecomunicaciones"
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
@@ -529,7 +529,7 @@ function HeroSection() {
                                     duration: 0.7,
                                     delay: 0.35
                                 },
-                                className: "text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10",
+                                className: "text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 px-2",
                                 children: "Implementamos infraestructura tecnológica confiable para empresas. Conectividad, seguridad, domótica y comunicación unificada en un solo socio estratégico."
                             }, void 0, false, {
                                 fileName: "[project]/components/hero-section.tsx",
@@ -549,11 +549,11 @@ function HeroSection() {
                                     duration: 0.6,
                                     delay: 0.5
                                 },
-                                className: "flex flex-col sm:flex-row gap-4 justify-center mb-14",
+                                className: "flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 sm:mb-14 px-4",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "#contacto",
-                                        className: "inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all duration-200 shadow-[0_0_32px_oklch(0.55_0.2_250/0.45)] hover:shadow-[0_0_48px_oklch(0.55_0.2_250/0.65)] group",
+                                        className: "inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all duration-200 shadow-[0_0_32px_oklch(0.55_0.2_250/0.45)] hover:shadow-[0_0_48px_oklch(0.55_0.2_250/0.65)] group",
                                         children: [
                                             "Solicitar cotización",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
@@ -571,7 +571,7 @@ function HeroSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "#servicios",
-                                        className: "inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-border bg-[oklch(0.55_0.2_250/0.08)] backdrop-blur-sm text-foreground font-semibold text-base hover:bg-[oklch(0.55_0.2_250/0.15)] hover:border-primary/50 active:scale-95 transition-all duration-200",
+                                        className: "inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl border border-border bg-[oklch(0.55_0.2_250/0.08)] backdrop-blur-sm text-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.55_0.2_250/0.15)] hover:border-primary/50 active:scale-95 transition-all duration-200",
                                         children: "Ver servicios"
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
@@ -597,18 +597,25 @@ function HeroSection() {
                                     duration: 0.6,
                                     delay: 0.65
                                 },
-                                className: "flex flex-wrap gap-3 justify-center",
+                                className: "flex flex-wrap gap-2 sm:gap-3 justify-center px-4",
                                 children: badges.map(({ icon: Icon, label })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-2 px-4 py-2 rounded-full bg-[oklch(0.14_0.02_250/0.7)] backdrop-blur-sm border border-border/80 text-muted-foreground text-sm",
+                                        className: "flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[oklch(0.14_0.02_250/0.7)] backdrop-blur-sm border border-border/80 text-muted-foreground text-xs sm:text-sm",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
-                                                className: "w-3.5 h-3.5 text-primary"
+                                                className: "w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/hero-section.tsx",
                                                 lineNumber: 106,
                                                 columnNumber: 17
                                             }, this),
-                                            label
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "whitespace-nowrap",
+                                                children: label
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/hero-section.tsx",
+                                                lineNumber: 107,
+                                                columnNumber: 17
+                                            }, this)
                                         ]
                                     }, label, true, {
                                         fileName: "[project]/components/hero-section.tsx",
@@ -639,12 +646,12 @@ function HeroSection() {
                             duration: 0.7,
                             delay: 0.8
                         },
-                        className: "mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden max-w-3xl mx-auto",
+                        className: "mt-16 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden max-w-3xl mx-auto",
                         children: stats.map(({ value, label })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-card flex flex-col items-center justify-center py-6 px-4 hover:bg-[oklch(0.14_0.02_250)] transition-colors",
+                                className: "bg-card flex flex-col items-center justify-center py-4 sm:py-6 px-3 sm:px-4 hover:bg-[oklch(0.14_0.02_250)] transition-colors",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-3xl font-bold text-primary mb-1",
+                                        className: "text-2xl sm:text-3xl font-bold text-primary mb-0.5 sm:mb-1",
                                         children: value
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
@@ -652,11 +659,11 @@ function HeroSection() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-xs text-muted-foreground text-center leading-tight",
+                                        className: "text-[10px] sm:text-xs text-muted-foreground text-center leading-tight",
                                         children: label
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 128,
                                         columnNumber: 15
                                     }, this)
                                 ]
@@ -686,7 +693,7 @@ function HeroSection() {
                 transition: {
                     delay: 1.2
                 },
-                className: "absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1",
+                className: "absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                     animate: {
                         y: [
@@ -702,20 +709,20 @@ function HeroSection() {
                     },
                     "aria-hidden": true,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
-                        className: "w-5 h-5 text-muted-foreground/60"
+                        className: "w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground/60"
                     }, void 0, false, {
                         fileName: "[project]/components/hero-section.tsx",
-                        lineNumber: 144,
+                        lineNumber: 148,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/hero-section.tsx",
-                    lineNumber: 139,
+                    lineNumber: 143,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/hero-section.tsx",
-                lineNumber: 133,
+                lineNumber: 137,
                 columnNumber: 7
             }, this)
         ]
