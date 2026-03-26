@@ -196,8 +196,12 @@ export default function ServicesSection() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: '-60px' }}
-                className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
-                style={{ gridTemplateColumns: `repeat(${Math.min(cat.services.length, 4)}, minmax(0, 1fr))` }}
+                className={`
+                  grid gap-4
+                  ${cat.services.length === 2 ? 'grid-cols-1 sm:grid-cols-2' : ''}
+                  ${cat.services.length === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : ''}
+                  ${cat.services.length === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : ''}
+                `}
               >
                 {cat.services.map((svc) => (
                   <motion.div
