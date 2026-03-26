@@ -14,11 +14,11 @@ const highlights = [
 
 export default function AboutSection() {
   return (
-    <section id="nosotros" className="py-20 sm:py-24 lg:py-32 relative overflow-hidden">
+    <section id="nosotros" className="py-24 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_0%_50%,oklch(0.55_0.2_250/0.05),transparent)]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: text */}
           <motion.div
             initial={{ opacity: 0, x: -32 }}
@@ -26,14 +26,14 @@ export default function AboutSection() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3 sm:mb-4">
+            <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-4">
               Quiénes somos
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-5 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-6">
               Tu socio estratégico en{' '}
-              <span className="text-primary whitespace-nowrap">tecnología</span>
+              <span className="text-primary">tecnología</span>
             </h2>
-            <div className="space-y-3 sm:space-y-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
+            <div className="space-y-4 text-muted-foreground text-base leading-relaxed">
               <p>
                 <strong className="text-foreground">Operadores AGO</strong> es una empresa mexicana
                 especializada en telecomunicaciones y soluciones tecnológicas para el sector empresarial.
@@ -53,7 +53,7 @@ export default function AboutSection() {
 
             <a
               href="#contacto"
-              className="mt-6 sm:mt-8 inline-flex items-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.3)]"
+              className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.3)]"
             >
               Contáctanos hoy
             </a>
@@ -65,17 +65,13 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+            className="grid sm:grid-cols-2 gap-4"
           >
             {/* Large feature card */}
-            <div className="sm:col-span-2 rounded-2xl border border-primary/25 bg-[oklch(0.55_0.2_250/0.08)] p-5 sm:p-6 lg:p-7">
-              <div className="text-4xl sm:text-5xl font-bold text-primary mb-0.5 sm:mb-1">
-                200+
-              </div>
-              <div className="text-foreground font-semibold text-base sm:text-lg mb-1 sm:mb-2">
-                Proyectos implementados
-              </div>
-              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
+            <div className="sm:col-span-2 rounded-2xl border border-primary/25 bg-[oklch(0.55_0.2_250/0.08)] p-7">
+              <div className="text-5xl font-bold text-primary mb-1">200+</div>
+              <div className="text-foreground font-semibold mb-2">Proyectos implementados</div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Empresas de manufactura, retail, salud, gobierno y servicios confían en nosotros para
                 su infraestructura tecnológica crítica.
               </p>
@@ -89,12 +85,10 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="flex items-start gap-2.5 sm:gap-3 rounded-xl border border-border bg-card p-3 sm:p-4 hover:border-primary/30 transition-colors"
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-primary/30 transition-colors"
               >
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
-                <span className="text-xs sm:text-sm text-muted-foreground leading-snug">
-                  {item}
-                </span>
+                <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                <span className="text-sm text-muted-foreground leading-snug">{item}</span>
               </motion.div>
             ))}
           </motion.div>
