@@ -51,12 +51,7 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <a
-              href="#contacto"
-              className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.3)]"
-            >
-              Contáctanos hoy
-            </a>
+           
           </motion.div>
 
           {/* Right: highlights grid */}
