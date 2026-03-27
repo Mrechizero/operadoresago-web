@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: 'Operadores AGO',
     images: [
       {
-        url: 'public/social-image.png',
+        url: '/social-image.png',  // ← CORREGIDO: sin "public/"
         width: 1200,
         height: 630,
         alt: 'Operadores AGO - Telecomunicaciones',
