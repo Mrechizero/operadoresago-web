@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 import { Send, Phone, Mail, MapPin, CheckCircle2, AlertCircle, CheckCircle } from 'lucide-react'
 
 const contactInfo = [
-  { icon: Phone, label: 'Teléfono', value: '+52 (000) 000-0000', href: 'tel:+520000000000' },
-  { icon: Mail, label: 'Correo electrónico', value: 'contacto@operadoresago.com', href: 'mailto:contacto@operadoresago.com' },
+  { icon: Phone, label: 'Teléfono', value: '+52 (771) 318-9879', href: 'tel:+527713189879' },
+  { icon: Mail, label: 'Correo electrónico', value: 'admin@operadoresago.com', href: 'mailto:admin@operadoresago.com' },
   { icon: MapPin, label: 'Ubicación', value: 'México', href: '#' },
 ]
 
@@ -40,7 +40,6 @@ export default function ContactSection() {
   useEffect(() => {
     const newErrors = { nombre: '', empresa: '', correo: '', mensaje: '' }
     
-    // Validar nombre
     if (touched.nombre) {
       if (!form.nombre.trim()) {
         newErrors.nombre = 'El nombre es requerido'
@@ -51,7 +50,6 @@ export default function ContactSection() {
       }
     }
     
-    // Validar empresa
     if (touched.empresa) {
       if (!form.empresa.trim()) {
         newErrors.empresa = 'La empresa es requerida'
@@ -60,7 +58,6 @@ export default function ContactSection() {
       }
     }
     
-    // Validar correo
     if (touched.correo) {
       const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/
       if (!form.correo.trim()) {
@@ -70,7 +67,6 @@ export default function ContactSection() {
       }
     }
     
-    // Validar mensaje
     if (touched.mensaje) {
       if (!form.mensaje.trim()) {
         newErrors.mensaje = 'El mensaje es requerido'
@@ -95,7 +91,6 @@ export default function ContactSection() {
   }
 
   const validateForm = () => {
-    // Marcar todos los campos como tocados
     setTouched({
       nombre: true,
       empresa: true,
@@ -103,7 +98,6 @@ export default function ContactSection() {
       mensaje: true
     })
     
-    // Verificar si hay errores
     return !errors.nombre && !errors.empresa && !errors.correo && !errors.mensaje
   }
 
@@ -116,13 +110,26 @@ export default function ContactSection() {
     setError('')
     
     try {
+      // Combinar empresa y teléfono dentro del mensaje
+      const mensajeCompleto = `
+📋 DATOS DE CONTACTO:
+━━━━━━━━━━━━━━━━━━━━━
+🏢 Empresa: ${form.empresa || 'No especificada'}
+📞 Teléfono: ${form.telefono || 'No especificado'}
+
+💬 MENSAJE:
+━━━━━━━━━━━━━━━━━━━━━
+${form.mensaje}
+      `.trim()
+      
+      // Payload compatible con el backend existente
       const payload = {
         name: form.nombre.trim(),
         email: form.correo.trim(),
-        company: form.empresa.trim(),
-        phone: form.telefono.trim(),
-        message: form.mensaje.trim(),
+        message: mensajeCompleto
       }
+      
+      console.log('Enviando a backend:', payload)
       
       const response = await fetch('http://10.10.0.49:3001/contact', {
         method: 'POST',
@@ -130,13 +137,17 @@ export default function ContactSection() {
         body: JSON.stringify(payload),
       })
       
-      if (!response.ok) throw new Error('Error')
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Error al enviar')
+      }
       
       setSubmitted(true)
       setForm({ nombre: '', empresa: '', telefono: '', correo: '', mensaje: '' })
       setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
       
     } catch (err) {
+      console.error('Error:', err)
       setError('Error al enviar. Intenta de nuevo.')
     } finally {
       setLoading(false)
@@ -151,7 +162,6 @@ export default function ContactSection() {
     setError('')
   }
 
-  // Verificar si el formulario es válido para habilitar el botón
   const isFormValid = () => {
     return (
       form.nombre.trim().length >= 2 &&
@@ -304,7 +314,7 @@ export default function ContactSection() {
                       name="telefono"
                       value={form.telefono}
                       onChange={handleChange}
-                      placeholder="+52 (000) 000-0000"
+                      placeholder="+52 (771) 000-0000"
                       className="w-full rounded-xl border border-border bg-secondary/50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
                     />
                   </div>

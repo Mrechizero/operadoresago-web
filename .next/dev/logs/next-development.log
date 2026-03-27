@@ -1,163 +1,63 @@
-{"timestamp":"00:00:01.097","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:13.596","source":"Server","level":"WARN","message":"⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using \"http://localhost:3000\". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"}
-{"timestamp":"00:00:14.739","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
-{"timestamp":"00:00:14.739","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
-{"timestamp":"00:00:14.739","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"r\":\"\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774571157331} /_vercel/insights/view"}
-{"timestamp":"00:04:27.396","source":"Server","level":"LOG","message":"✓ Compiled in 1656ms"}
-{"timestamp":"00:17:16.016","source":"Server","level":"LOG","message":"✓ Compiled in 170ms"}
-{"timestamp":"00:17:26.304","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
-{"timestamp":"00:17:26.304","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
-{"timestamp":"00:17:26.304","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/#contacto\",\"r\":\"\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774572188903} /_vercel/insights/view"}
-{"timestamp":"00:19:50.521","source":"Server","level":"LOG","message":"✓ Compiled in 189ms"}
-{"timestamp":"00:20:45.906","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
-{"timestamp":"00:20:45.906","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
-{"timestamp":"00:20:45.906","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"r\":\"\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774572388502} /_vercel/insights/view"}
-{"timestamp":"00:22:49.789","source":"Server","level":"LOG","message":"✓ Compiled in 331ms"}
-{"timestamp":"00:22:57.299","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
-{"timestamp":"00:22:57.299","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
-{"timestamp":"00:22:57.299","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"r\":\"\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774572519899} /_vercel/insights/view"}
-{"timestamp":"00:23:32.361","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: G"}
-{"timestamp":"00:23:32.933","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: "}
-{"timestamp":"00:23:33.426","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: G"}
-{"timestamp":"00:23:33.962","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Ga"}
-{"timestamp":"00:23:34.166","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gab"}
-{"timestamp":"00:23:34.306","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabi"}
-{"timestamp":"00:23:34.427","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabin"}
-{"timestamp":"00:23:34.570","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino"}
-{"timestamp":"00:23:34.773","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino "}
-{"timestamp":"00:23:35.323","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino P"}
-{"timestamp":"00:23:35.432","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Pa"}
-{"timestamp":"00:23:35.591","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Pal"}
-{"timestamp":"00:23:35.867","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Palm"}
-{"timestamp":"00:23:35.938","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Palma"}
-{"timestamp":"00:23:36.412","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Palma "}
-{"timestamp":"00:23:36.846","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Palma L"}
-{"timestamp":"00:23:37.030","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Palma Lo"}
-{"timestamp":"00:23:37.106","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Palma Loz"}
-{"timestamp":"00:23:37.302","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Palma Loza"}
-{"timestamp":"00:23:37.380","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Palma Lozad"}
-{"timestamp":"00:23:37.491","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: Gabino Palma Lozada"}
-{"timestamp":"00:23:39.791","source":"Browser","level":"LOG","message":"Campo empresa cambiado a: C"}
-{"timestamp":"00:23:39.976","source":"Browser","level":"LOG","message":"Campo empresa cambiado a: CG"}
-{"timestamp":"00:23:40.055","source":"Browser","level":"LOG","message":"Campo empresa cambiado a: CGO"}
-{"timestamp":"00:23:42.251","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: 7"}
-{"timestamp":"00:23:42.379","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: 77"}
-{"timestamp":"00:23:42.677","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: 771"}
-{"timestamp":"00:23:42.897","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: 7713"}
-{"timestamp":"00:23:43.296","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: 77131"}
-{"timestamp":"00:23:43.530","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: 771318"}
-{"timestamp":"00:23:43.735","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: 7713189"}
-{"timestamp":"00:23:43.861","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: 77131898"}
-{"timestamp":"00:23:44.178","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: 771318987"}
-{"timestamp":"00:23:44.383","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: 7713189879"}
-{"timestamp":"00:23:46.335","source":"Browser","level":"LOG","message":"Campo correo cambiado a: d"}
-{"timestamp":"00:23:46.389","source":"Browser","level":"LOG","message":"Campo correo cambiado a: dj"}
-{"timestamp":"00:23:46.567","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djd"}
-{"timestamp":"00:23:46.662","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdj"}
-{"timestamp":"00:23:46.746","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf"}
-{"timestamp":"00:23:47.392","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf@"}
-{"timestamp":"00:23:48.284","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf@g"}
-{"timestamp":"00:23:48.442","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf@gm"}
-{"timestamp":"00:23:48.598","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf@gma"}
-{"timestamp":"00:23:48.736","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf@gmai"}
-{"timestamp":"00:23:48.922","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf@gmail"}
-{"timestamp":"00:23:49.099","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf@gmail."}
-{"timestamp":"00:23:49.225","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf@gmail.c"}
-{"timestamp":"00:23:49.318","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf@gmail.co"}
-{"timestamp":"00:23:49.472","source":"Browser","level":"LOG","message":"Campo correo cambiado a: djdjf@gmail.com"}
-{"timestamp":"00:23:51.664","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: t"}
-{"timestamp":"00:23:51.823","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: to"}
-{"timestamp":"00:23:51.906","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: tod"}
-{"timestamp":"00:23:51.985","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo"}
-{"timestamp":"00:23:55.464","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo "}
-{"timestamp":"00:23:55.653","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo l"}
-{"timestamp":"00:23:55.781","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo"}
-{"timestamp":"00:23:55.990","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo "}
-{"timestamp":"00:23:56.041","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo q"}
-{"timestamp":"00:23:56.199","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo qu"}
-{"timestamp":"00:23:56.279","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que"}
-{"timestamp":"00:23:56.373","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que "}
-{"timestamp":"00:23:56.712","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que t"}
-{"timestamp":"00:23:56.948","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que te"}
-{"timestamp":"00:23:57.081","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que ten"}
-{"timestamp":"00:23:57.163","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tene"}
-{"timestamp":"00:23:57.276","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenem"}
-{"timestamp":"00:23:57.412","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemo"}
-{"timestamp":"00:23:57.510","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos"}
-{"timestamp":"00:23:57.601","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos "}
-{"timestamp":"00:23:57.718","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos e"}
-{"timestamp":"00:23:57.896","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es"}
-{"timestamp":"00:23:58.014","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es "}
-{"timestamp":"00:23:58.602","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es a"}
-{"timestamp":"00:23:58.748","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es ag"}
-{"timestamp":"00:23:58.910","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es age"}
-{"timestamp":"00:23:58.910","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es ager"}
-{"timestamp":"00:23:58.986","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agern"}
-{"timestamp":"00:23:59.114","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agernd"}
-{"timestamp":"00:23:59.306","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agernda"}
-{"timestamp":"00:23:59.530","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar"}
-{"timestamp":"00:23:59.595","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar "}
-{"timestamp":"00:23:59.765","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar u"}
-{"timestamp":"00:23:59.884","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar un"}
-{"timestamp":"00:23:59.971","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una"}
-{"timestamp":"00:24:00.104","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una "}
-{"timestamp":"00:24:00.342","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una r"}
-{"timestamp":"00:24:00.497","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una re"}
-{"timestamp":"00:24:00.629","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reu"}
-{"timestamp":"00:24:00.780","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reun"}
-{"timestamp":"00:24:00.933","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reuni"}
-{"timestamp":"00:24:01.097","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunid"}
-{"timestamp":"00:24:01.097","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunids"}
-{"timestamp":"00:24:01.097","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso"}
-{"timestamp":"00:24:01.320","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso "}
-{"timestamp":"00:24:01.502","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso p"}
-{"timestamp":"00:24:01.535","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso pa"}
-{"timestamp":"00:24:01.737","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso par"}
-{"timestamp":"00:24:01.933","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para"}
-{"timestamp":"00:24:02.036","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para "}
-{"timestamp":"00:24:02.215","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para p"}
-{"timestamp":"00:24:02.281","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para po"}
-{"timestamp":"00:24:02.367","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para por"}
-{"timestamp":"00:24:02.598","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para por "}
-{"timestamp":"00:24:02.646","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para por d"}
-{"timestamp":"00:24:02.858","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para por de"}
-{"timestamp":"00:24:03.038","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para por der"}
-{"timestamp":"00:24:03.234","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para por der "}
-{"timestamp":"00:24:03.468","source":"Browser","level":"LOG","message":"Campo mensaje cambiado a: todo lo que tenemos es agerndar una reunidso para por der d"}
-{"timestamp":"00:24:04.703","source":"Browser","level":"LOG","message":"Enviando: {\"company\":\"CGO\",\"email\":\"djdjf@gmail.com\",\"message\":\"todo lo que tenemos es agerndar una reunidso para por der d\",\"name\":\"Gabino Palma Lozada\",\"phone\":\"7713189879\"}"}
-{"timestamp":"00:24:55.271","source":"Browser","level":"LOG","message":"Campo empresa cambiado a: d"}
-{"timestamp":"00:24:55.463","source":"Browser","level":"LOG","message":"Campo empresa cambiado a: dd"}
-{"timestamp":"00:24:55.634","source":"Browser","level":"LOG","message":"Campo empresa cambiado a: ddd"}
-{"timestamp":"00:24:55.802","source":"Browser","level":"LOG","message":"Campo empresa cambiado a: dddd"}
-{"timestamp":"00:24:56.002","source":"Browser","level":"LOG","message":"Campo empresa cambiado a: ddddd"}
-{"timestamp":"00:24:56.433","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: d"}
-{"timestamp":"00:24:56.632","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: dd"}
-{"timestamp":"00:24:56.767","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: ddd"}
-{"timestamp":"00:24:57.515","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: ddd "}
-{"timestamp":"00:24:57.700","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: ddd d"}
-{"timestamp":"00:24:57.882","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: ddd dd"}
-{"timestamp":"00:24:58.020","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: ddd ddd"}
-{"timestamp":"00:24:58.179","source":"Browser","level":"LOG","message":"Campo nombre cambiado a: ddd dddd"}
-{"timestamp":"00:24:58.642","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s"}
-{"timestamp":"00:24:59.867","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s4"}
-{"timestamp":"00:24:59.995","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s"}
-{"timestamp":"00:25:00.200","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s4"}
-{"timestamp":"00:25:00.200","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s"}
-{"timestamp":"00:25:00.411","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s4"}
-{"timestamp":"00:25:00.572","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s45"}
-{"timestamp":"00:25:00.756","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s454"}
-{"timestamp":"00:25:00.788","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s4543"}
-{"timestamp":"00:25:00.892","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s45435"}
-{"timestamp":"00:25:01.048","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s454353"}
-{"timestamp":"00:25:01.066","source":"Browser","level":"LOG","message":"Campo telefono cambiado a: s4543534"}
-{"timestamp":"00:25:01.949","source":"Browser","level":"LOG","message":"Campo correo cambiado a: 3"}
-{"timestamp":"00:25:01.986","source":"Browser","level":"LOG","message":"Campo correo cambiado a: 34"}
-{"timestamp":"00:25:02.145","source":"Browser","level":"LOG","message":"Campo correo cambiado a: 345"}
-{"timestamp":"00:25:02.289","source":"Browser","level":"LOG","message":"Campo correo cambiado a: 3453"}
-{"timestamp":"00:25:02.289","source":"Browser","level":"LOG","message":"Campo correo cambiado a: 34534"}
-{"timestamp":"00:25:02.353","source":"Browser","level":"LOG","message":"Campo correo cambiado a: 345345"}
-{"timestamp":"00:27:55.971","source":"Server","level":"WARN","message":"⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using \"http://localhost:3000\". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"}
-{"timestamp":"00:27:55.979","source":"Server","level":"LOG","message":"✓ Compiled in 474ms"}
-{"timestamp":"00:28:00.557","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
-{"timestamp":"00:28:00.557","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
-{"timestamp":"00:28:00.557","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"r\":\"\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774572823156} /_vercel/insights/view"}
+{"timestamp":"00:00:01.069","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:01:36.264","source":"Server","level":"WARN","message":"⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using \"http://localhost:3000\". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"}
+{"timestamp":"00:01:38.531","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:01:38.531","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:01:38.532","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"r\":\"\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774573733423} /_vercel/insights/view"}
+{"timestamp":"00:03:13.744","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:03:13.744","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:03:13.744","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"r\":\"\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774573829393} /_vercel/insights/view"}
+{"timestamp":"00:04:43.271","source":"Server","level":"WARN","message":"⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using \"http://localhost:3000\". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"}
+{"timestamp":"00:04:43.661","source":"Server","level":"WARN","message":"⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using \"http://localhost:3000\". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"}
+{"timestamp":"00:04:43.676","source":"Server","level":"LOG","message":"✓ Compiled in 0ms"}
+{"timestamp":"00:04:45.530","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:04:45.530","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:04:45.530","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774573920670} /_vercel/insights/view"}
+{"timestamp":"00:04:53.228","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:04:53.228","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:04:53.228","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774573928880} /_vercel/insights/view"}
+{"timestamp":"00:06:30.697","source":"Server","level":"LOG","message":"✓ Compiled in 0ms"}
+{"timestamp":"00:06:40.721","source":"Server","level":"ERROR","message":"⨯ Error: Could not find the module \"[project]/app/layout.tsx#default\" in the React Client Manifest. This is probably a bug in the React Server Components bundler."}
+{"timestamp":"00:06:40.913","source":"Server","level":"LOG","message":"✓ Compiled in 0ms"}
+{"timestamp":"00:06:41.220","source":"Server","level":"WARN","message":"⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using \"http://localhost:3000\". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"}
+{"timestamp":"00:06:42.088","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:06:42.088","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:06:42.088","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774574037737} /_vercel/insights/view"}
+{"timestamp":"00:06:46.105","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:06:46.105","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:06:46.105","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774574041762} /_vercel/insights/view"}
+{"timestamp":"00:07:53.222","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:07:53.222","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:07:53.222","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774574108869} /_vercel/insights/view"}
+{"timestamp":"00:08:14.434","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:08:14.435","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:08:14.435","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774574130076} /_vercel/insights/view"}
+{"timestamp":"00:21:43.408","source":"Server","level":"LOG","message":"✓ Compiled in 101ms"}
+{"timestamp":"00:21:54.702","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:21:54.702","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:21:54.702","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/#contacto\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774574950357} /_vercel/insights/view"}
+{"timestamp":"00:22:07.070","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:22:07.070","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:22:07.070","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/#contacto\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774574962725} /_vercel/insights/view"}
+{"timestamp":"00:22:34.441","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:22:34.441","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:22:34.441","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/#contacto\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774574990090} /_vercel/insights/view"}
+{"timestamp":"00:23:29.391","source":"Server","level":"LOG","message":"✓ Compiled in 109ms"}
+{"timestamp":"00:23:33.255","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:23:33.255","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:23:33.255","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/#contacto\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774575048912} /_vercel/insights/view"}
+{"timestamp":"00:23:35.902","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:23:35.902","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:23:35.902","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/#contacto\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774575051557} /_vercel/insights/view"}
+{"timestamp":"00:23:43.705","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:23:43.705","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:23:43.705","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/#contacto\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774575059353} /_vercel/insights/view"}
+{"timestamp":"00:24:38.169","source":"Server","level":"LOG","message":"✓ Compiled in 138ms"}
+{"timestamp":"00:25:37.776","source":"Server","level":"LOG","message":"✓ Compiled in 220ms"}
+{"timestamp":"00:25:49.180","source":"Server","level":"LOG","message":"✓ Compiled in 169ms"}
+{"timestamp":"00:26:01.248","source":"Server","level":"LOG","message":"✓ Compiled in 128ms"}
+{"timestamp":"00:26:25.315","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:26:25.315","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:26:25.315","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/#contacto\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774575220958} /_vercel/insights/view"}
+{"timestamp":"00:26:35.228","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
+{"timestamp":"00:26:35.228","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
+{"timestamp":"00:26:35.228","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/#contacto\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"1.6.1\",\"sv\":\"0.1.3\",\"ts\":1774575230874} /_vercel/insights/view"}
