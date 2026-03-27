@@ -1,135 +1,143 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Send, Phone, Mail, MapPin, CheckCircle2, AlertCircle } from 'lucide-react'
+import { Send, Phone, Mail, MapPin, CheckCircle2, AlertCircle, CheckCircle } from 'lucide-react'
 
 const contactInfo = [
-  { icon: Phone, label: 'Teléfono', value: '+52 (771) 318-9879', href: 'tel:+527713189879' },
-  { icon: Mail, label: 'Correo electrónico', value: 'admin@operadoresago.com', href: 'mailto:admin@operadoresago.com' },
+  { icon: Phone, label: 'Teléfono', value: '+52 (000) 000-0000', href: 'tel:+520000000000' },
+  { icon: Mail, label: 'Correo electrónico', value: 'contacto@operadoresago.com', href: 'mailto:contacto@operadoresago.com' },
   { icon: MapPin, label: 'Ubicación', value: 'México', href: '#' },
 ]
-
-// URL de Google Apps Script - REEMPLAZA CON TU URL REAL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/TU_ID_AQUI/exec'
-
-interface FormData {
-  nombre: string
-  empresa: string
-  telefono: string
-  correo: string
-  mensaje: string
-}
-
-interface FormErrors {
-  nombre?: string
-  empresa?: string
-  correo?: string
-  mensaje?: string
-}
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const formRef = useRef<HTMLFormElement>(null)
+  const [touched, setTouched] = useState({
+    nombre: false,
+    empresa: false,
+    correo: false,
+    mensaje: false
+  })
   
-  const [form, setForm] = useState<FormData>({
+  const [form, setForm] = useState({
     nombre: '',
     empresa: '',
     telefono: '',
     correo: '',
-    mensaje: '',
+    mensaje: ''
   })
   
-  const [errors, setErrors] = useState<FormErrors>({})
+  const [errors, setErrors] = useState({
+    nombre: '',
+    empresa: '',
+    correo: '',
+    mensaje: ''
+  })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setForm((prev) => ({ ...prev, [name]: value }))
-    // Limpiar error del campo cuando el usuario empieza a escribir
-    if (errors[name as keyof FormErrors]) {
-      setErrors((prev) => ({ ...prev, [name]: undefined }))
-    }
-  }
-
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {}
+  // Validación en tiempo real
+  useEffect(() => {
+    const newErrors = { nombre: '', empresa: '', correo: '', mensaje: '' }
     
     // Validar nombre
-    if (!form.nombre.trim()) {
-      newErrors.nombre = 'El nombre es requerido'
-    } else if (form.nombre.trim().length < 2) {
-      newErrors.nombre = 'El nombre debe tener al menos 2 caracteres'
+    if (touched.nombre) {
+      if (!form.nombre.trim()) {
+        newErrors.nombre = 'El nombre es requerido'
+      } else if (form.nombre.trim().length < 2) {
+        newErrors.nombre = 'Mínimo 2 caracteres'
+      } else if (form.nombre.trim().length > 50) {
+        newErrors.nombre = 'Máximo 50 caracteres'
+      }
     }
     
     // Validar empresa
-    if (!form.empresa.trim()) {
-      newErrors.empresa = 'La empresa es requerida'
-    } else if (form.empresa.trim().length < 2) {
-      newErrors.empresa = 'La empresa debe tener al menos 2 caracteres'
+    if (touched.empresa) {
+      if (!form.empresa.trim()) {
+        newErrors.empresa = 'La empresa es requerida'
+      } else if (form.empresa.trim().length < 2) {
+        newErrors.empresa = 'Mínimo 2 caracteres'
+      }
     }
     
     // Validar correo
-    const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/
-    if (!form.correo.trim()) {
-      newErrors.correo = 'El correo electrónico es requerido'
-    } else if (!emailRegex.test(form.correo.trim())) {
-      newErrors.correo = 'Ingresa un correo electrónico válido'
+    if (touched.correo) {
+      const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/
+      if (!form.correo.trim()) {
+        newErrors.correo = 'El correo es requerido'
+      } else if (!emailRegex.test(form.correo.trim())) {
+        newErrors.correo = 'Ingresa un correo válido (ej: nombre@empresa.com)'
+      }
     }
     
     // Validar mensaje
-    if (!form.mensaje.trim()) {
-      newErrors.mensaje = 'El mensaje es requerido'
-    } else if (form.mensaje.trim().length < 10) {
-      newErrors.mensaje = 'Por favor proporciona más detalles (mínimo 10 caracteres)'
+    if (touched.mensaje) {
+      if (!form.mensaje.trim()) {
+        newErrors.mensaje = 'El mensaje es requerido'
+      } else if (form.mensaje.trim().length < 10) {
+        newErrors.mensaje = `Mínimo 10 caracteres (${form.mensaje.trim().length}/10)`
+      } else if (form.mensaje.trim().length > 500) {
+        newErrors.mensaje = `Máximo 500 caracteres (${form.mensaje.trim().length}/500)`
+      }
     }
     
     setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
+  }, [form, touched])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setForm(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name } = e.target
+    setTouched(prev => ({ ...prev, [name]: true }))
+  }
+
+  const validateForm = () => {
+    // Marcar todos los campos como tocados
+    setTouched({
+      nombre: true,
+      empresa: true,
+      correo: true,
+      mensaje: true
+    })
+    
+    // Verificar si hay errores
+    return !errors.nombre && !errors.empresa && !errors.correo && !errors.mensaje
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!validateForm()) {
-      return
-    }
+    if (!validateForm()) return
     
     setLoading(true)
     setError('')
     
     try {
-      // Enviar a Google Apps Script
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      const payload = {
+        name: form.nombre.trim(),
+        email: form.correo.trim(),
+        company: form.empresa.trim(),
+        phone: form.telefono.trim(),
+        message: form.mensaje.trim(),
+      }
+      
+      const response = await fetch('http://10.10.0.49:3001/contact', {
         method: 'POST',
-        mode: 'no-cors', // Necesario para Google Apps Script
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          nombre: form.nombre.trim(),
-          empresa: form.empresa.trim(),
-          telefono: form.telefono.trim(),
-          correo: form.correo.trim(),
-          mensaje: form.mensaje.trim(),
-          timestamp: new Date().toISOString(),
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       })
       
-      // Con no-cors, no podemos leer la respuesta, asumimos éxito
+      if (!response.ok) throw new Error('Error')
+      
       setSubmitted(true)
-      setForm({
-        nombre: '',
-        empresa: '',
-        telefono: '',
-        correo: '',
-        mensaje: '',
-      })
+      setForm({ nombre: '', empresa: '', telefono: '', correo: '', mensaje: '' })
+      setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
       
     } catch (err) {
-      console.error('Error al enviar:', err)
-      setError('Ocurrió un error al enviar el mensaje. Por favor intenta nuevamente o contáctanos directamente por teléfono.')
+      setError('Error al enviar. Intenta de nuevo.')
     } finally {
       setLoading(false)
     }
@@ -137,252 +145,261 @@ export default function ContactSection() {
 
   const resetForm = () => {
     setSubmitted(false)
-    setForm({
-      nombre: '',
-      empresa: '',
-      telefono: '',
-      correo: '',
-      mensaje: '',
-    })
-    setErrors({})
+    setForm({ nombre: '', empresa: '', telefono: '', correo: '', mensaje: '' })
+    setErrors({ nombre: '', empresa: '', correo: '', mensaje: '' })
+    setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
     setError('')
+  }
+
+  // Verificar si el formulario es válido para habilitar el botón
+  const isFormValid = () => {
+    return (
+      form.nombre.trim().length >= 2 &&
+      form.empresa.trim().length >= 2 &&
+      /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/.test(form.correo.trim()) &&
+      form.mensaje.trim().length >= 10 &&
+      form.mensaje.trim().length <= 500
+    )
   }
 
   return (
     <section id="contacto" className="py-20 sm:py-24 lg:py-32 relative">
-      <div className="absolute top-0 left-0 right-0 h-px bg-[linear-gradient(to_right,transparent,oklch(0.55_0.2_250/0.3),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,oklch(0.55_0.2_250/0.06),transparent)]" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-10 sm:mb-14"
         >
           <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3 sm:mb-4">
             Hablemos
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3 sm:mb-5 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3 sm:mb-5">
             Solicita tu cotización
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4">
-            Cuéntanos sobre tu proyecto. Nuestros ingenieros se pondrán en contacto contigo
-            en menos de 24 horas para diseñar la solución ideal.
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+            Cuéntanos sobre tu proyecto. Te contactaremos en menos de 24 horas.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-14 items-start">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-14">
           {/* Contact info */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-2 space-y-5 sm:space-y-6"
-          >
-            <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 lg:p-7 space-y-5 sm:space-y-6">
-              <h3 className="font-bold text-foreground text-base sm:text-lg">
-                Información de contacto
-              </h3>
+          <div className="lg:col-span-2 space-y-5">
+            <div className="rounded-2xl border border-border bg-card p-5 sm:p-6">
+              <h3 className="font-bold text-foreground mb-5">Información de contacto</h3>
               {contactInfo.map(({ icon: Icon, label, value, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="flex items-start gap-3 sm:gap-4 group hover:translate-x-0.5 transition-transform duration-200"
-                >
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/15 border border-primary/25 flex items-center justify-center shrink-0 group-hover:bg-primary/25 transition-colors">
-                    <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
+                <a key={label} href={href} className="flex items-start gap-3 mb-4 group hover:translate-x-0.5 transition">
+                  <div className="w-9 h-9 rounded-xl bg-primary/15 flex items-center justify-center shrink-0 group-hover:bg-primary/25 transition">
+                    <Icon className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider mb-0.5">
-                      {label}
-                    </p>
-                    <p className="text-foreground font-medium text-xs sm:text-sm break-all">
-                      {value}
-                    </p>
+                    <p className="text-xs text-muted-foreground uppercase">{label}</p>
+                    <p className="text-foreground text-sm">{value}</p>
                   </div>
                 </a>
               ))}
             </div>
-
-            <div className="rounded-2xl border border-primary/25 bg-[oklch(0.55_0.2_250/0.07)] p-5 sm:p-6 lg:p-7">
-              <p className="text-foreground font-semibold text-sm sm:text-base mb-1 sm:mb-2">
-                Respuesta garantizada
-              </p>
-              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                Respondemos todas las solicitudes en un plazo máximo de 24 horas hábiles.
-                Para urgencias llámanos directamente.
-              </p>
-            </div>
-          </motion.div>
+          </div>
 
           {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-3"
-          >
+          <div className="lg:col-span-3">
             {submitted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="rounded-2xl border border-primary/30 bg-[oklch(0.55_0.2_250/0.08)] p-8 sm:p-12 text-center"
-              >
-                <CheckCircle2 className="w-12 h-12 sm:w-14 sm:h-14 text-primary mx-auto mb-4 sm:mb-5" />
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2 sm:mb-3">
-                  Mensaje enviado con éxito
-                </h3>
-                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed px-2">
-                  Gracias por contactarnos. Un asesor de Operadores AGO se comunicará contigo
-                  en las próximas 24 horas.
+              <div className="rounded-2xl border border-primary/30 bg-primary/5 p-8 sm:p-12 text-center">
+                <CheckCircle2 className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-2">¡Mensaje enviado con éxito!</h3>
+                <p className="text-muted-foreground mb-6">
+                  Gracias por contactarnos. Un asesor se comunicará contigo en las próximas 24 horas.
                 </p>
                 <button
                   onClick={resetForm}
-                  className="mt-6 sm:mt-7 px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all text-xs sm:text-sm"
+                  className="px-5 py-2 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition"
                 >
                   Enviar otro mensaje
                 </button>
-              </motion.div>
+              </div>
             ) : (
-              <form
-                ref={formRef}
-                onSubmit={handleSubmit}
-                className="rounded-2xl border border-border bg-card p-5 sm:p-6 lg:p-9 space-y-4 sm:space-y-5"
-                noValidate
-              >
-                {/* Error general */}
+              <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-5 sm:p-6 lg:p-8 space-y-4">
+                
                 {error && (
-                  <div className="flex items-center gap-2 rounded-xl bg-destructive/10 border border-destructive/30 p-3 sm:p-4">
-                    <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-destructive shrink-0" />
-                    <p className="text-destructive text-xs sm:text-sm">{error}</p>
+                  <div className="flex items-center gap-2 bg-destructive/10 border border-destructive/30 p-3 rounded-xl">
+                    <AlertCircle className="w-4 h-4 text-destructive" />
+                    <p className="text-destructive text-sm">{error}</p>
                   </div>
                 )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1">
-                    <label htmlFor="nombre" className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-xs font-semibold text-muted-foreground uppercase block mb-1">
                       Nombre completo *
                     </label>
                     <input
-                      id="nombre"
-                      name="nombre"
                       type="text"
-                      required
+                      name="nombre"
                       value={form.nombre}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       placeholder="Juan Pérez"
-                      className={`w-full rounded-xl border ${
-                        errors.nombre ? 'border-destructive focus:ring-destructive/40' : 'border-border focus:ring-primary/40'
-                      } bg-secondary/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:border-transparent transition-all`}
+                      className={`w-full rounded-xl border px-4 py-3 text-sm transition-all focus:outline-none focus:ring-2 ${
+                        touched.nombre && errors.nombre
+                          ? 'border-destructive focus:ring-destructive/40 bg-destructive/5'
+                          : touched.nombre && !errors.nombre && form.nombre
+                          ? 'border-green-500 focus:ring-green-500/40 bg-green-500/5'
+                          : 'border-border bg-secondary/50 focus:ring-primary/40'
+                      }`}
                     />
-                    {errors.nombre && (
-                      <p className="text-destructive text-[10px] sm:text-xs mt-1">{errors.nombre}</p>
+                    {touched.nombre && errors.nombre && (
+                      <p className="text-destructive text-xs mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.nombre}
+                      </p>
+                    )}
+                    {touched.nombre && !errors.nombre && form.nombre && (
+                      <p className="text-green-500 text-xs mt-1 flex items-center gap-1">
+                        <CheckCircle className="w-3 h-3" />
+                        Válido
+                      </p>
                     )}
                   </div>
-                  <div className="space-y-1">
-                    <label htmlFor="empresa" className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                  <div>
+                    <label className="text-xs font-semibold text-muted-foreground uppercase block mb-1">
                       Empresa *
                     </label>
                     <input
-                      id="empresa"
-                      name="empresa"
                       type="text"
-                      required
+                      name="empresa"
                       value={form.empresa}
                       onChange={handleChange}
-                      placeholder="Mi Empresa S.A. de C.V."
-                      className={`w-full rounded-xl border ${
-                        errors.empresa ? 'border-destructive focus:ring-destructive/40' : 'border-border focus:ring-primary/40'
-                      } bg-secondary/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:border-transparent transition-all`}
+                      onBlur={handleBlur}
+                      placeholder="Mi Empresa S.A."
+                      className={`w-full rounded-xl border px-4 py-3 text-sm transition-all focus:outline-none focus:ring-2 ${
+                        touched.empresa && errors.empresa
+                          ? 'border-destructive focus:ring-destructive/40 bg-destructive/5'
+                          : touched.empresa && !errors.empresa && form.empresa
+                          ? 'border-green-500 focus:ring-green-500/40 bg-green-500/5'
+                          : 'border-border bg-secondary/50 focus:ring-primary/40'
+                      }`}
                     />
-                    {errors.empresa && (
-                      <p className="text-destructive text-[10px] sm:text-xs mt-1">{errors.empresa}</p>
+                    {touched.empresa && errors.empresa && (
+                      <p className="text-destructive text-xs mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.empresa}
+                      </p>
+                    )}
+                    {touched.empresa && !errors.empresa && form.empresa && (
+                      <p className="text-green-500 text-xs mt-1 flex items-center gap-1">
+                        <CheckCircle className="w-3 h-3" />
+                        Válido
+                      </p>
                     )}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1">
-                    <label htmlFor="telefono" className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-xs font-semibold text-muted-foreground uppercase block mb-1">
                       Teléfono
                     </label>
                     <input
-                      id="telefono"
-                      name="telefono"
                       type="tel"
+                      name="telefono"
                       value={form.telefono}
                       onChange={handleChange}
                       placeholder="+52 (000) 000-0000"
-                      className="w-full rounded-xl border border-border bg-secondary/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-transparent transition-all"
+                      className="w-full rounded-xl border border-border bg-secondary/50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
                     />
                   </div>
-                  <div className="space-y-1">
-                    <label htmlFor="correo" className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                  <div>
+                    <label className="text-xs font-semibold text-muted-foreground uppercase block mb-1">
                       Correo electrónico *
                     </label>
                     <input
-                      id="correo"
-                      name="correo"
                       type="email"
-                      required
+                      name="correo"
                       value={form.correo}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       placeholder="juan@empresa.com"
-                      className={`w-full rounded-xl border ${
-                        errors.correo ? 'border-destructive focus:ring-destructive/40' : 'border-border focus:ring-primary/40'
-                      } bg-secondary/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:border-transparent transition-all`}
+                      className={`w-full rounded-xl border px-4 py-3 text-sm transition-all focus:outline-none focus:ring-2 ${
+                        touched.correo && errors.correo
+                          ? 'border-destructive focus:ring-destructive/40 bg-destructive/5'
+                          : touched.correo && !errors.correo && form.correo
+                          ? 'border-green-500 focus:ring-green-500/40 bg-green-500/5'
+                          : 'border-border bg-secondary/50 focus:ring-primary/40'
+                      }`}
                     />
-                    {errors.correo && (
-                      <p className="text-destructive text-[10px] sm:text-xs mt-1">{errors.correo}</p>
+                    {touched.correo && errors.correo && (
+                      <p className="text-destructive text-xs mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.correo}
+                      </p>
+                    )}
+                    {touched.correo && !errors.correo && form.correo && (
+                      <p className="text-green-500 text-xs mt-1 flex items-center gap-1">
+                        <CheckCircle className="w-3 h-3" />
+                        Correo válido
+                      </p>
                     )}
                   </div>
                 </div>
 
-                <div className="space-y-1">
-                  <label htmlFor="mensaje" className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                <div>
+                  <label className="text-xs font-semibold text-muted-foreground uppercase block mb-1">
                     Cuéntanos sobre tu proyecto *
                   </label>
                   <textarea
-                    id="mensaje"
                     name="mensaje"
-                    required
                     rows={4}
                     value={form.mensaje}
                     onChange={handleChange}
-                    placeholder="Describe tus necesidades de telecomunicaciones, la cantidad de usuarios, ubicaciones, etc."
-                    className={`w-full rounded-xl border ${
-                      errors.mensaje ? 'border-destructive focus:ring-destructive/40' : 'border-border focus:ring-primary/40'
-                    } bg-secondary/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:border-transparent transition-all resize-none`}
+                    onBlur={handleBlur}
+                    placeholder="Describe tus necesidades de telecomunicaciones, cantidad de usuarios, ubicaciones, etc."
+                    className={`w-full rounded-xl border px-4 py-3 text-sm transition-all focus:outline-none focus:ring-2 resize-none ${
+                      touched.mensaje && errors.mensaje
+                        ? 'border-destructive focus:ring-destructive/40 bg-destructive/5'
+                        : touched.mensaje && !errors.mensaje && form.mensaje
+                        ? 'border-green-500 focus:ring-green-500/40 bg-green-500/5'
+                        : 'border-border bg-secondary/50 focus:ring-primary/40'
+                    }`}
                   />
-                  {errors.mensaje && (
-                    <p className="text-destructive text-[10px] sm:text-xs mt-1">{errors.mensaje}</p>
+                  {touched.mensaje && errors.mensaje && (
+                    <p className="text-destructive text-xs mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" />
+                      {errors.mensaje}
+                    </p>
+                  )}
+                  {touched.mensaje && !errors.mensaje && form.mensaje && (
+                    <p className="text-green-500 text-xs mt-1 flex items-center gap-1">
+                      <CheckCircle className="w-3 h-3" />
+                      Mensaje válido
+                    </p>
+                  )}
+                  {form.mensaje && !errors.mensaje && (
+                    <p className="text-muted-foreground text-xs mt-1 text-right">
+                      {form.mensaje.trim().length}/500 caracteres
+                    </p>
                   )}
                 </div>
 
                 <button
                   type="submit"
-                  disabled={loading}
-                  className="w-full flex items-center justify-center gap-2.5 px-5 sm:px-7 py-3 sm:py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-[0.99] disabled:opacity-70 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.35)] hover:shadow-[0_0_36px_oklch(0.55_0.2_250/0.55)] group"
+                  disabled={loading || !isFormValid()}
+                  className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/80 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>
-                      <span className="w-4 h-4 border-2 border-primary-foreground/40 border-t-primary-foreground rounded-full animate-spin" />
+                      <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
                       Enviando...
                     </>
                   ) : (
                     <>
                       Enviar solicitud
-                      <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <Send className="w-4 h-4" />
                     </>
                   )}
                 </button>
               </form>
             )}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
