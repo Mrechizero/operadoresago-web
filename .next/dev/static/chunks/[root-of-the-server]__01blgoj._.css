@@ -2097,16 +2097,6 @@
     background-color: var(--muted);
   }
 
-  .bg-muted\/30 {
-    background-color: var(--muted);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-muted\/30 {
-      background-color: color-mix(in oklab, var(--muted) 30%, transparent);
-    }
-  }
-
   .bg-muted\/50 {
     background-color: var(--muted);
   }
@@ -2125,16 +2115,6 @@
     background-color: var(--primary);
   }
 
-  .bg-primary-foreground\/20 {
-    background-color: var(--primary-foreground);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-primary-foreground\/20 {
-      background-color: color-mix(in oklab, var(--primary-foreground) 20%, transparent);
-    }
-  }
-
   .bg-primary\/5 {
     background-color: var(--primary);
   }
@@ -2142,16 +2122,6 @@
   @supports (color: color-mix(in lab, red, red)) {
     .bg-primary\/5 {
       background-color: color-mix(in oklab, var(--primary) 5%, transparent);
-    }
-  }
-
-  .bg-primary\/10 {
-    background-color: var(--primary);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-primary\/10 {
-      background-color: color-mix(in oklab, var(--primary) 10%, transparent);
     }
   }
 
@@ -2693,26 +2663,6 @@
 
   .text-primary-foreground {
     color: var(--primary-foreground);
-  }
-
-  .text-primary-foreground\/70 {
-    color: var(--primary-foreground);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .text-primary-foreground\/70 {
-      color: color-mix(in oklab, var(--primary-foreground) 70%, transparent);
-    }
-  }
-
-  .text-primary-foreground\/80 {
-    color: var(--primary-foreground);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .text-primary-foreground\/80 {
-      color: color-mix(in oklab, var(--primary-foreground) 80%, transparent);
-    }
   }
 
   .text-secondary-foreground {
@@ -3760,12 +3710,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:text-primary-foreground:hover {
-      color: var(--primary-foreground);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:text-sidebar-accent-foreground:hover {
       color: var(--sidebar-accent-foreground);
     }
@@ -3924,10 +3868,6 @@
     .focus\:ring-green-500\/40:focus {
       --tw-ring-color: color-mix(in oklab, var(--color-green-500) 40%, transparent);
     }
-  }
-
-  .focus\:ring-primary:focus {
-    --tw-ring-color: var(--primary);
   }
 
   .focus\:ring-primary\/40:focus {
