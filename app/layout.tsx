@@ -9,6 +9,9 @@ const inter = Inter({
   variable: '--font-sans',
 })
 
+// URL base - toma del entorno o usa el dominio real
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://web.operadoresago.com'
+
 export const metadata: Metadata = {
   title: 'Operadores AGO | Telecomunicaciones y Soluciones Tecnológicas',
   description:
@@ -22,22 +25,29 @@ export const metadata: Metadata = {
     'domótica',
     'conectividad empresarial',
   ],
+  metadataBase: new URL(SITE_URL), // ← Esto resuelve URLs relativas
   openGraph: {
     title: 'Operadores AGO | Telecomunicaciones y Soluciones Tecnológicas',
     description:
       'Implementamos infraestructura tecnológica confiable para empresas.',
     type: 'website',
     locale: 'es_MX',
-    url: 'https://web.operadoresago.com',
+    url: SITE_URL,
     siteName: 'Operadores AGO',
     images: [
       {
-        url: '/social-image.avif',  // ← CORREGIDO: sin "public/"
+        url: '/social-image.avif',  // ← URL relativa, se resolverá con metadataBase
         width: 1200,
         height: 630,
         alt: 'Operadores AGO - Telecomunicaciones',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Operadores AGO | Telecomunicaciones y Soluciones Tecnológicas',
+    description: 'Implementamos infraestructura tecnológica confiable para empresas.',
+    images: ['/social-image.avif'],  // ← URL relativa
   },
 }
 
@@ -57,7 +67,6 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         <Analytics />
-        {/* ✅ Agregamos el botón de WhatsApp aquí */}
         <WhatsAppButton />
       </body>
     </html>
