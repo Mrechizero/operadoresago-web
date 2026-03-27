@@ -129,9 +129,8 @@ ${form.mensaje}
         message: mensajeCompleto
       }
       
-      console.log('Enviando a backend:', payload)
-      
-      const response = await fetch('http://10.10.0.49:3001/contact', {
+      // ✅ Usando ruta relativa (mismo dominio, evita Mixed Content)
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -314,7 +313,7 @@ ${form.mensaje}
                       name="telefono"
                       value={form.telefono}
                       onChange={handleChange}
-                      placeholder="+52 (771) 000-0000"
+                      placeholder="+52 (000) 000-0000"
                       className="w-full rounded-xl border border-border bg-secondary/50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
                     />
                   </div>
