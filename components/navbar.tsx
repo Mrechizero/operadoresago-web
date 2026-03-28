@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Zap } from 'lucide-react'
+import { EarthLock, EarthLockIcon, HeartCrackIcon, LucideEarth, Menu, PhoneCallIcon, X, Zap, ZapOff } from 'lucide-react'
 
 const navLinks = [
   { label: 'Servicios', href: '#servicios' },
@@ -49,10 +49,10 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 sm:gap-2.5 group shrink-0">
             <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary flex items-center justify-center shadow-[0_0_16px_oklch(0.55_0.2_250/0.6)] group-hover:shadow-[0_0_24px_oklch(0.55_0.2_250/0.8)] transition-all duration-300">
-              <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-foreground fill-current" />
+              <EarthLockIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-foreground fill-current" />
             </div>
             <span className="text-foreground font-bold text-base sm:text-lg tracking-tight">
-              Operadores <span className="text-primary">AGO</span>
+              Operadores  <span className="text-primary">AGO</span>
             </span>
           </a>
 

@@ -37,7 +37,7 @@ const categories: Category[] = [
         icon: Radio,
         name: 'Radio Enlaces',
         description:
-          'Conexiones inalámbricas de alta velocidad punto a punto para distancias críticas sin depender de fibra.',
+          'Conexiones inalámbricas de alta velocidad punto a punto para distancias críticas sin depender de fibra óptica.',
       },
       {
         icon: Network,
@@ -92,6 +92,12 @@ const categories: Category[] = [
         name: 'Seguridad electrónica',
         description:
           'CCTV, control de acceso y alarmas integradas para proteger instalaciones y activos.',
+      },
+      {
+       icon:  Smartphone,
+       name: 'Desarrollo de aplicaciones Web y Multiplataforma',
+       description:
+       'Desarrollo de proyectos y soluciones a la medida, desde páginas web hasta servicios de integración y automatización'
       },
       {
         icon: Home,
