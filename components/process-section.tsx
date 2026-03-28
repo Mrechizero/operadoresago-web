@@ -54,7 +54,7 @@ export default function ProcessSection() {
             Nuestro proceso de trabajo
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4">
-            Un proceso estructuido que garantiza resultados superiores en cada proyecto,
+            Un proceso estructurado que garantiza resultados superiores en cada proyecto,
             sin importar su escala o complejidad.
           </p>
         </motion.div>
