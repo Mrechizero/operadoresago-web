@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  poweredByHeader: false, // 🔒 QUITA x-powered-by
+
   async rewrites() {
     return [
       {
@@ -8,7 +10,6 @@ const nextConfig = {
       },
     ]
   },
-  // Si no existe, puedes agregar otras configuraciones aquí
 }
 
 module.exports = nextConfig
