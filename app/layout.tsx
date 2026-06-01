@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import WhatsAppButton from '@/components/whatsapp-button'
 
@@ -66,7 +65,6 @@ export default function RootLayout({
     <html lang="es" className={inter.variable}>
       <body className="font-sans antialiased">
         {children}
-        <Analytics />
         <WhatsAppButton />
       </body>
     </html>
