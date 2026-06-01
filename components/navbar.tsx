@@ -13,14 +13,31 @@ const navLinks = [
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  let lastScroll = 0
+
+  const onScroll = () => {
+    const currentScroll = window.scrollY
+
+    setScrolled(currentScroll > 40)
+
+    if (currentScroll < 100) {
+      setVisible(true)
+    } else {
+      setVisible(currentScroll < lastScroll)
+    }
+
+    lastScroll = currentScroll
+  }
+
+  window.addEventListener('scroll', onScroll)
+
+  return () => window.removeEventListener('scroll', onScroll)
+}, [])
 
   // Cerrar menú al cambiar tamaño de pantalla (responsive)
   useEffect(() => {
@@ -48,7 +65,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-18 py-2 sm:py-4">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 sm:gap-2.5 group shrink-0">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary flex items-center justify-center shadow-md group-hover:group-hover:shadow-lg transition-all duration-300">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
               <EarthLockIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-foreground fill-current" />
             </div>
             <span className="text-foreground font-bold text-base sm:text-lg tracking-tight">
@@ -74,7 +91,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="#contacto"
-              className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all duration-200 shadow-md hover:hover:shadow-lg whitespace-nowrap"
+              className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg whitespace-nowrap"
             >
               Solicitar cotización
             </a>

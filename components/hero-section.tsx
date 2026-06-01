@@ -12,9 +12,9 @@ const stats = [
 ]
 
 const badges = [
-  { icon: Wifi, label: 'Conectividad Empresarial' },
-  { icon: Globe, label: 'Infraestructura Global' },
-  { icon: Shield, label: 'Seguridad Avanzada' },
+  { icon: Wifi, label: 'Internet Empresarial' },
+{ icon: Globe, label: 'PBX y Call Center' },
+{ icon: Shield, label: 'Hosting y Seguridad' },
 ]
 
 export default function HeroSection() {
@@ -37,22 +37,25 @@ export default function HeroSection() {
 className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-blue-200 bg-blue-50 mb-6 sm:mb-8"          >
             <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-primary text-[10px] sm:text-xs font-semibold tracking-widest uppercase whitespace-nowrap">
-              Soluciones Empresariales de Alto Nivel
+              Internet • Telefonía • Hosting • Seguridad
             </span>
           </motion.div>
 
           {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-balance leading-[1.2] sm:leading-tight mb-4 sm:mb-6"
-          >
-            Soluciones en{' '}
-<span className="text-primary whitespace-nowrap">              Telecomunicaciones
-            </span>{' '}
-            y Conectividad Empresarial
-          </motion.h1>
+         <motion.h1
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.2 }}
+  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-6"
+>
+  Conecta,
+  <br />
+  <span className="text-primary">
+    comunica y protege
+  </span>
+  <br />
+  tu empresa.
+</motion.h1>
 
           {/* Subheading */}
           <motion.p
@@ -61,8 +64,9 @@ className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-fu
             transition={{ duration: 0.7, delay: 0.35 }}
             className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 px-2"
           >
-            Implementamos infraestructura tecnológica confiable para empresas.
-            Conectividad, seguridad, domótica y comunicación unificada en un solo socio estratégico.
+            Internet empresarial, PBX IP, Call Center,
+            hosting, desarrollo web y soluciones de seguridad
+            tecnológica en un solo proveedor.
           </motion.p>
 
           {/* CTA Buttons */}
