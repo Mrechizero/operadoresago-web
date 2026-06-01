@@ -23,9 +23,9 @@ export default function NetworkCanvas() {
 
     let animFrameId: number
     let particles: Particle[] = []
-    const PARTICLE_COUNT = 80
+    const PARTICLE_COUNT = 110
     const CONNECTION_DISTANCE = 160
-    const BLUE_COLOR = '92, 148, 255'
+    const BLUE_COLOR = '37, 99, 235'
 
     const resize = () => {
       canvas.width = canvas.offsetWidth
@@ -39,7 +39,7 @@ export default function NetworkCanvas() {
         vx: (Math.random() - 0.5) * 0.4,
         vy: (Math.random() - 0.5) * 0.4,
         radius: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.5 + 0.3,
+        opacity: Math.random() * 0.4 + 0.6,
       }))
     }
 
@@ -66,12 +66,12 @@ export default function NetworkCanvas() {
           const dy = particles[i].y - particles[j].y
           const dist = Math.sqrt(dx * dx + dy * dy)
           if (dist < CONNECTION_DISTANCE) {
-            const alpha = (1 - dist / CONNECTION_DISTANCE) * 0.3
+            const alpha = (1 - dist / CONNECTION_DISTANCE) * 0.45
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
             ctx.strokeStyle = `rgba(${BLUE_COLOR}, ${alpha})`
-            ctx.lineWidth = 0.8
+            ctx.lineWidth = 1
             ctx.stroke()
           }
         }

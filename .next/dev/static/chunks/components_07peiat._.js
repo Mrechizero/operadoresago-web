@@ -87,7 +87,7 @@ function Navbar() {
             duration: 0.6,
             ease: 'easeOut'
         },
-        className: `fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[oklch(0.07_0.01_250/0.9)] backdrop-blur-xl border-b border-[oklch(0.55_0.2_250/0.2)] shadow-[0_4px_24px_oklch(0.55_0.2_250/0.08)]' : 'bg-transparent'}`,
+        className: `fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm' : 'bg-transparent'}`,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
@@ -99,7 +99,7 @@ function Navbar() {
                             className: "flex items-center gap-2 sm:gap-2.5 group shrink-0",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary flex items-center justify-center shadow-[0_0_16px_oklch(0.55_0.2_250/0.6)] group-hover:shadow-[0_0_24px_oklch(0.55_0.2_250/0.8)] transition-all duration-300",
+                                    className: "w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary flex items-center justify-center shadow-md group-hover:group-hover:shadow-lg transition-all duration-300",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$earth$2d$lock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__EarthLockIcon$3e$__["EarthLockIcon"], {
                                         className: "w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-foreground fill-current"
                                     }, void 0, false, {
@@ -165,7 +165,7 @@ function Navbar() {
                             className: "hidden md:flex items-center gap-3",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: "#contacto",
-                                className: "px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all duration-200 shadow-[0_0_16px_oklch(0.55_0.2_250/0.4)] hover:shadow-[0_0_24px_oklch(0.55_0.2_250/0.6)] whitespace-nowrap",
+                                className: "px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all duration-200 shadow-md hover:hover:shadow-lg whitespace-nowrap",
                                 children: "Solicitar cotización"
                             }, void 0, false, {
                                 fileName: "[project]/components/navbar.tsx",
@@ -227,7 +227,7 @@ function Navbar() {
                     transition: {
                         duration: 0.3
                     },
-                    className: "md:hidden bg-[oklch(0.07_0.01_250/0.97)] backdrop-blur-xl border-t border-border overflow-hidden",
+                    className: "md:hidden bg-white backdrop-blur-xl border-t border-slate-200 overflow-hidden",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "px-6 py-4 flex flex-col gap-3",
                         children: [
@@ -306,9 +306,9 @@ function NetworkCanvas() {
             if (!ctx) return;
             let animFrameId;
             let particles = [];
-            const PARTICLE_COUNT = 80;
+            const PARTICLE_COUNT = 110;
             const CONNECTION_DISTANCE = 160;
-            const BLUE_COLOR = '92, 148, 255';
+            const BLUE_COLOR = '37, 99, 235';
             const resize = {
                 "NetworkCanvas.useEffect.resize": ()=>{
                     canvas.width = canvas.offsetWidth;
@@ -326,7 +326,7 @@ function NetworkCanvas() {
                                 vx: (Math.random() - 0.5) * 0.4,
                                 vy: (Math.random() - 0.5) * 0.4,
                                 radius: Math.random() * 2 + 1,
-                                opacity: Math.random() * 0.5 + 0.3
+                                opacity: Math.random() * 0.4 + 0.6
                             })
                     }["NetworkCanvas.useEffect.initParticles"]);
                 }
@@ -352,12 +352,12 @@ function NetworkCanvas() {
                             const dy = particles[i].y - particles[j].y;
                             const dist = Math.sqrt(dx * dx + dy * dy);
                             if (dist < CONNECTION_DISTANCE) {
-                                const alpha = (1 - dist / CONNECTION_DISTANCE) * 0.3;
+                                const alpha = (1 - dist / CONNECTION_DISTANCE) * 0.45;
                                 ctx.beginPath();
                                 ctx.moveTo(particles[i].x, particles[i].y);
                                 ctx.lineTo(particles[j].x, particles[j].y);
                                 ctx.strokeStyle = `rgba(${BLUE_COLOR}, ${alpha})`;
-                                ctx.lineWidth = 0.8;
+                                ctx.lineWidth = 1;
                                 ctx.stroke();
                             }
                         }
@@ -466,19 +466,21 @@ function HeroSection() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,oklch(0.55_0.2_250/0.15),transparent)]"
+                        className: "absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(37,99,235,0.12),transparent)]"
                     }, void 0, false, {
                         fileName: "[project]/components/hero-section.tsx",
                         lineNumber: 27,
-                        columnNumber: 9
+                        columnNumber: 1
                     }, this),
+                    "        ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute bottom-0 left-0 right-0 h-32 sm:h-48 bg-[linear-gradient(to_top,oklch(0.07_0.01_250),transparent)]"
+                        className: "absolute bottom-0 left-0 right-0 h-32 sm:h-48 bg-[linear-gradient(to_top,white,transparent)]"
                     }, void 0, false, {
                         fileName: "[project]/components/hero-section.tsx",
-                        lineNumber: 29,
-                        columnNumber: 9
-                    }, this)
+                        lineNumber: 28,
+                        columnNumber: 1
+                    }, this),
+                    "      "
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/hero-section.tsx",
@@ -504,13 +506,13 @@ function HeroSection() {
                                     duration: 0.6,
                                     delay: 0.1
                                 },
-                                className: "inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[oklch(0.55_0.2_250/0.4)] bg-[oklch(0.55_0.2_250/0.1)] backdrop-blur-sm mb-6 sm:mb-8",
+                                className: "inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-blue-200 bg-blue-50 mb-6 sm:mb-8",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary animate-pulse"
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 38,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -518,13 +520,13 @@ function HeroSection() {
                                         children: "Soluciones Empresariales de Alto Nivel"
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 39,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/hero-section.tsx",
-                                lineNumber: 35,
+                                lineNumber: 33,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].h1, {
@@ -545,19 +547,19 @@ function HeroSection() {
                                     "Soluciones en",
                                     ' ',
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-primary [text-shadow:0_0_40px_oklch(0.55_0.2_250/0.6)] whitespace-nowrap",
-                                        children: "Telecomunicaciones"
+                                        className: "text-primary whitespace-nowrap",
+                                        children: "              Telecomunicaciones"
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
-                                        lineNumber: 55,
-                                        columnNumber: 13
+                                        lineNumber: 52,
+                                        columnNumber: 1
                                     }, this),
                                     ' ',
                                     "y Conectividad Empresarial"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/hero-section.tsx",
-                                lineNumber: 48,
+                                lineNumber: 45,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -577,7 +579,7 @@ function HeroSection() {
                                 children: "Implementamos infraestructura tecnológica confiable para empresas. Conectividad, seguridad, domótica y comunicación unificada en un solo socio estratégico."
                             }, void 0, false, {
                                 fileName: "[project]/components/hero-section.tsx",
-                                lineNumber: 62,
+                                lineNumber: 58,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -597,35 +599,35 @@ function HeroSection() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "#contacto",
-                                        className: "inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all duration-200 shadow-[0_0_32px_oklch(0.55_0.2_250/0.45)] hover:shadow-[0_0_48px_oklch(0.55_0.2_250/0.65)] group",
+                                        className: "inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all duration-200 shadow-lg hover:shadow-lg group",
                                         children: [
                                             "Solicitar cotización",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                 className: "w-4 h-4 group-hover:translate-x-1 transition-transform"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/hero-section.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 80,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/hero-section.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 75,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "#servicios",
-                                        className: "inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl border border-border bg-[oklch(0.55_0.2_250/0.08)] backdrop-blur-sm text-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.55_0.2_250/0.15)] hover:border-primary/50 active:scale-95 transition-all duration-200",
+                                        className: "inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl border border-border bg-white backdrop-blur-sm text-foreground font-semibold text-sm sm:text-base hover:bg-slate-50 hover:border-primary/50 active:scale-95 transition-all duration-200",
                                         children: "Ver servicios"
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 82,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/hero-section.tsx",
-                                lineNumber: 73,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -643,13 +645,13 @@ function HeroSection() {
                                 },
                                 className: "flex flex-wrap gap-2 sm:gap-3 justify-center px-4",
                                 children: badges.map(({ icon: Icon, label })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[oklch(0.14_0.02_250/0.7)] backdrop-blur-sm border border-border/80 text-muted-foreground text-xs sm:text-sm",
+                                        className: "flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white backdrop-blur-sm border border-border/80 text-muted-foreground text-xs sm:text-sm",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
                                                 className: "w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/hero-section.tsx",
-                                                lineNumber: 106,
+                                                lineNumber: 102,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -657,24 +659,24 @@ function HeroSection() {
                                                 children: label
                                             }, void 0, false, {
                                                 fileName: "[project]/components/hero-section.tsx",
-                                                lineNumber: 107,
+                                                lineNumber: 103,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, label, true, {
                                         fileName: "[project]/components/hero-section.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 98,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/components/hero-section.tsx",
-                                lineNumber: 95,
+                                lineNumber: 91,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/hero-section.tsx",
-                        lineNumber: 33,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -692,14 +694,14 @@ function HeroSection() {
                         },
                         className: "mt-16 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden max-w-3xl mx-auto",
                         children: stats.map(({ value, label })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-card flex flex-col items-center justify-center py-4 sm:py-6 px-3 sm:px-4 hover:bg-[oklch(0.14_0.02_250)] transition-colors",
+                                className: "bg-card flex flex-col items-center justify-center py-4 sm:py-6 px-3 sm:px-4 hover:bg-slate-50 transition-colors",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-2xl sm:text-3xl font-bold text-primary mb-0.5 sm:mb-1",
                                         children: value
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
-                                        lineNumber: 125,
+                                        lineNumber: 121,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -707,24 +709,24 @@ function HeroSection() {
                                         children: label
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero-section.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 124,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, label, true, {
                                 fileName: "[project]/components/hero-section.tsx",
-                                lineNumber: 121,
+                                lineNumber: 117,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/hero-section.tsx",
-                        lineNumber: 114,
+                        lineNumber: 110,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/hero-section.tsx",
-                lineNumber: 32,
+                lineNumber: 30,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -756,17 +758,17 @@ function HeroSection() {
                         className: "w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground/60"
                     }, void 0, false, {
                         fileName: "[project]/components/hero-section.tsx",
-                        lineNumber: 148,
+                        lineNumber: 144,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/hero-section.tsx",
-                    lineNumber: 143,
+                    lineNumber: 139,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/hero-section.tsx",
-                lineNumber: 137,
+                lineNumber: 133,
                 columnNumber: 7
             }, this)
         ]
