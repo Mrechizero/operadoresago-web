@@ -5,9 +5,24 @@ import { motion } from 'framer-motion'
 import { Send, Phone, Mail, MapPin, CheckCircle2, AlertCircle, CheckCircle } from 'lucide-react'
 
 const contactInfo = [
-  { icon: Phone, label: 'Teléfono', value: '+52 (771) 318-9879', href: 'tel:+527713189879' },
-  { icon: Mail, label: 'Correo electrónico', value: 'admin@operadoresago.com', href: 'mailto:admin@operadoresago.com' },
-  { icon: MapPin, label: 'Ubicación', value: 'México', href: '#' },
+  {
+    icon: Phone,
+    label: 'Teléfono',
+    value: '+52 (771) 318-9879',
+    href: 'tel:+527713189879'
+  },
+  {
+    icon: Mail,
+    label: 'Correo electrónico',
+    value: 'admin@operadoresago.com',
+    href: 'mailto:admin@operadoresago.com'
+  },
+  {
+    icon: MapPin,
+    label: 'Cobertura',
+    value: 'México y Latinoamérica',
+    href: '#'
+  },
 ]
 
 export default function ContactSection() {
@@ -193,21 +208,52 @@ ${form.mensaje}
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-14">
           {/* Contact info */}
-          <div className="lg:col-span-2 space-y-5">
-            <div className="rounded-2xl border border-border bg-card p-5 sm:p-6">
-              <h3 className="font-bold text-foreground mb-5">Información de contacto</h3>
-              {contactInfo.map(({ icon: Icon, label, value, href }) => (
-                <a key={label} href={href} className="flex items-start gap-3 mb-4 group hover:translate-x-0.5 transition">
-                  <div className="w-9 h-9 rounded-xl bg-primary/15 flex items-center justify-center shrink-0 group-hover:bg-primary/25 transition">
-                    <Icon className="w-4 h-4 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground uppercase">{label}</p>
-                    <p className="text-foreground text-sm">{value}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
+          <div className="lg:col-span-2">
+          <div className="rounded-3xl border border-border bg-card p-6 sm:p-8">
+
+  <div className="mb-8">
+    <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider">
+      Contacto directo
+    </span>
+
+    <h3 className="mt-4 text-2xl font-bold">
+      Hablemos de tu proyecto
+    </h3>
+
+    <p className="mt-3 text-muted-foreground">
+      Nuestro equipo puede ayudarte con conectividad,
+      telefonía IP, VPN empresariales, hosting,
+      desarrollo web e infraestructura tecnológica.
+    </p>
+  </div>
+
+  <div className="space-y-5">
+    {contactInfo.map(({ icon: Icon, label, value, href }) => (
+      <a
+        key={label}
+        href={href}
+        className="flex items-start gap-4 group hover:translate-x-1 transition"
+      >
+        <div className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+          <Icon className="w-5 h-5 text-primary" />
+        </div>
+
+        <div>
+          <p className="text-xs text-muted-foreground uppercase tracking-wider">
+            {label}
+          </p>
+
+          <p className="text-foreground font-medium">
+            {value}
+          </p>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  
+
+</div>
           </div>
 
           {/* Form */}

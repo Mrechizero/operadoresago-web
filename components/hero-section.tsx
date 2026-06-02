@@ -19,7 +19,7 @@ const badges = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden">
       {/* Animated network background */}
       <div className="absolute inset-0">
         <NetworkCanvas />
@@ -27,7 +27,7 @@ export default function HeroSection() {
 <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(37,99,235,0.12),transparent)]" />        {/* Bottom fade */}
 <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-48 bg-[linear-gradient(to_top,white,transparent)]" />      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <motion.div
