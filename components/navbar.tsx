@@ -5,11 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { EarthLock, EarthLockIcon, HeartCrackIcon, LucideEarth, Menu, PhoneCallIcon, X, Zap, ZapOff } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Por qué nosotros', href: '#por-que-nosotros' },
-  { label: 'Proceso', href: '#proceso' },
-  { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Inicio', href: '/' },
+  { label: 'Servicios', href: '/servicios' },
+  { label: 'Nosotros', href: '/nosotros' },
+  { label: 'Contacto', href: '/contacto' },
 ]
 
 export default function Navbar() {
