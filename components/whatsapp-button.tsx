@@ -1,25 +1,25 @@
 // components/whatsapp-button.tsx
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { MessageCircle, X, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const lastScrollY = useRef(0)
 
   // Ocultar al hacer scroll hacia abajo
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      setIsVisible(currentScrollY < lastScrollY || currentScrollY < 100)
-      setLastScrollY(currentScrollY)
+      setIsVisible(currentScrollY < lastScrollY.current || currentScrollY < 100)
+      lastScrollY.current = currentScrollY
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+  }, [])
 
   // Número de WhatsApp (cambia por el tuyo)
   const phoneNumber = "527713189879" // código país + número
@@ -47,7 +47,7 @@ export default function WhatsAppButton() {
                   </div>
                   <div className="flex-1">
                     <p className="text-white font-semibold text-sm">Operadores AGO</p>
-                    <p className="text-white/80 text-xs">Normalmente responde en minutos</p>
+                    <p className="text-white/80 text-xs">Atención directa por WhatsApp</p>
                   </div>
                   <button 
                     onClick={() => setIsOpen(false)}
@@ -87,7 +87,7 @@ export default function WhatsAppButton() {
                 {/* Footer */}
                 <div className="px-4 py-2 bg-gray-50 dark:bg-gray-900/50 border-t border-gray-100 dark:border-gray-700">
                   <p className="text-[10px] text-gray-400 text-center">
-                    Respuesta garantizada en 24h
+                    Te responderemos a la brevedad
                   </p>
                 </div>
               </motion.div>

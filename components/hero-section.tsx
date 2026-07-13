@@ -1,151 +1,132 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, ChevronDown, Wifi, Globe, Shield } from 'lucide-react'
+import { ArrowRight, ChevronDown, CloudCog, Code2, Radar, Wifi } from 'lucide-react'
 import NetworkCanvas from './network-canvas'
 
-const stats = [
-  { value: '10+', label: 'Años de experiencia' },
-  { value: '200+', label: 'Proyectos implementados' },
-  { value: '99.9%', label: 'Uptime garantizado' },
-  { value: '24/7', label: 'Soporte técnico' },
+const capabilities = [
+  { value: 'Redes', label: 'Conectividad e infraestructura' },
+  { value: 'Apps', label: 'Desarrollo web y multiplataforma' },
+  { value: 'Cloud', label: 'Servicios administrados' },
+  { value: 'IoT', label: 'Monitoreo y automatización' },
 ]
 
 const badges = [
-  { icon: Wifi, label: 'Internet Empresarial' },
-{ icon: Globe, label: 'PBX y Call Center' },
-{ icon: Shield, label: 'Hosting y Seguridad' },
+  { icon: Wifi, label: 'Infraestructura empresarial' },
+  { icon: Code2, label: 'Software a la medida' },
+  { icon: Radar, label: 'Monitoreo proactivo' },
 ]
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden">
-      {/* Animated network background */}
+    <section className="relative flex min-h-[88vh] flex-col justify-center overflow-hidden">
       <div className="absolute inset-0">
         <NetworkCanvas />
-        {/* Radial gradient overlay */}
-<div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(37,99,235,0.12),transparent)]" />        {/* Bottom fade */}
-<div className="absolute bottom-0 left-0 right-0 h-32 sm:h-48 bg-[linear-gradient(to_top,white,transparent)]" />      </div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(37,99,235,0.14),transparent)]" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-[linear-gradient(to_top,white,transparent)]" />
+      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-28 sm:px-6 sm:pb-20 lg:px-8">
+        <div className="mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-blue-200 bg-blue-50 mb-6 sm:mb-8"          >
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-primary text-[10px] sm:text-xs font-semibold tracking-widest uppercase whitespace-nowrap">
-              Internet • Telefonía • Hosting • Seguridad
+            className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2"
+          >
+            <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
+            <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary sm:text-xs">
+              Infraestructura • Software • Monitoreo • Seguridad
             </span>
           </motion.div>
 
-          {/* Heading */}
-         <motion.h1
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7, delay: 0.2 }}
-  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-6"
->
-  Conecta,
-  <br />
-  <span className="text-primary">
-    comunica y protege
-  </span>
-  <br />
-  tu empresa.
-</motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mb-6 text-4xl font-bold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+          >
+            Tecnología que conecta,
+            <br />
+            <span className="text-primary">automatiza y hace crecer</span>
+            <br />
+            tu negocio.
+          </motion.h1>
 
-          {/* Subheading */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 px-2"
+            className="mx-auto mb-9 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl"
           >
-            Internet empresarial, PBX IP, Call Center,
-            hosting, desarrollo web y soluciones de seguridad
-            tecnológica en un solo proveedor.
+            Integramos conectividad, infraestructura, desarrollo de aplicaciones, cloud,
+            ciberseguridad y monitoreo en soluciones claras para empresas que quieren operar mejor.
           </motion.p>
 
-          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 sm:mb-14 px-4"
+            className="mb-11 flex flex-col justify-center gap-3 px-4 sm:flex-row sm:gap-4"
           >
-            <a
-              href="#contacto"
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all duration-200 shadow-lg hover:shadow-lg group"
+            <Link
+              href="/servicios"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl sm:text-base"
             >
-              Solicitar cotización
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#servicios"
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl border border-border bg-white backdrop-blur-sm text-foreground font-semibold text-sm sm:text-base hover:bg-slate-50 hover:border-primary/50 active:scale-95 transition-all duration-200"
+              Explorar servicios
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/#plataformas"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white/90 px-7 py-3.5 text-sm font-semibold text-foreground backdrop-blur-sm transition-all hover:border-primary/40 hover:bg-white sm:text-base"
             >
-              Ver servicios
-            </a>
+              Ver plataformas propias
+              <CloudCog className="h-4 w-4 text-primary" />
+            </Link>
           </motion.div>
 
-          {/* Tech badges */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.65 }}
-            className="flex flex-wrap gap-2 sm:gap-3 justify-center px-4"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3"
           >
             {badges.map(({ icon: Icon, label }) => (
               <div
                 key={label}
-                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white backdrop-blur-sm border border-border/80 text-muted-foreground text-xs sm:text-sm"
+                className="flex items-center gap-2 rounded-full border border-border/80 bg-white/90 px-4 py-2 text-xs text-muted-foreground backdrop-blur-sm sm:text-sm"
               >
-                <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary" />
-                <span className="whitespace-nowrap">{label}</span>
+                <Icon className="h-3.5 w-3.5 text-primary" />
+                <span>{label}</span>
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Stats bar */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.8 }}
-          className="mt-16 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden max-w-3xl mx-auto"
+          className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-2xl bg-border lg:grid-cols-4"
         >
-          {stats.map(({ value, label }) => (
-            <div
-              key={label}
-              className="bg-card flex flex-col items-center justify-center py-4 sm:py-6 px-3 sm:px-4 hover:bg-slate-50 transition-colors"
-            >
-              <span className="text-2xl sm:text-3xl font-bold text-primary mb-0.5 sm:mb-1">
-                {value}
-              </span>
-              <span className="text-[10px] sm:text-xs text-muted-foreground text-center leading-tight">
-                {label}
-              </span>
+          {capabilities.map(({ value, label }) => (
+            <div key={label} className="flex flex-col items-center justify-center bg-card px-3 py-5 transition-colors hover:bg-slate-50 sm:py-6">
+              <span className="mb-1 text-xl font-bold text-primary sm:text-2xl">{value}</span>
+              <span className="text-center text-[10px] leading-tight text-muted-foreground sm:text-xs">{label}</span>
             </div>
           ))}
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2"
       >
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-          aria-hidden
-        >
-          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground/60" />
+        <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}>
+          <ChevronDown className="h-5 w-5 text-muted-foreground/60" />
         </motion.div>
       </motion.div>
     </section>

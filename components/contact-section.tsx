@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send, Phone, Mail, MapPin, CheckCircle2, AlertCircle, CheckCircle } from 'lucide-react'
 
@@ -21,7 +21,7 @@ const contactInfo = [
     icon: MapPin,
     label: 'Cobertura',
     value: 'México y Latinoamérica',
-    href: '#'
+    href: undefined
   },
 ]
 
@@ -44,56 +44,33 @@ export default function ContactSection() {
     mensaje: ''
   })
   
-  const [errors, setErrors] = useState({
-    nombre: '',
-    empresa: '',
-    correo: '',
-    mensaje: ''
-  })
-
-  // Validación en tiempo real
-  useEffect(() => {
+  const getValidationErrors = () => {
     const newErrors = { nombre: '', empresa: '', correo: '', mensaje: '' }
-    
-    if (touched.nombre) {
-      if (!form.nombre.trim()) {
-        newErrors.nombre = 'El nombre es requerido'
-      } else if (form.nombre.trim().length < 2) {
-        newErrors.nombre = 'Mínimo 2 caracteres'
-      } else if (form.nombre.trim().length > 50) {
-        newErrors.nombre = 'Máximo 50 caracteres'
-      }
+    const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/
+
+    if (!form.nombre.trim()) newErrors.nombre = 'El nombre es requerido'
+    else if (form.nombre.trim().length < 2) newErrors.nombre = 'Mínimo 2 caracteres'
+    else if (form.nombre.trim().length > 50) newErrors.nombre = 'Máximo 50 caracteres'
+
+    if (!form.empresa.trim()) newErrors.empresa = 'La empresa es requerida'
+    else if (form.empresa.trim().length < 2) newErrors.empresa = 'Mínimo 2 caracteres'
+
+    if (!form.correo.trim()) newErrors.correo = 'El correo es requerido'
+    else if (!emailRegex.test(form.correo.trim())) {
+      newErrors.correo = 'Ingresa un correo válido (ej: nombre@empresa.com)'
     }
-    
-    if (touched.empresa) {
-      if (!form.empresa.trim()) {
-        newErrors.empresa = 'La empresa es requerida'
-      } else if (form.empresa.trim().length < 2) {
-        newErrors.empresa = 'Mínimo 2 caracteres'
-      }
+
+    if (!form.mensaje.trim()) newErrors.mensaje = 'El mensaje es requerido'
+    else if (form.mensaje.trim().length < 10) {
+      newErrors.mensaje = `Mínimo 10 caracteres (${form.mensaje.trim().length}/10)`
+    } else if (form.mensaje.trim().length > 500) {
+      newErrors.mensaje = `Máximo 500 caracteres (${form.mensaje.trim().length}/500)`
     }
-    
-    if (touched.correo) {
-      const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/
-      if (!form.correo.trim()) {
-        newErrors.correo = 'El correo es requerido'
-      } else if (!emailRegex.test(form.correo.trim())) {
-        newErrors.correo = 'Ingresa un correo válido (ej: nombre@empresa.com)'
-      }
-    }
-    
-    if (touched.mensaje) {
-      if (!form.mensaje.trim()) {
-        newErrors.mensaje = 'El mensaje es requerido'
-      } else if (form.mensaje.trim().length < 10) {
-        newErrors.mensaje = `Mínimo 10 caracteres (${form.mensaje.trim().length}/10)`
-      } else if (form.mensaje.trim().length > 500) {
-        newErrors.mensaje = `Máximo 500 caracteres (${form.mensaje.trim().length}/500)`
-      }
-    }
-    
-    setErrors(newErrors)
-  }, [form, touched])
+
+    return newErrors
+  }
+
+  const validationErrors = getValidationErrors()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -106,14 +83,10 @@ export default function ContactSection() {
   }
 
   const validateForm = () => {
-    setTouched({
-      nombre: true,
-      empresa: true,
-      correo: true,
-      mensaje: true
-    })
-    
-    return !errors.nombre && !errors.empresa && !errors.correo && !errors.mensaje
+    const validationErrors = getValidationErrors()
+
+    setTouched({ nombre: true, empresa: true, correo: true, mensaje: true })
+    return Object.values(validationErrors).every((validationError) => !validationError)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -171,20 +144,12 @@ ${form.mensaje}
   const resetForm = () => {
     setSubmitted(false)
     setForm({ nombre: '', empresa: '', telefono: '', correo: '', mensaje: '' })
-    setErrors({ nombre: '', empresa: '', correo: '', mensaje: '' })
     setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
     setError('')
   }
 
-  const isFormValid = () => {
-    return (
-      form.nombre.trim().length >= 2 &&
-      form.empresa.trim().length >= 2 &&
-      /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/.test(form.correo.trim()) &&
-      form.mensaje.trim().length >= 10 &&
-      form.mensaje.trim().length <= 500
-    )
-  }
+  const isFormValid = () =>
+    Object.values(getValidationErrors()).every((validationError) => !validationError)
 
   return (
     <section id="contacto" className="py-20 sm:py-24 lg:py-32 relative">
@@ -202,7 +167,7 @@ ${form.mensaje}
             Solicita tu cotización
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-            Cuéntanos sobre tu proyecto. Te contactaremos en menos de 24 horas.
+            Cuéntanos qué necesitas y te responderemos con una ruta clara para tu proyecto.
           </p>
         </motion.div>
 
@@ -221,34 +186,33 @@ ${form.mensaje}
     </h3>
 
     <p className="mt-3 text-muted-foreground">
-      Nuestro equipo puede ayudarte con conectividad,
-      telefonía IP, VPN empresariales, hosting,
-      desarrollo web e infraestructura tecnológica.
+      Podemos ayudarte con conectividad, software, cloud,
+      monitoreo, seguridad y proyectos de infraestructura tecnológica.
     </p>
   </div>
 
   <div className="space-y-5">
-    {contactInfo.map(({ icon: Icon, label, value, href }) => (
-      <a
-        key={label}
-        href={href}
-        className="flex items-start gap-4 group hover:translate-x-1 transition"
-      >
-        <div className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-          <Icon className="w-5 h-5 text-primary" />
-        </div>
+    {contactInfo.map(({ icon: Icon, label, value, href }) => {
+      const content = (
+        <>
+          <div className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+            <Icon className="w-5 h-5 text-primary" />
+          </div>
+          <div>
+            <p className="text-xs text-muted-foreground uppercase tracking-wider">{label}</p>
+            <p className="text-foreground font-medium">{value}</p>
+          </div>
+        </>
+      )
 
-        <div>
-          <p className="text-xs text-muted-foreground uppercase tracking-wider">
-            {label}
-          </p>
-
-          <p className="text-foreground font-medium">
-            {value}
-          </p>
-        </div>
-      </a>
-    ))}
+      return href ? (
+        <a key={label} href={href} className="flex items-start gap-4 group hover:translate-x-1 transition">
+          {content}
+        </a>
+      ) : (
+        <div key={label} className="flex items-start gap-4">{content}</div>
+      )
+    })}
   </div>
 
   
@@ -263,7 +227,7 @@ ${form.mensaje}
                 <CheckCircle2 className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-2">¡Mensaje enviado con éxito!</h3>
                 <p className="text-muted-foreground mb-6">
-                  Gracias por contactarnos. Un asesor se comunicará contigo en las próximas 24 horas.
+                  Gracias por contactarnos. Revisaremos tu solicitud y nos comunicaremos contigo a la brevedad.
                 </p>
                 <button
                   onClick={resetForm}
@@ -295,20 +259,20 @@ ${form.mensaje}
                       onBlur={handleBlur}
                       placeholder="Juan Pérez"
                       className={`w-full rounded-xl border px-4 py-3 text-sm transition-all focus:outline-none focus:ring-2 ${
-                        touched.nombre && errors.nombre
+                        touched.nombre && validationErrors.nombre
                           ? 'border-destructive focus:ring-destructive/40 bg-destructive/5'
-                          : touched.nombre && !errors.nombre && form.nombre
+                          : touched.nombre && !validationErrors.nombre && form.nombre
                           ? 'border-green-500 focus:ring-green-500/40 bg-green-500/5'
                           : 'border-border bg-secondary/50 focus:ring-primary/40'
                       }`}
                     />
-                    {touched.nombre && errors.nombre && (
+                    {touched.nombre && validationErrors.nombre && (
                       <p className="text-destructive text-xs mt-1 flex items-center gap-1">
                         <AlertCircle className="w-3 h-3" />
-                        {errors.nombre}
+                        {validationErrors.nombre}
                       </p>
                     )}
-                    {touched.nombre && !errors.nombre && form.nombre && (
+                    {touched.nombre && !validationErrors.nombre && form.nombre && (
                       <p className="text-green-500 text-xs mt-1 flex items-center gap-1">
                         <CheckCircle className="w-3 h-3" />
                         Válido
@@ -327,20 +291,20 @@ ${form.mensaje}
                       onBlur={handleBlur}
                       placeholder="Mi Empresa S.A."
                       className={`w-full rounded-xl border px-4 py-3 text-sm transition-all focus:outline-none focus:ring-2 ${
-                        touched.empresa && errors.empresa
+                        touched.empresa && validationErrors.empresa
                           ? 'border-destructive focus:ring-destructive/40 bg-destructive/5'
-                          : touched.empresa && !errors.empresa && form.empresa
+                          : touched.empresa && !validationErrors.empresa && form.empresa
                           ? 'border-green-500 focus:ring-green-500/40 bg-green-500/5'
                           : 'border-border bg-secondary/50 focus:ring-primary/40'
                       }`}
                     />
-                    {touched.empresa && errors.empresa && (
+                    {touched.empresa && validationErrors.empresa && (
                       <p className="text-destructive text-xs mt-1 flex items-center gap-1">
                         <AlertCircle className="w-3 h-3" />
-                        {errors.empresa}
+                        {validationErrors.empresa}
                       </p>
                     )}
-                    {touched.empresa && !errors.empresa && form.empresa && (
+                    {touched.empresa && !validationErrors.empresa && form.empresa && (
                       <p className="text-green-500 text-xs mt-1 flex items-center gap-1">
                         <CheckCircle className="w-3 h-3" />
                         Válido
@@ -375,20 +339,20 @@ ${form.mensaje}
                       onBlur={handleBlur}
                       placeholder="juan@empresa.com"
                       className={`w-full rounded-xl border px-4 py-3 text-sm transition-all focus:outline-none focus:ring-2 ${
-                        touched.correo && errors.correo
+                        touched.correo && validationErrors.correo
                           ? 'border-destructive focus:ring-destructive/40 bg-destructive/5'
-                          : touched.correo && !errors.correo && form.correo
+                          : touched.correo && !validationErrors.correo && form.correo
                           ? 'border-green-500 focus:ring-green-500/40 bg-green-500/5'
                           : 'border-border bg-secondary/50 focus:ring-primary/40'
                       }`}
                     />
-                    {touched.correo && errors.correo && (
+                    {touched.correo && validationErrors.correo && (
                       <p className="text-destructive text-xs mt-1 flex items-center gap-1">
                         <AlertCircle className="w-3 h-3" />
-                        {errors.correo}
+                        {validationErrors.correo}
                       </p>
                     )}
-                    {touched.correo && !errors.correo && form.correo && (
+                    {touched.correo && !validationErrors.correo && form.correo && (
                       <p className="text-green-500 text-xs mt-1 flex items-center gap-1">
                         <CheckCircle className="w-3 h-3" />
                         Correo válido
@@ -407,28 +371,28 @@ ${form.mensaje}
                     value={form.mensaje}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="Describe tus necesidades de telecomunicaciones, cantidad de usuarios, ubicaciones, etc."
+                    placeholder="Describe el servicio que buscas, el problema actual, cantidad de usuarios, ubicaciones o alcance esperado."
                     className={`w-full rounded-xl border px-4 py-3 text-sm transition-all focus:outline-none focus:ring-2 resize-none ${
-                      touched.mensaje && errors.mensaje
+                      touched.mensaje && validationErrors.mensaje
                         ? 'border-destructive focus:ring-destructive/40 bg-destructive/5'
-                        : touched.mensaje && !errors.mensaje && form.mensaje
+                        : touched.mensaje && !validationErrors.mensaje && form.mensaje
                         ? 'border-green-500 focus:ring-green-500/40 bg-green-500/5'
                         : 'border-border bg-secondary/50 focus:ring-primary/40'
                     }`}
                   />
-                  {touched.mensaje && errors.mensaje && (
+                  {touched.mensaje && validationErrors.mensaje && (
                     <p className="text-destructive text-xs mt-1 flex items-center gap-1">
                       <AlertCircle className="w-3 h-3" />
-                      {errors.mensaje}
+                      {validationErrors.mensaje}
                     </p>
                   )}
-                  {touched.mensaje && !errors.mensaje && form.mensaje && (
+                  {touched.mensaje && !validationErrors.mensaje && form.mensaje && (
                     <p className="text-green-500 text-xs mt-1 flex items-center gap-1">
                       <CheckCircle className="w-3 h-3" />
                       Mensaje válido
                     </p>
                   )}
-                  {form.mensaje && !errors.mensaje && (
+                  {form.mensaje && !validationErrors.mensaje && (
                     <p className="text-muted-foreground text-xs mt-1 text-right">
                       {form.mensaje.trim().length}/500 caracteres
                     </p>

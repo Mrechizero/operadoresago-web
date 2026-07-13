@@ -1,220 +1,99 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import {
+  ArrowRight,
+  CloudCog,
+  Code2,
+  ExternalLink,
+  Network,
+  Radar,
+  ShieldCheck,
+  Wifi,
+} from 'lucide-react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import ProcessSection from '@/components/process-section'
+import { serviceCategories } from '@/lib/site-data'
 
-const serviceCategories = [
-  {
-    title: 'Conectividad',
-    services: [
-      {
-        title: 'Internet',
-        description:
-          'Conectividad para empresas, corporativos y residenciales.',
-        href: '/servicios/internet',
-      },
-      {
-        title: 'VPN Empresarial',
-        description:
-          'Conecta sucursales y usuarios remotos mediante túneles seguros.',
-        href: '/servicios/vpn',
-      },
-      {
-        title: 'Radio Enlaces',
-        description:
-          'Conectividad inalámbrica de alta capacidad para sitios remotos.',
-        href: '/contacto',
-      },
-      {
-        title: 'LAN to LAN',
-        description:
-          'Interconexión segura y privada entre sucursales.',
-        href: '/contacto',
-      },
-    ],
-  },
+export const metadata: Metadata = {
+  title: 'Servicios tecnológicos | Operadores AGO',
+  description:
+    'Conectividad, desarrollo de software, cloud, monitoreo web y de hardware, ciberseguridad, WiFi administrado e infraestructura empresarial.',
+}
 
-  {
-    title: 'Comunicaciones',
-    services: [
-      {
-        title: 'PBX IP',
-        description:
-          'Telefonía empresarial moderna y escalable.',
-        href: '/contacto',
-      },
-      {
-        title: 'Call Center',
-        description:
-          'Plataformas omnicanal para atención y ventas.',
-        href: '/contacto',
-      },
-      {
-        title: 'SMS Masivos',
-        description:
-          'Campañas, notificaciones y alertas empresariales.',
-        href: '/contacto',
-      },
-    ],
-  },
-
-  {
-    title: 'Cloud y Desarrollo',
-    services: [
-      {
-        title: 'Hosting',
-        description:
-          'Hospedaje web profesional y correo empresarial.',
-        href: '/contacto',
-      },
-      {
-        title: 'Cloud VPS',
-        description:
-          'Servidores virtuales para aplicaciones críticas.',
-        href: '/contacto',
-      },
-      {
-        title: 'Desarrollo Web',
-        description:
-          'Sitios corporativos, sistemas empresariales y e-commerce.',
-        href: '/contacto',
-      },
-    ],
-  },
-
-  {
-    title: 'Seguridad',
-    services: [
-      {
-        title: 'Videovigilancia',
-        description:
-          'Monitoreo inteligente para hogares y empresas.',
-        href: '/contacto',
-      },
-      {
-        title: 'Control de Acceso',
-        description:
-          'Control de personal, visitantes y activos.',
-        href: '/contacto',
-      },
-      {
-        title: 'Ciberseguridad',
-        description:
-          'Firewalls, monitoreo y protección empresarial.',
-        href: '/contacto',
-      },
-    ],
-  },
-
-  {
-    title: 'WiFi Inteligente',
-    services: [
-      {
-        title: 'Portal Cautivo',
-        description:
-          'WiFi para hoteles, restaurantes y comercios.',
-        href: '/contacto',
-      },
-      {
-        title: 'WiFi Empresarial',
-        description:
-          'Cobertura profesional para oficinas y corporativos.',
-        href: '/contacto',
-      },
-      {
-        title: 'Analítica de Visitantes',
-        description:
-          'Estadísticas, marketing y captación de clientes.',
-        href: '/contacto',
-      },
-    ],
-  },
-]
+const categoryIcons = [Network, CloudCog, Code2, Radar, ShieldCheck, Wifi]
 
 export default function ServiciosPage() {
   return (
     <>
       <Navbar />
-
-      <main className="pt-20 min-h-screen">
-
-        <section className="max-w-7xl mx-auto px-6 py-12">
-
-          <div className="text-center mb-12">
-
-            <div className="inline-flex items-center px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary font-medium mb-6">
-              Catálogo de Servicios
+      <main className="min-h-screen pt-20">
+        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="mb-6 inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
+              Catálogo de servicios
             </div>
-
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Soluciones Tecnológicas
+            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              Un ecosistema tecnológico, <span className="text-primary">organizado por necesidad</span>
             </h1>
-
-            <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
-              Infraestructura, conectividad, comunicaciones,
-              seguridad y desarrollo tecnológico para empresas,
-              comercios y organizaciones.
+            <p className="mx-auto max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Desde la red que conecta tu operación hasta el software que la administra y el monitoreo que la mantiene visible.
             </p>
-
           </div>
-
-          {serviceCategories.map((category) => (
-            <section key={category.title} className="mb-14">
-
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-10 h-px bg-primary" />
-
-                <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-semibold uppercase tracking-wider">
-                  {category.title}
-                </span>
-              </div>
-
-              <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-
-                {category.services.map((service) => (
-                  <Link
-                    key={service.title}
-                    href={service.href}
-                    className="group"
-                  >
-                    <div
-                      className="
-                        h-full
-                        rounded-3xl
-                        border
-                        border-border
-                        bg-card
-                        p-6
-                        transition-all
-                        duration-300
-                        hover:-translate-y-1
-                        hover:border-primary/30
-                        hover:shadow-xl
-                      "
-                    >
-                      <h2 className="text-2xl font-semibold mb-4 group-hover:text-primary transition-colors">
-                        {service.title}
-                      </h2>
-
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {service.description}
-                      </p>
-
-                      <div className="mt-6 text-primary font-medium">
-                        Ver más →
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-
-              </div>
-
-            </section>
-          ))}
-
         </section>
 
-      </main>
+        <section className="mx-auto max-w-7xl space-y-16 px-4 pb-20 sm:px-6 lg:px-8">
+          {serviceCategories.map((category, categoryIndex) => {
+            const Icon = categoryIcons[categoryIndex]
 
+            return (
+              <section key={category.id} id={category.id} className="scroll-mt-28">
+                <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-center">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10">
+                    <Icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold sm:text-3xl">{category.title}</h2>
+                    <p className="mt-1 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">{category.description}</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                  {category.services.map((service) => {
+                    const cardClass =
+                      'group flex h-full flex-col rounded-3xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl'
+                    const content = (
+                      <>
+                        {service.featured && (
+                          <span className="mb-4 w-fit rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">Destacado</span>
+                        )}
+                        <h3 className="mb-3 text-xl font-semibold transition-colors group-hover:text-primary">{service.title}</h3>
+                        <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                          {service.external ? 'Abrir plataforma' : 'Conocer solución'}
+                          {service.external ? <ExternalLink className="h-4 w-4" /> : <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />}
+                        </span>
+                      </>
+                    )
+
+                    return service.external ? (
+                      <a key={service.title} href={service.href} target="_blank" rel="noopener noreferrer" className={cardClass}>
+                        {content}
+                      </a>
+                    ) : (
+                      <Link key={service.title} href={service.href} className={cardClass}>
+                        {content}
+                      </Link>
+                    )
+                  })}
+                </div>
+              </section>
+            )
+          })}
+        </section>
+
+        <ProcessSection />
+      </main>
       <Footer />
     </>
   )

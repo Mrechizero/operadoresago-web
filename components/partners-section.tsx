@@ -25,7 +25,7 @@ export default function PartnersSection() {
           className="text-center mb-10"
         >
           <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground font-semibold">
-            Tecnologías que impulsan nuestras soluciones
+            Tecnologías con las que construimos soluciones
           </p>
         </motion.div>
 

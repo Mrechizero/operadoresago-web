@@ -1,68 +1,53 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import WhatsAppButton from '@/components/whatsapp-button'
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-sans',
-})
-
-// URL base - toma del entorno o usa el dominio real
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://web.operadoresago.com'
 
 export const metadata: Metadata = {
-  title: 'Operadores AGO | Telecomunicaciones y Soluciones Tecnológicas',
+  title: {
+    default: 'Operadores AGO | Infraestructura, software y monitoreo',
+    template: '%s',
+  },
   description:
-    'Implementamos infraestructura tecnológica confiable para empresas. Radio enlaces, internet dedicado, PBX IP, seguridad electrónica, domótica IoT y más.',
+    'Soluciones de conectividad, infraestructura, desarrollo web y multiplataforma, cloud, monitoreo, ciberseguridad y WiFi administrado para empresas.',
   keywords: [
     'telecomunicaciones',
-    'internet dedicado',
-    'radio enlace',
-    'PBX IP',
-    'seguridad electrónica',
-    'domótica',
-    'conectividad empresarial',
+    'desarrollo de software',
+    'monitoreo web',
+    'monitoreo de hardware',
+    'internet empresarial',
+    'VPN empresarial',
+    'WiFi administrado',
+    'ciberseguridad',
   ],
-  metadataBase: new URL(SITE_URL), // ← Esto resuelve URLs relativas
+  metadataBase: new URL(SITE_URL),
   openGraph: {
-    title: 'Operadores AGO | Telecomunicaciones y Soluciones Tecnológicas',
-    description:
-      'Implementamos infraestructura tecnológica confiable para empresas.',
+    title: 'Operadores AGO | Infraestructura, software y monitoreo',
+    description: 'Tecnología que conecta, automatiza y hace crecer tu negocio.',
     type: 'website',
     locale: 'es_MX',
     url: SITE_URL,
     siteName: 'Operadores AGO',
-    images: [
-      {
-        url: '/social-image.avif',  // ← URL relativa, se resolverá con metadataBase
-        width: 1200,
-        height: 630,
-        alt: 'Operadores AGO - Telecomunicaciones',
-      },
-    ],
+    images: [{ url: '/social-image.avif', width: 1200, height: 630, alt: 'Operadores AGO' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Operadores AGO | Telecomunicaciones y Soluciones Tecnológicas',
-    description: 'Implementamos infraestructura tecnológica confiable para empresas.',
-    images: ['/social-image.avif'],  // ← URL relativa
+    title: 'Operadores AGO | Infraestructura, software y monitoreo',
+    description: 'Tecnología que conecta, automatiza y hace crecer tu negocio.',
+    images: ['/social-image.avif'],
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0a0f1e',
+  themeColor: '#2563eb',
   width: 'device-width',
   initialScale: 1,
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={inter.variable}>
+    <html lang="es">
       <body className="font-sans antialiased">
         {children}
         <WhatsAppButton />
