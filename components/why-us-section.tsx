@@ -1,99 +1,80 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Server, HeadphonesIcon, Settings, Award } from 'lucide-react'
+import { Layers3, Radar, Settings, ShieldCheck } from 'lucide-react'
 
 const reasons = [
   {
-    icon: Server,
-    title: 'Infraestructura confiable',
+    icon: Layers3,
+    title: 'Visión integral',
     description:
-      'Diseñamos e implementamos redes robustas con equipos de grado industrial y redundancia garantizada para mantener tu negocio siempre activo.',
-    stat: '99.9%',
-    statLabel: 'uptime',
+      'No vemos la red, el software y el soporte como piezas aisladas. Diseñamos soluciones que funcionan juntas dentro de la operación real.',
+    stat: 'Integral',
+    statLabel: 'de punta a punta',
   },
   {
-    icon: HeadphonesIcon,
-    title: 'Soporte técnico especializado',
+    icon: Radar,
+    title: 'Monitoreo proactivo',
     description:
-      'Nuestro equipo de ingenieros certificados está disponible 24/7 para resolver cualquier incidencia y minimizar el tiempo de inactividad.',
-    stat: '24/7',
-    statLabel: 'disponibilidad',
+      'Incorporamos visibilidad, alertas y seguimiento para detectar condiciones anormales antes de que se conviertan en fallas mayores.',
+    stat: 'Visible',
+    statLabel: 'con alertas',
   },
   {
     icon: Settings,
     title: 'Soluciones a la medida',
     description:
-      'Cada empresa es única. Analizamos tu operación y diseñamos una arquitectura tecnológica personalizada que se adapta a tus procesos y presupuesto.',
-    stat: '100%',
-    statLabel: 'personalizado',
+      'Partimos de tus procesos, prioridades y presupuesto para construir una ruta tecnológica realista y escalable.',
+    stat: 'A medida',
+    statLabel: 'según tu operación',
   },
   {
-    icon: Award,
-    title: 'Experiencia comprobada',
+    icon: ShieldCheck,
+    title: 'Continuidad y seguridad',
     description:
-      'Más de 10 años implementando proyectos de telecomunicaciones en sectores industriales, comerciales y de servicios en toda la región.',
-    stat: '10+',
-    statLabel: 'años en el mercado',
+      'Consideramos acceso, respaldos, segmentación, mantenimiento y reducción de riesgos desde el diseño de cada proyecto.',
+    stat: 'Seguro',
+    statLabel: 'por diseño',
   },
 ]
 
 export default function WhyUsSection() {
   return (
-    <section id="por-que-nosotros" className="py-20 sm:py-24 lg:py-32 relative overflow-hidden">
-      {/* Background accent */}
+    <section id="por-que-nosotros" className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,oklch(0.55_0.2_250/0.06),transparent)]" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-16"
+          className="mx-auto mb-12 max-w-3xl text-center sm:mb-16"
         >
-          <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3 sm:mb-4">
-            Nuestra ventaja
-          </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3 sm:mb-5 px-4">
-            ¿Por qué elegirnos?
-          </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4">
-            Somos el socio tecnológico que tu empresa necesita para crecer sin límites de conectividad.
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">Nuestra forma de trabajar</p>
+          <h2 className="mb-5 text-3xl font-bold sm:text-4xl lg:text-5xl">Un solo aliado para conectar tecnología y operación</h2>
+          <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Combinamos infraestructura, desarrollo y seguimiento técnico para evitar soluciones desconectadas o difíciles de mantener.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {reasons.map((r, i) => (
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {reasons.map((reason, index) => (
             <motion.div
-              key={r.title}
+              key={reason.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative rounded-2xl border border-border bg-card p-5 sm:p-6 lg:p-7 hover:border-primary/40 hover:shadow-[0_8px_48px_oklch(0.55_0.2_250/0.1)] transition-all duration-300"
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="group relative rounded-3xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
             >
-              <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_at_top_left,oklch(0.55_0.2_250/0.05),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-              {/* Stat */}
-              <div className="mb-4 sm:mb-5 lg:mb-6">
-                <span className="text-3xl sm:text-4xl font-bold text-primary">{r.stat}</span>
-                <span className="ml-1.5 sm:ml-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">
-                  {r.statLabel}
-                </span>
+              <div className="mb-5">
+                <span className="text-2xl font-bold text-primary">{reason.stat}</span>
+                <span className="ml-2 text-[10px] uppercase tracking-wider text-muted-foreground">{reason.statLabel}</span>
               </div>
-
-              {/* Icon */}
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/15 border border-primary/25 flex items-center justify-center mb-3 sm:mb-4">
-                <r.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-primary/20 bg-primary/10">
+                <reason.icon className="h-5 w-5 text-primary" />
               </div>
-
-              <h3 className="font-bold text-foreground text-base sm:text-lg mb-2 sm:mb-3 leading-tight">
-                {r.title}
-              </h3>
-              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                {r.description}
-              </p>
+              <h3 className="mb-3 text-lg font-bold">{reason.title}</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">{reason.description}</p>
             </motion.div>
           ))}
         </div>

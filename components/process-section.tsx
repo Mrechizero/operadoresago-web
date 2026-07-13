@@ -23,7 +23,7 @@ const steps = [
     icon: Rocket,
     title: 'Implementación',
     description:
-      'Ejecutamos el proyecto con ingenieros certificados, garantizando calidad en cada etapa, mínima interrupción operativa y cumplimiento de tiempos.',
+      'Ejecutamos el proyecto por etapas, validando cada componente y reduciendo al mínimo la interrupción de la operación.',
   },
   {
     number: '04',
@@ -54,8 +54,7 @@ export default function ProcessSection() {
             Nuestro proceso de trabajo
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-4">
-            Un proceso estructurado que garantiza resultados superiores en cada proyecto,
-            sin importar su escala o complejidad.
+            Un proceso claro para pasar del diagnóstico a una solución implementada, documentada y preparada para evolucionar.
           </p>
         </motion.div>
 
@@ -112,7 +111,7 @@ export default function ProcessSection() {
             </p>
           </div>
           <a
-            href="#contacto"
+            href="/contacto"
             className="shrink-0 px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-[oklch(0.62_0.2_250)] active:scale-95 transition-all shadow-[0_0_24px_oklch(0.55_0.2_250/0.35)] whitespace-nowrap"
           >
             Agendar evaluación

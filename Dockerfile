@@ -1,24 +1,37 @@
-# ---------- BUILD ----------
-FROM node:20-alpine AS builder
+# ---------- BASE ----------
+FROM node:20-alpine AS base
+
+RUN npm install --global pnpm@10.33.4
+
+# ---------- DEPENDENCIAS ----------
+FROM base AS dependencies
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
+COPY package.json pnpm-lock.yaml ./
 
+RUN pnpm install --frozen-lockfile
+
+# ---------- COMPILACIÓN ----------
+FROM base AS builder
+
+WORKDIR /app
+
+COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 
-RUN npm run build
+RUN pnpm run build
 
-# ---------- PRODUCTION ----------
-FROM node:20
+# ---------- PRODUCCIÓN ----------
+FROM base AS runner
 
 WORKDIR /app
 
 ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
 COPY --from=builder /app ./
 
-EXPOSE 3005
+EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["pnpm", "start"]
