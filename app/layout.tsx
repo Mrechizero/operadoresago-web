@@ -6,25 +6,32 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://web.operadoresago.
 
 export const metadata: Metadata = {
   title: {
-    default: 'Operadores AGO | Infraestructura, software y monitoreo',
+    default: 'Operadores AGO | Portal cautivo, WiFi administrado y redes de datos',
     template: '%s',
   },
   description:
-    'Soluciones de conectividad, infraestructura, desarrollo web y multiplataforma, cloud, monitoreo, ciberseguridad y WiFi administrado para empresas.',
+    'Portal cautivo, WiFi administrado, diseño e implementación de redes de datos, desarrollo de software y monitoreo para empresas en todo México.',
   keywords: [
+    'portal cautivo México',
+    'WiFi administrado',
+    'redes de datos empresariales',
+    'diseño de redes',
+    'cableado estructurado',
     'telecomunicaciones',
     'desarrollo de software',
     'monitoreo web',
     'monitoreo de hardware',
     'internet empresarial',
     'VPN empresarial',
-    'WiFi administrado',
     'ciberseguridad',
   ],
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
-    title: 'Operadores AGO | Infraestructura, software y monitoreo',
-    description: 'Tecnología que conecta, automatiza y hace crecer tu negocio.',
+    title: 'Operadores AGO | Portal cautivo, WiFi administrado y redes de datos',
+    description: 'Conectividad que funciona, experiencias que atraen clientes y tecnología que crece contigo.',
     type: 'website',
     locale: 'es_MX',
     url: SITE_URL,
@@ -33,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Operadores AGO | Infraestructura, software y monitoreo',
-    description: 'Tecnología que conecta, automatiza y hace crecer tu negocio.',
+    title: 'Operadores AGO | Portal cautivo, WiFi administrado y redes de datos',
+    description: 'Soluciones de conectividad e infraestructura para empresas en todo México.',
     images: ['/social-image.avif'],
   },
 }
@@ -45,10 +52,36 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['Organization', 'ProfessionalService'],
+  name: 'Operadores AGO',
+  url: SITE_URL,
+  email: 'admin@operadoresago.com',
+  areaServed: {
+    '@type': 'Country',
+    name: 'México',
+  },
+  description:
+    'Portal cautivo, WiFi administrado, redes de datos, desarrollo de software y monitoreo para empresas.',
+  knowsAbout: [
+    'Portal cautivo',
+    'WiFi administrado',
+    'Redes de datos',
+    'Cableado estructurado',
+    'Desarrollo de software',
+    'Monitoreo tecnológico',
+  ],
+}
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es">
+    <html lang="es-MX">
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         {children}
         <WhatsAppButton />
       </body>

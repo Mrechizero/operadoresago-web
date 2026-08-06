@@ -6,6 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/servicios',
+    '/servicios/portal-cautivo',
+    '/servicios/wifi-administrado',
+    '/servicios/redes-datos',
     '/servicios/internet',
     '/servicios/vpn',
     '/servicios/desarrollo',

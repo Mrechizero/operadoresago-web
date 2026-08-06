@@ -6,7 +6,7 @@ import ContactSection from '@/components/contact-section'
 export const metadata: Metadata = {
   title: 'Contacto | Operadores AGO',
   description:
-    'Solicita información o una propuesta para conectividad, desarrollo, monitoreo, cloud, seguridad, WiFi e infraestructura tecnológica.',
+    'Solicita una propuesta para portal cautivo, WiFi administrado, redes de datos, desarrollo y monitoreo tecnológico en México.',
 }
 
 export default function ContactoPage() {
@@ -23,7 +23,7 @@ export default function ContactoPage() {
               Conversemos sobre el siguiente paso de <span className="text-primary">tu proyecto</span>
             </h1>
             <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-xl">
-              Cuéntanos qué quieres implementar, mejorar o supervisar. Revisaremos el contexto para orientarte hacia una solución realista.
+              Cuéntanos qué quieres implementar, cuántas ubicaciones tienes y qué problema deseas resolver. Atendemos proyectos en toda la República Mexicana.
             </p>
           </div>
         </section>

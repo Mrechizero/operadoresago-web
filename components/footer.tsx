@@ -3,10 +3,10 @@ import { EarthLockIcon, ExternalLink, MessageCircle } from 'lucide-react'
 import { platforms } from '@/lib/site-data'
 
 const serviceLinks = [
-  { label: 'Internet empresarial', href: '/servicios/internet' },
+  { label: 'Portal cautivo', href: '/servicios/portal-cautivo' },
+  { label: 'WiFi administrado', href: '/servicios/wifi-administrado' },
+  { label: 'Redes de datos', href: '/servicios/redes-datos' },
   { label: 'Desarrollo de software', href: '/servicios/desarrollo' },
-  { label: 'Monitoreo web', href: '/servicios/monitoreo-web' },
-  { label: 'Monitoreo de hardware', href: '/servicios/monitoreo-hardware' },
   { label: 'Catálogo completo', href: '/servicios' },
 ]
 
@@ -38,7 +38,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mb-6 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Infraestructura, software, monitoreo y seguridad para empresas que buscan operar con mayor control y crecer con tecnología.
+              Portal cautivo, WiFi administrado, redes de datos y desarrollo tecnológico para empresas en todo México.
             </p>
             <a
               href={whatsappUrl}

@@ -3,3 +3,8 @@ node_modules
 .git
 npm-debug.log
 tsconfig.tsbuildinfo
+
+# Contador persistente de impacto
+data/*.json
+data/*.tmp
+!data/.gitkeep

@@ -18,10 +18,10 @@ import { serviceCategories } from '@/lib/site-data'
 export const metadata: Metadata = {
   title: 'Servicios tecnológicos | Operadores AGO',
   description:
-    'Conectividad, desarrollo de software, cloud, monitoreo web y de hardware, ciberseguridad, WiFi administrado e infraestructura empresarial.',
+    'Portal cautivo, WiFi administrado, redes de datos, conectividad, desarrollo de software, monitoreo y seguridad para empresas en México.',
 }
 
-const categoryIcons = [Network, CloudCog, Code2, Radar, ShieldCheck, Wifi]
+const categoryIcons = [Wifi, Network, CloudCog, Code2, Radar, ShieldCheck]
 
 export default function ServiciosPage() {
   return (
@@ -34,10 +34,10 @@ export default function ServiciosPage() {
               Catálogo de servicios
             </div>
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Un ecosistema tecnológico, <span className="text-primary">organizado por necesidad</span>
+              Soluciones tecnológicas, <span className="text-primary">priorizadas por impacto</span>
             </h1>
             <p className="mx-auto max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Desde la red que conecta tu operación hasta el software que la administra y el monitoreo que la mantiene visible.
+              Comenzamos por conectividad, WiFi y redes de datos; después integramos software, monitoreo, comunicaciones y seguridad según la operación.
             </p>
           </div>
         </section>

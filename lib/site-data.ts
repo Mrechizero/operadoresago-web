@@ -1,9 +1,12 @@
+export type PlatformType = 'Plataforma propia' | 'Proyecto para cliente'
+
 export interface PlatformItem {
   name: string
   shortName: string
   description: string
   href: string
   audience: string
+  type: PlatformType
   status?: 'Disponible' | 'En preparación'
 }
 
@@ -22,6 +25,33 @@ export interface ServiceCategory {
   services: ServiceItem[]
 }
 
+export const prioritySolutions = [
+  {
+    title: 'Portal cautivo',
+    description:
+      'Convierte el acceso WiFi de tus visitantes en una experiencia con tu marca, registro autorizado y datos útiles para mejorar la atención.',
+    href: '/servicios/portal-cautivo',
+    label: 'Captación y experiencia',
+    benefits: ['Acceso personalizado', 'Base de datos autorizada', 'Promociones y fidelización'],
+  },
+  {
+    title: 'WiFi administrado',
+    description:
+      'Diseñamos, instalamos y administramos redes inalámbricas estables para negocios con múltiples usuarios, áreas o sucursales.',
+    href: '/servicios/wifi-administrado',
+    label: 'Cobertura y control',
+    benefits: ['Cobertura profesional', 'Segmentación de red', 'Monitoreo y soporte'],
+  },
+  {
+    title: 'Diseño e implementación de redes',
+    description:
+      'Creamos la infraestructura cableada e inalámbrica que necesita tu operación, desde el levantamiento hasta la documentación final.',
+    href: '/servicios/redes-datos',
+    label: 'Infraestructura empresarial',
+    benefits: ['Site survey', 'Cableado y racks', 'Configuración y puesta en marcha'],
+  },
+]
+
 export const platforms: PlatformItem[] = [
   {
     name: 'ReservaBella',
@@ -30,15 +60,17 @@ export const platforms: PlatformItem[] = [
       'Plataforma SaaS para administrar citas, clientes, servicios y páginas de reservas para negocios de belleza, bienestar y atención profesional.',
     href: 'https://reservabella.com',
     audience: 'Salones, barberías, spas y profesionales',
+    type: 'Plataforma propia',
     status: 'Disponible',
   },
   {
     name: 'Shoopper.me',
     shortName: 'SH',
     description:
-      'Experiencia de compra en línea y personal shopping de productos originales como bolsos, ropa, maquillaje, accesorios y más.',
+      'Experiencia de compra en línea de productos originales como bolsos, ropa, maquillaje, accesorios y otros artículos de moda y belleza.',
     href: 'https://shoopper.me',
     audience: 'Compradores de moda, belleza y accesorios',
+    type: 'Plataforma propia',
     status: 'Disponible',
   },
   {
@@ -48,6 +80,17 @@ export const platforms: PlatformItem[] = [
       'Portal cautivo y WiFi administrado para ofrecer acceso, captar datos autorizados, conocer visitantes y mejorar la experiencia del cliente.',
     href: 'https://wifi.operadoresago.com',
     audience: 'Restaurantes, hoteles, comercios y eventos',
+    type: 'Plataforma propia',
+    status: 'Disponible',
+  },
+  {
+    name: 'CEAS Industrial',
+    shortName: 'CI',
+    description:
+      'Proyecto comercial desarrollado para presentar servicios de reparación, mantenimiento y automatización de maquinaria industrial textil.',
+    href: 'https://electronica-industrial.operadoresago.com',
+    audience: 'Industria textil y empresas con maquinaria especializada',
+    type: 'Proyecto para cliente',
     status: 'Disponible',
   },
   {
@@ -57,11 +100,38 @@ export const platforms: PlatformItem[] = [
       'Arcade en línea de Operadores AGO, preparado para reunir experiencias de juego desde cualquier dispositivo.',
     href: 'https://games.operadoresago.com',
     audience: 'Jugadores y comunidades digitales',
+    type: 'Plataforma propia',
     status: 'En preparación',
   },
 ]
 
 export const serviceCategories: ServiceCategory[] = [
+  {
+    id: 'wifi',
+    title: 'WiFi inteligente',
+    description:
+      'Cobertura, acceso administrado y analítica para convertir la red WiFi en una herramienta del negocio.',
+    services: [
+      {
+        title: 'Portal cautivo',
+        description: 'Acceso personalizado para visitantes con identidad de marca, registro autorizado y analítica.',
+        href: '/servicios/portal-cautivo',
+        featured: true,
+      },
+      {
+        title: 'WiFi administrado',
+        description: 'Diseño de cobertura, implementación, segmentación, monitoreo y soporte de red.',
+        href: '/servicios/wifi-administrado',
+        featured: true,
+      },
+      {
+        title: 'Analítica de visitantes',
+        description: 'Indicadores de conexión y comportamiento para apoyar decisiones comerciales.',
+        href: 'https://wifi.operadoresago.com',
+        external: true,
+      },
+    ],
+  },
   {
     id: 'conectividad',
     title: 'Conectividad e infraestructura',
@@ -69,25 +139,24 @@ export const serviceCategories: ServiceCategory[] = [
       'Redes estables y seguras para conectar oficinas, sucursales, equipos y usuarios.',
     services: [
       {
+        title: 'Diseño e implementación de redes de datos',
+        description: 'Site survey, cableado, racks, switching, WiFi y documentación técnica.',
+        href: '/servicios/redes-datos',
+        featured: true,
+      },
+      {
         title: 'Internet empresarial',
         description: 'Enlaces dedicados, simétricos y soluciones de conectividad según cobertura.',
         href: '/servicios/internet',
-        featured: true,
       },
       {
         title: 'VPN empresarial',
         description: 'Conexión segura entre sucursales, colaboradores remotos y servicios internos.',
         href: '/servicios/vpn',
-        featured: true,
       },
       {
-        title: 'Radio enlaces',
-        description: 'Conectividad punto a punto para sitios donde la fibra no es viable.',
-        href: '/contacto',
-      },
-      {
-        title: 'LAN to LAN',
-        description: 'Interconexión privada entre sedes con una arquitectura administrada.',
+        title: 'Radio enlaces y LAN to LAN',
+        description: 'Interconexión entre sedes cuando la fibra no es viable o se requiere una red privada.',
         href: '/contacto',
       },
     ],
@@ -196,32 +265,6 @@ export const serviceCategories: ServiceCategory[] = [
         title: 'Domótica e IoT',
         description: 'Automatización de iluminación, clima, sensores, accesos y alertas.',
         href: '/contacto',
-      },
-    ],
-  },
-  {
-    id: 'wifi',
-    title: 'WiFi inteligente',
-    description:
-      'Cobertura, acceso administrado y analítica para convertir la red WiFi en una herramienta del negocio.',
-    services: [
-      {
-        title: 'Portal cautivo Ago WiFi',
-        description: 'Acceso personalizado para visitantes con identidad de marca y analítica.',
-        href: 'https://wifi.operadoresago.com',
-        external: true,
-        featured: true,
-      },
-      {
-        title: 'WiFi empresarial',
-        description: 'Diseño de cobertura, implementación, segmentación y administración de red.',
-        href: '/contacto',
-      },
-      {
-        title: 'Analítica de visitantes',
-        description: 'Indicadores de conexión y comportamiento para apoyar decisiones comerciales.',
-        href: 'https://wifi.operadoresago.com',
-        external: true,
       },
     ],
   },

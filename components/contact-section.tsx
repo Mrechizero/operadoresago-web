@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'Cobertura',
-    value: 'México y Latinoamérica',
+    value: 'Toda la República Mexicana',
     href: undefined
   },
 ]
@@ -41,6 +41,7 @@ export default function ContactSection() {
     empresa: '',
     telefono: '',
     correo: '',
+    servicio: 'Portal cautivo',
     mensaje: ''
   })
   
@@ -72,7 +73,7 @@ export default function ContactSection() {
 
   const validationErrors = getValidationErrors()
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setForm(prev => ({ ...prev, [name]: value }))
   }
@@ -104,6 +105,7 @@ export default function ContactSection() {
 ━━━━━━━━━━━━━━━━━━━━━
 🏢 Empresa: ${form.empresa || 'No especificada'}
 📞 Teléfono: ${form.telefono || 'No especificado'}
+🧭 Servicio de interés: ${form.servicio}
 
 💬 MENSAJE:
 ━━━━━━━━━━━━━━━━━━━━━
@@ -130,7 +132,7 @@ ${form.mensaje}
       }
       
       setSubmitted(true)
-      setForm({ nombre: '', empresa: '', telefono: '', correo: '', mensaje: '' })
+      setForm({ nombre: '', empresa: '', telefono: '', correo: '', servicio: 'Portal cautivo', mensaje: '' })
       setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
       
     } catch (err) {
@@ -143,7 +145,7 @@ ${form.mensaje}
 
   const resetForm = () => {
     setSubmitted(false)
-    setForm({ nombre: '', empresa: '', telefono: '', correo: '', mensaje: '' })
+    setForm({ nombre: '', empresa: '', telefono: '', correo: '', servicio: 'Portal cautivo', mensaje: '' })
     setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
     setError('')
   }
@@ -167,7 +169,7 @@ ${form.mensaje}
             Solicita tu cotización
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-            Cuéntanos qué necesitas y te responderemos con una ruta clara para tu proyecto.
+            Cuéntanos qué necesitas y prepararemos una ruta clara para tu portal cautivo, red WiFi, infraestructura o desarrollo tecnológico.
           </p>
         </motion.div>
 
@@ -186,8 +188,7 @@ ${form.mensaje}
     </h3>
 
     <p className="mt-3 text-muted-foreground">
-      Podemos ayudarte con conectividad, software, cloud,
-      monitoreo, seguridad y proyectos de infraestructura tecnológica.
+      Podemos ayudarte con portal cautivo, WiFi administrado, redes de datos, software, monitoreo y proyectos de infraestructura tecnológica.
     </p>
   </div>
 
@@ -359,6 +360,25 @@ ${form.mensaje}
                       </p>
                     )}
                   </div>
+                </div>
+
+                <div>
+                  <label className="text-xs font-semibold text-muted-foreground uppercase block mb-1">
+                    Servicio de interés
+                  </label>
+                  <select
+                    name="servicio"
+                    value={form.servicio}
+                    onChange={handleChange}
+                    className="w-full rounded-xl border border-border bg-secondary/50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                  >
+                    <option>Portal cautivo</option>
+                    <option>WiFi administrado</option>
+                    <option>Diseño e implementación de redes</option>
+                    <option>Desarrollo web o aplicación</option>
+                    <option>Monitoreo tecnológico</option>
+                    <option>Otro servicio</option>
+                  </select>
                 </div>
 
                 <div>
