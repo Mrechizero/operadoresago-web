@@ -34,7 +34,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) setMenuOpen(false)
+      if (window.innerWidth >= 1024) setMenuOpen(false)
     }
 
     window.addEventListener('resize', handleResize)
@@ -63,7 +63,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-6 lg:gap-8 md:flex" aria-label="Navegación principal">
+          <nav className="hidden items-center gap-6 lg:gap-8 lg:flex" aria-label="Navegación principal">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -78,14 +78,14 @@ export default function Navbar() {
 
           <Link
             href="/contacto"
-            className="hidden rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg md:inline-flex"
+            className="hidden rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg lg:inline-flex"
           >
             Solicitar cotización
           </Link>
 
           <button
             type="button"
-            className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground md:hidden"
+            className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground lg:hidden"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={menuOpen}
@@ -101,7 +101,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-t border-slate-200 bg-white md:hidden"
+            className="overflow-hidden border-t border-slate-200 bg-white lg:hidden"
           >
             <div className="flex flex-col gap-1 px-5 py-4">
               {navLinks.map((link) => (

@@ -7,7 +7,7 @@ import Footer from '@/components/footer'
 export const metadata: Metadata = {
   title: 'Nosotros | Operadores AGO',
   description:
-    'Conoce el enfoque de Operadores AGO para integrar infraestructura, software, monitoreo y seguridad en soluciones tecnológicas para empresas.',
+    'Conoce el enfoque de Operadores AGO para implementar portal cautivo, WiFi administrado, redes de datos y soluciones tecnológicas en todo México.',
 }
 
 const values = [
@@ -47,7 +47,7 @@ export default function NosotrosPage() {
               Tecnología conectada con la <span className="text-primary">realidad de tu negocio</span>
             </h1>
             <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-xl">
-              Ayudamos a empresas y emprendedores a construir, conectar y administrar soluciones tecnológicas sin separar la infraestructura del software ni el soporte de la operación.
+              Ayudamos a empresas de todo México a construir, conectar y administrar soluciones tecnológicas sin separar la infraestructura del software ni el soporte de la operación.
             </p>
           </div>
         </section>

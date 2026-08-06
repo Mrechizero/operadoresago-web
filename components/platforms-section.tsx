@@ -1,10 +1,23 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CalendarDays, ExternalLink, Gamepad2, ShoppingBag, Wifi } from 'lucide-react'
+import {
+  CalendarDays,
+  ExternalLink,
+  Factory,
+  Gamepad2,
+  ShoppingBag,
+  Wifi,
+} from 'lucide-react'
 import { platforms } from '@/lib/site-data'
 
-const icons = [CalendarDays, ShoppingBag, Wifi, Gamepad2]
+const iconByShortName = {
+  RB: CalendarDays,
+  SH: ShoppingBag,
+  WF: Wifi,
+  CI: Factory,
+  AG: Gamepad2,
+}
 
 export default function PlatformsSection() {
   return (
@@ -17,17 +30,21 @@ export default function PlatformsSection() {
           className="mb-12 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between"
         >
           <div className="max-w-3xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">Ecosistema digital</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Plataformas desarrolladas por Operadores AGO</h2>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+              Experiencia comprobable
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              Plataformas y proyectos que ya puedes explorar
+            </h2>
           </div>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground lg:text-right">
-            Productos con objetivos distintos, construidos para resolver necesidades reales de operación, atención, comercio y entretenimiento.
+            Productos propios y soluciones desarrolladas para clientes con objetivos distintos: reservas, comercio, conectividad, industria y entretenimiento.
           </p>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {platforms.map((platform, index) => {
-            const Icon = icons[index]
+            const Icon = iconByShortName[platform.shortName as keyof typeof iconByShortName]
             const isPreparing = platform.status === 'En preparación'
 
             return (
@@ -39,7 +56,7 @@ export default function PlatformsSection() {
                 initial={{ opacity: 0, y: 26 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
+                transition={{ duration: 0.5, delay: index * 0.07 }}
                 whileHover={{ y: -5 }}
                 className="group relative overflow-hidden rounded-3xl border border-border bg-card p-6 transition-all hover:border-primary/35 hover:shadow-xl sm:p-8"
               >
@@ -49,19 +66,34 @@ export default function PlatformsSection() {
                     <div className="flex h-13 w-13 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
-                    <span className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider ${
-                      isPreparing ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'
-                    }`}>
-                      {platform.status}
-                    </span>
+                    <div className="flex flex-col items-end gap-2">
+                      <span
+                        className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider ${
+                          isPreparing
+                            ? 'bg-amber-100 text-amber-700'
+                            : 'bg-emerald-100 text-emerald-700'
+                        }`}
+                      >
+                        {platform.status}
+                      </span>
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                        {platform.type}
+                      </span>
+                    </div>
                   </div>
 
-                  <h3 className="mb-3 text-2xl font-bold text-foreground sm:text-3xl">{platform.name}</h3>
-                  <p className="mb-5 flex-1 text-sm leading-relaxed text-muted-foreground sm:text-base">{platform.description}</p>
-                  <p className="mb-6 text-xs font-medium uppercase tracking-wider text-muted-foreground">{platform.audience}</p>
+                  <h3 className="mb-3 text-2xl font-bold text-foreground sm:text-3xl">
+                    {platform.name}
+                  </h3>
+                  <p className="mb-5 flex-1 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    {platform.description}
+                  </p>
+                  <p className="mb-6 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                    {platform.audience}
+                  </p>
 
                   <span className="inline-flex items-center gap-2 font-semibold text-primary">
-                    {isPreparing ? 'Abrir dominio del proyecto' : 'Ir a la plataforma'}
+                    {isPreparing ? 'Abrir dominio del proyecto' : 'Explorar proyecto'}
                     <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </div>

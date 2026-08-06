@@ -13,7 +13,7 @@ import {
 } from 'lucide-react'
 import { serviceCategories } from '@/lib/site-data'
 
-const categoryIcons = [Network, CloudCog, Code2, Radar, ShieldCheck, Wifi]
+const categoryIcons = [Wifi, Network, CloudCog, Code2, Radar, ShieldCheck]
 
 export default function ServicesSection() {
   return (
