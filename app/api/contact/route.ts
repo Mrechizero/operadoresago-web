@@ -123,6 +123,84 @@ function buildHtmlEmail(data: z.infer<typeof contactSchema>) {
   `
 }
 
+
+function buildConfirmationTextEmail(data: z.infer<typeof contactSchema>) {
+  return [
+    `Hola ${data.name},`,
+    '',
+    'Recibimos correctamente tu solicitud en AGO TECH.',
+    `Servicio de interés: ${data.service}`,
+    '',
+    'Nuestro equipo revisará la información y te responderá lo antes posible.',
+    '',
+    'Gracias por confiar en AGO TECH.',
+    'https://web.operadoresago.com',
+  ].join('\n')
+}
+
+function buildConfirmationHtmlEmail(data: z.infer<typeof contactSchema>) {
+  const safeName = escapeHtml(data.name)
+  const safeService = escapeHtml(data.service)
+  const safeCompany = escapeHtml(data.company)
+
+  return `
+    <!doctype html>
+    <html lang="es">
+      <body style="margin:0;padding:0;background:#f5f6ff;font-family:Arial,Helvetica,sans-serif;color:#111827;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f5f6ff;padding:36px 12px;">
+          <tr>
+            <td align="center">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:680px;background:#ffffff;border-radius:24px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 22px 60px rgba(49,46,129,.12);">
+                <tr>
+                  <td style="padding:0;background:#0b1024;">
+                    <div style="height:5px;background:#5b5df9;"></div>
+                    <div style="padding:32px 36px;color:#ffffff;">
+                      <div style="display:inline-block;padding:7px 11px;border-radius:999px;background:#312e81;color:#c7d2fe;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;">AGO TECH</div>
+                      <div style="margin-top:18px;font-size:29px;line-height:1.2;font-weight:800;">Recibimos tu solicitud</div>
+                      <div style="margin-top:10px;font-size:15px;line-height:1.7;color:#cbd5e1;">Tu mensaje ya está con nuestro equipo.</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:34px 36px;">
+                    <div style="font-size:18px;line-height:1.5;font-weight:700;color:#111827;">Hola ${safeName},</div>
+                    <div style="margin-top:12px;font-size:15px;line-height:1.8;color:#475569;">
+                      Gracias por contactar a AGO TECH. Recibimos correctamente la solicitud de <strong style="color:#111827;">${safeCompany}</strong> y la revisaremos para responderte lo antes posible.
+                    </div>
+
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:26px;border-collapse:separate;">
+                      <tr>
+                        <td style="padding:18px 20px;border-radius:16px;background:#eef2ff;border:1px solid #c7d2fe;">
+                          <div style="font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#4f46e5;">Servicio de interés</div>
+                          <div style="margin-top:7px;font-size:16px;font-weight:800;color:#1e1b4b;">${safeService}</div>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <div style="margin-top:26px;padding:20px;border-radius:16px;background:#f8fafc;border:1px solid #e2e8f0;">
+                      <div style="font-size:14px;font-weight:800;color:#111827;">¿Qué sigue?</div>
+                      <div style="margin-top:8px;font-size:14px;line-height:1.75;color:#64748b;">Nuestro equipo revisará los datos enviados y se pondrá en contacto contigo utilizando el correo o teléfono proporcionado.</div>
+                    </div>
+
+                    <div style="margin-top:30px;text-align:center;">
+                      <a href="https://web.operadoresago.com" style="display:inline-block;padding:13px 22px;border-radius:12px;background:#4f46e5;color:#ffffff;text-decoration:none;font-size:14px;font-weight:800;">Conocer AGO TECH</a>
+                    </div>
+
+                    <div style="margin-top:30px;padding-top:22px;border-top:1px solid #e2e8f0;font-size:13px;line-height:1.7;color:#64748b;text-align:center;">
+                      AGO TECH · Infraestructura digital para empresas<br />
+                      <a href="mailto:contacto@operadoresago.com" style="color:#4f46e5;text-decoration:none;font-weight:700;">contacto@operadoresago.com</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </body>
+    </html>
+  `
+}
+
 export async function POST(request: Request) {
   let body: unknown
 
@@ -180,16 +258,42 @@ export async function POST(request: Request) {
 
     const transporter = nodemailer.createTransport(transportOptions)
 
-    await transporter.sendMail({
-      from: `"${mailFromName.replaceAll('"', '')}" <${mailFrom}>`,
+    const safeMailFromName = mailFromName.replace(/[\r\n"]/g, '')
+    const safeCompanyHeader = parsed.data.company.replace(/[\r\n]/g, ' ').trim()
+
+    const internalInfo = await transporter.sendMail({
+      from: `"${safeMailFromName}" <${mailFrom}>`,
       to: contactTo,
       replyTo: parsed.data.email,
-      subject: `Nuevo prospecto web · ${parsed.data.service} · ${parsed.data.company}`,
+      subject: `Nuevo prospecto web · ${parsed.data.service} · ${safeCompanyHeader}`,
       text: buildTextEmail(parsed.data),
       html: buildHtmlEmail(parsed.data),
     })
 
-    return NextResponse.json({ ok: true })
+    console.info('[contact] Prospecto aceptado por SMTP:', internalInfo.messageId)
+
+    let confirmationSent = false
+
+    try {
+      const confirmationInfo = await transporter.sendMail({
+        from: `"${safeMailFromName}" <${mailFrom}>`,
+        to: parsed.data.email,
+        replyTo: contactTo,
+        subject: 'Recibimos tu solicitud · AGO TECH',
+        text: buildConfirmationTextEmail(parsed.data),
+        html: buildConfirmationHtmlEmail(parsed.data),
+      })
+
+      confirmationSent = true
+      console.info('[contact] Confirmación al prospecto aceptada por SMTP:', confirmationInfo.messageId)
+    } catch (confirmationError) {
+      console.warn(
+        '[contact] Prospecto recibido, pero no fue posible enviar la confirmación:',
+        confirmationError instanceof Error ? confirmationError.message : 'Error desconocido',
+      )
+    }
+
+    return NextResponse.json({ ok: true, confirmationSent })
   } catch (error) {
     console.error(
       '[contact] No fue posible enviar el correo SMTP:',
