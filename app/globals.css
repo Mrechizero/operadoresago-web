@@ -99,3 +99,13 @@
     scroll-behavior: smooth;
   }
 }
+
+
+@keyframes ago-client-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-50% - 0.5rem), 0, 0);
+  }
+}

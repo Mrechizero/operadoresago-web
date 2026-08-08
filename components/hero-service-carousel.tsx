@@ -358,36 +358,120 @@ function HardwareVisual() {
 }
 
 function SoftwareVisual() {
-  const products = [
-    ['ReservaBella', 'Reservas', 'RB'],
-    ['Shoopper.me', 'E-commerce', 'SH'],
-    ['Ago WiFi', 'Conectividad', 'WF'],
-    ['CEAS', 'Industria', 'CI'],
+  const projects = [
+    {
+      name: 'ReservaBella',
+      label: 'SaaS · Reservas',
+      short: 'RB',
+      gradient: 'from-fuchsia-500 via-pink-500 to-rose-400',
+      className: 'left-[2%] top-[9%] z-20 w-[76%] sm:left-[4%] sm:top-[8%] sm:w-[72%]',
+      delay: 0,
+    },
+    {
+      name: 'Shoopper.me',
+      label: 'E-commerce',
+      short: 'SH',
+      gradient: 'from-violet-500 via-fuchsia-500 to-pink-500',
+      className: 'right-[1%] top-[33%] z-30 w-[68%] sm:right-[2%] sm:top-[31%] sm:w-[64%]',
+      delay: 0.35,
+    },
+    {
+      name: 'Ago WiFi',
+      label: 'Conectividad',
+      short: 'WF',
+      gradient: 'from-cyan-400 via-blue-500 to-indigo-600',
+      className: 'bottom-[10%] left-[8%] z-40 w-[72%] sm:bottom-[8%] sm:left-[12%] sm:w-[68%]',
+      delay: 0.7,
+    },
   ]
 
   return (
-    <div className="flex h-full items-center justify-center p-5 sm:p-8">
-      <div className="relative w-full max-w-xl">
-        <div className="absolute -inset-8 rounded-full bg-violet-500/15 blur-3xl" />
-        <div className="relative grid grid-cols-2 gap-3">
-          {products.map(([name, type, short], index) => (
-            <div
-              key={name}
-              className={`rounded-3xl border border-white/10 bg-slate-950/70 p-4 shadow-xl backdrop-blur-xl sm:p-5 ${index % 2 ? 'translate-y-2 sm:translate-y-5' : ''}`}
-            >
-              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-fuchsia-500 to-indigo-500 text-xs font-bold text-white">
-                {short}
+    <div className="relative h-full min-h-[330px] overflow-hidden px-3 py-5 sm:min-h-[440px] sm:px-6 sm:py-7">
+      <div className="absolute left-[8%] top-[8%] h-44 w-44 rounded-full bg-fuchsia-500/15 blur-3xl sm:h-60 sm:w-60" />
+      <div className="absolute bottom-[6%] right-[4%] h-48 w-48 rounded-full bg-indigo-500/20 blur-3xl sm:h-64 sm:w-64" />
+
+      <div className="absolute left-3 top-4 z-50 hidden flex-col gap-2 sm:flex">
+        {['WEB', 'SAAS', 'UX', 'DATA'].map((item, index) => (
+          <motion.span
+            key={item}
+            initial={{ opacity: 0, x: -8 }}
+            animate={{ opacity: [0.28, 0.85, 0.28], x: 0 }}
+            transition={{ duration: 3.4, delay: index * 0.32, repeat: Infinity, ease: 'easeInOut' }}
+            className="text-[9px] font-semibold tracking-[0.26em] text-white/45"
+          >
+            {item}
+          </motion.span>
+        ))}
+      </div>
+
+      <motion.div
+        aria-hidden="true"
+        animate={{ rotate: [0, 3, 0, -2, 0], scale: [1, 1.04, 1] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute inset-[12%] rounded-[2rem] border border-violet-300/10 bg-violet-500/[0.045]"
+      />
+
+      {projects.map((project, index) => (
+        <motion.div
+          key={project.name}
+          initial={{ opacity: 0, y: 24, rotate: index === 1 ? 2 : -1 }}
+          animate={{
+            opacity: 1,
+            y: [0, index % 2 ? -8 : 7, 0],
+            rotate: index === 1 ? [1.2, 0.2, 1.2] : [-0.8, 0.2, -0.8],
+          }}
+          transition={{
+            opacity: { duration: 0.5, delay: project.delay },
+            y: { duration: 6 + index, repeat: Infinity, ease: 'easeInOut', delay: project.delay },
+            rotate: { duration: 7 + index, repeat: Infinity, ease: 'easeInOut', delay: project.delay },
+          }}
+          className={`absolute ${project.className}`}
+        >
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#090719]/95 shadow-[0_24px_70px_rgba(0,0,0,0.38)] backdrop-blur-xl sm:rounded-[1.6rem]">
+            <div className="flex h-7 items-center justify-between border-b border-white/[0.07] px-3 sm:h-8 sm:px-4">
+              <div className="flex gap-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-white/25" />
+                <span className="h-1.5 w-1.5 rounded-full bg-white/15" />
+                <span className="h-1.5 w-1.5 rounded-full bg-white/10" />
               </div>
-              <p className="text-sm font-semibold text-white sm:text-base">{name}</p>
-              <p className="mt-1 text-[10px] uppercase tracking-wider text-white/40">{type}</p>
-              <div className="mt-5 flex items-center gap-1">
-                <span className="h-1.5 flex-1 rounded-full bg-white/10" />
-                <span className="h-1.5 w-8 rounded-full bg-violet-400" />
+              <span className="h-1.5 w-12 rounded-full bg-white/10 sm:w-16" />
+            </div>
+
+            <div className="grid grid-cols-[.82fr_1.18fr] gap-2 p-2.5 sm:gap-3 sm:p-4">
+              <div className="flex min-h-20 flex-col justify-between rounded-xl border border-white/[0.06] bg-white/[0.035] p-2.5 sm:min-h-24 sm:p-3">
+                <span className={`flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br ${project.gradient} text-[9px] font-black text-white shadow-lg sm:h-8 sm:w-8`}>
+                  {project.short}
+                </span>
+                <div>
+                  <p className="text-[10px] font-bold text-white sm:text-xs">{project.name}</p>
+                  <p className="mt-1 text-[7px] font-semibold uppercase tracking-[0.16em] text-white/35 sm:text-[8px]">{project.label}</p>
+                </div>
+              </div>
+
+              <div className="relative min-h-20 overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.035] p-2.5 sm:min-h-24 sm:p-3">
+                <div className={`h-8 rounded-lg bg-gradient-to-r ${project.gradient} opacity-85 sm:h-10`} />
+                <div className="mt-2 grid grid-cols-3 gap-1.5">
+                  <span className="h-4 rounded bg-white/[0.08] sm:h-5" />
+                  <span className="h-4 rounded bg-white/[0.055] sm:h-5" />
+                  <span className="h-4 rounded bg-white/[0.035] sm:h-5" />
+                </div>
+                <div className="mt-2 flex gap-1">
+                  <span className="h-1 flex-1 rounded-full bg-white/10" />
+                  <span className={`h-1 w-8 rounded-full bg-gradient-to-r ${project.gradient}`} />
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        </motion.div>
+      ))}
+
+      <motion.div
+        animate={{ opacity: [0.32, 0.8, 0.32], x: [0, 8, 0] }}
+        transition={{ duration: 4.6, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute bottom-5 right-5 z-50 rounded-full border border-white/10 bg-white/[0.06] px-3 py-2 text-[8px] font-semibold uppercase tracking-[0.2em] text-white/45 backdrop-blur-xl sm:bottom-7 sm:right-7 sm:px-4 sm:text-[9px]"
+      >
+        Diseño · Desarrollo · Operación
+      </motion.div>
     </div>
   )
 }
