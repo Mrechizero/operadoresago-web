@@ -22,8 +22,15 @@ declare module 'nodemailer' {
     html?: string
   }
 
+  type SentMessageInfo = {
+    messageId?: string
+    accepted?: string[]
+    rejected?: string[]
+    response?: string
+  }
+
   type Transporter = {
-    sendMail(options: MailOptions): Promise<unknown>
+    sendMail(options: MailOptions): Promise<SentMessageInfo>
   }
 
   const nodemailer: {

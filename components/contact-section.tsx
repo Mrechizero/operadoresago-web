@@ -14,8 +14,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Correo electrónico',
-    value: 'admin@operadoresago.com',
-    href: 'mailto:admin@operadoresago.com'
+    value: 'contacto@operadoresago.com',
+    href: 'mailto:contacto@operadoresago.com'
   },
   {
     icon: MapPin,
@@ -27,6 +27,7 @@ const contactInfo = [
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false)
+  const [confirmationSent, setConfirmationSent] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [touched, setTouched] = useState({
@@ -117,11 +118,13 @@ export default function ContactSection() {
         body: JSON.stringify(payload),
       })
       
+      const result = await response.json()
+
       if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.error || 'Error al enviar')
+        throw new Error(result.error || 'Error al enviar')
       }
-      
+
+      setConfirmationSent(result.confirmationSent === true)
       setSubmitted(true)
       setForm({ nombre: '', empresa: '', telefono: '', correo: '', servicio: 'Portal cautivo', mensaje: '', website: '' })
       setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
@@ -136,6 +139,7 @@ export default function ContactSection() {
 
   const resetForm = () => {
     setSubmitted(false)
+    setConfirmationSent(false)
     setForm({ nombre: '', empresa: '', telefono: '', correo: '', servicio: 'Portal cautivo', mensaje: '', website: '' })
     setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
     setError('')
@@ -221,6 +225,11 @@ export default function ContactSection() {
                 <p className="text-muted-foreground mb-6">
                   Gracias por contactarnos. Revisaremos tu solicitud y nos comunicaremos contigo a la brevedad.
                 </p>
+                {confirmationSent && (
+                  <p className="text-sm text-primary font-medium -mt-3 mb-6">
+                    También enviamos una confirmación al correo que registraste.
+                  </p>
+                )}
                 <button
                   onClick={resetForm}
                   className="px-5 py-2 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition"

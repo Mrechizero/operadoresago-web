@@ -15,7 +15,7 @@ services:
       SMTP_PASSWORD: ${SMTP_PASSWORD:-}
       MAIL_FROM_NAME: ${MAIL_FROM_NAME:-AGO TECH}
       MAIL_FROM: ${MAIL_FROM:-contacto@operadoresago.com}
-      CONTACT_TO: ${CONTACT_TO:-admin@operadoresago.com}
+      CONTACT_TO: ${CONTACT_TO:-contacto@operadoresago.com}
       IMPACT_METRICS_DATA_DIR: /app/data
     volumes:
       - ./data:/app/data
