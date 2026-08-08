@@ -1,2 +1,3 @@
 overrides:
-  "next>postcss": "8.5.10"
+  postcss: "8.5.25"
+  "postcss>nanoid": "3.3.17"

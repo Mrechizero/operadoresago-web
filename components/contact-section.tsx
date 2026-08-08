@@ -42,7 +42,8 @@ export default function ContactSection() {
     telefono: '',
     correo: '',
     servicio: 'Portal cautivo',
-    mensaje: ''
+    mensaje: '',
+    website: ''
   })
   
   const getValidationErrors = () => {
@@ -99,24 +100,14 @@ export default function ContactSection() {
     setError('')
     
     try {
-      // Combinar empresa y teléfono dentro del mensaje
-      const mensajeCompleto = `
-📋 DATOS DE CONTACTO:
-━━━━━━━━━━━━━━━━━━━━━
-🏢 Empresa: ${form.empresa || 'No especificada'}
-📞 Teléfono: ${form.telefono || 'No especificado'}
-🧭 Servicio de interés: ${form.servicio}
-
-💬 MENSAJE:
-━━━━━━━━━━━━━━━━━━━━━
-${form.mensaje}
-      `.trim()
-      
-      // Payload compatible con el backend existente
       const payload = {
         name: form.nombre.trim(),
+        company: form.empresa.trim(),
+        phone: form.telefono.trim(),
         email: form.correo.trim(),
-        message: mensajeCompleto
+        service: form.servicio,
+        message: form.mensaje.trim(),
+        website: form.website,
       }
       
       // ✅ Usando ruta relativa (mismo dominio, evita Mixed Content)
@@ -132,7 +123,7 @@ ${form.mensaje}
       }
       
       setSubmitted(true)
-      setForm({ nombre: '', empresa: '', telefono: '', correo: '', servicio: 'Portal cautivo', mensaje: '' })
+      setForm({ nombre: '', empresa: '', telefono: '', correo: '', servicio: 'Portal cautivo', mensaje: '', website: '' })
       setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
       
     } catch (err) {
@@ -145,7 +136,7 @@ ${form.mensaje}
 
   const resetForm = () => {
     setSubmitted(false)
-    setForm({ nombre: '', empresa: '', telefono: '', correo: '', servicio: 'Portal cautivo', mensaje: '' })
+    setForm({ nombre: '', empresa: '', telefono: '', correo: '', servicio: 'Portal cautivo', mensaje: '', website: '' })
     setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
     setError('')
   }
@@ -239,6 +230,18 @@ ${form.mensaje}
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-5 sm:p-6 lg:p-8 space-y-4">
+                <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="website">Sitio web</label>
+                  <input
+                    id="website"
+                    type="text"
+                    name="website"
+                    value={form.website}
+                    onChange={handleChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
                 
                 {error && (
                   <div className="flex items-center gap-2 bg-destructive/10 border border-destructive/30 p-3 rounded-xl">

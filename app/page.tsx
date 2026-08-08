@@ -8,6 +8,7 @@ import ServicesSection from '@/components/services-section'
 import PartnersSection from '@/components/partners-section'
 import WhyUsSection from '@/components/why-us-section'
 import ContactSection from '@/components/contact-section'
+import ClientsSection from '@/components/clients-section'
 import Footer from '@/components/footer'
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <PartnersSection />
       <WhyUsSection />
       <ContactSection />
+      <ClientsSection />
       <Footer />
     </main>
   )

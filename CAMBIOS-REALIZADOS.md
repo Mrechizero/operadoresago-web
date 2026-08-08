@@ -2,65 +2,63 @@
 
 ## Objetivo
 
-Conservar el avance existente y reorganizar la experiencia para que `web.operadoresago.com` funcione como sitio corporativo principal, separando servicios contratables de plataformas propias.
+Conservar el avance existente y reorganizar la experiencia para que `web.operadoresago.com` funcione como sitio corporativo principal, separando servicios contratables, plataformas propias y proyectos realizados.
 
 ## Cambios principales
 
 - Portada enfocada en infraestructura, software, monitoreo y seguridad.
-- Nueva sección de plataformas con enlaces directos a:
-  - `https://reservabella.com`
-  - `https://shoopper.me`
-  - `https://wifi.operadoresago.com`
-  - `https://games.operadoresago.com`
-- Catálogo de servicios organizado en seis áreas.
-- Nuevas páginas independientes:
-  - `/servicios/desarrollo`
-  - `/servicios/monitoreo-web`
-  - `/servicios/monitoreo-hardware`
-- Se conservaron las páginas existentes:
-  - `/servicios/internet`
-  - `/servicios/vpn`
-  - `/nosotros`
-  - `/contacto`
+- Pasarela visual de soluciones y showcase de clientes/proyectos.
+- Catálogo de servicios organizado en áreas comerciales.
+- Páginas independientes para servicios prioritarios, desarrollo y monitoreo.
 - Navegación y pie de página corregidos para usar rutas reales.
 - Formulario de contacto con validación de cliente y servidor.
-- Backend de contacto configurable en tiempo de ejecución con `CONTACT_API_URL`.
+- Envío del formulario directamente mediante SMTP autenticado, sin depender del backend anterior de Google/contacto.
+- `Reply-To` configurado con el correo del prospecto para responder directamente desde el cliente de correo.
+- Honeypot antispam sin seguimiento de IP ni almacenamiento de datos del visitante.
 - Metadatos, `sitemap.xml` y `robots.txt` actualizados.
-- ESLint instalado y configurado.
-- Docker corregido para exponer internamente el puerto `3000`.
+- Proyecto migrado a pnpm.
+- Docker preparado para recibir las credenciales SMTP únicamente mediante variables de entorno de producción.
 
 ## Variables de entorno
 
-Copia `.env.example` a `.env` o configura estas variables en el servidor:
+`.env.example` documenta los nombres necesarios. Las credenciales reales se cargan manualmente en producción y nunca deben subirse al repositorio:
 
 ```env
 NEXT_PUBLIC_SITE_URL=https://web.operadoresago.com
-CONTACT_API_URL=http://10.10.0.49:3001/contact
+SMTP_HOST=mail.korreoweb.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_REQUIRE_TLS=true
+SMTP_USER=contacto@operadoresago.com
+SMTP_PASSWORD=change-me
+MAIL_FROM_NAME=AGO TECH
+MAIL_FROM=contacto@operadoresago.com
+CONTACT_TO=admin@operadoresago.com
 ```
 
-## Validaciones ejecutadas
+## Validaciones recomendadas
 
 ```bash
-npm run lint
-npx tsc --noEmit
-npm run build
-npm start
+pnpm install
+pnpm run lint
+pnpm exec tsc --noEmit
+pnpm run build
+pnpm audit --prod
 ```
-
-La compilación completó Webpack, TypeScript y la generación estática de 15 rutas. En el entorno de revisión, el proceso fue detenido por el límite de ejecución durante `Collecting build traces`, pero los artefactos generados iniciaron correctamente con `next start` y las rutas verificadas respondieron con HTTP 200.
 
 ## Despliegue con Docker
 
+En producción, crea o actualiza `.env` con los valores reales antes de recrear el contenedor.
+
 ```bash
-cp .env.example .env
-docker compose build --no-cache
-docker compose up -d
+docker compose build --no-cache --pull
+docker compose up -d --force-recreate
 ```
 
 Verificación sugerida:
 
 ```bash
 docker compose ps
-docker compose logs --tail=100 operadoresago-web
+docker compose logs --tail=100
 curl -I http://127.0.0.1:3005
 ```

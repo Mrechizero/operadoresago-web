@@ -8,3 +8,10 @@ tsconfig.tsbuildinfo
 data/*.json
 data/*.tmp
 !data/.gitkeep
+
+# Variables locales / secretos
+.env
+.env.local
+.env.production
+.env.*.local
+!.env.example
