@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import WhatsAppButton from '@/components/whatsapp-button'
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://web.operadoresago.com'
+import MotionPreferences from '@/components/motion-preferences'
+import { SITE_URL } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: {
@@ -26,9 +26,6 @@ export const metadata: Metadata = {
     'ciberseguridad',
   ],
   metadataBase: new URL(SITE_URL),
-  alternates: {
-    canonical: SITE_URL,
-  },
   openGraph: {
     title: 'Operadores AGO | Portal cautivo, WiFi administrado y redes de datos',
     description: 'Conectividad que funciona, experiencias que atraen clientes y tecnología que crece contigo.',
@@ -57,7 +54,7 @@ const organizationSchema = {
   '@type': ['Organization', 'ProfessionalService'],
   name: 'Operadores AGO',
   url: SITE_URL,
-  email: 'admin@operadoresago.com',
+  email: 'contacto@operadoresago.com',
   areaServed: {
     '@type': 'Country',
     name: 'México',
@@ -78,12 +75,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es-MX">
       <body className="font-sans antialiased">
+        <a href="#contenido-principal" className="skip-link">Saltar al contenido principal</a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        {children}
-        <WhatsAppButton />
+        <MotionPreferences>
+          {children}
+          <WhatsAppButton />
+        </MotionPreferences>
       </body>
     </html>
   )

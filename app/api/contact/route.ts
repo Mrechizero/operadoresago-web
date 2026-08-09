@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { z } from 'zod'
+import { isContactServiceValue } from '@/lib/service-relations'
 
 export const runtime = 'nodejs'
 
@@ -9,21 +10,16 @@ type SecureTransportOptions = Parameters<typeof nodemailer.createTransport>[0] &
   disableUrlAccess?: boolean
 }
 
-const services = [
-  'Portal cautivo',
-  'WiFi administrado',
-  'Diseño e implementación de redes',
-  'Desarrollo web o aplicación',
-  'Monitoreo tecnológico',
-  'Otro servicio',
-] as const
 
 const contactSchema = z.object({
   name: z.string().trim().min(2).max(80),
   company: z.string().trim().min(2).max(120),
   phone: z.string().trim().max(40).optional().default(''),
   email: z.string().trim().email().max(160),
-  service: z.enum(services),
+  service: z.string().trim().refine(isContactServiceValue, { message: 'Servicio inválido' }),
+  sector: z.string().trim().max(120).optional().default('No especificado'),
+  need: z.string().trim().max(120).optional().default(''),
+  sourcePath: z.string().trim().max(240).optional().default('/contacto'),
   message: z.string().trim().min(10).max(1500),
   website: z.string().max(0).optional().default(''),
 }).strict()
@@ -63,11 +59,13 @@ function buildTextEmail(data: z.infer<typeof contactSchema>) {
     `Correo: ${data.email}`,
     `Teléfono: ${data.phone || 'No especificado'}`,
     `Servicio de interés: ${data.service}`,
+    `Sector: ${data.sector || 'No especificado'}`,
+    `Necesidad: ${data.need || 'No especificada'}`,
     '',
     'Mensaje:',
     data.message,
     '',
-    `Origen: ${process.env.NEXT_PUBLIC_SITE_URL || 'https://web.operadoresago.com'}`,
+    `Origen: ${(process.env.NEXT_PUBLIC_SITE_URL || 'https://web.operadoresago.com')}${data.sourcePath || ''}`,
   ].join('\n')
 }
 
@@ -77,6 +75,9 @@ function buildHtmlEmail(data: z.infer<typeof contactSchema>) {
   const safeEmail = escapeHtml(data.email)
   const safePhone = escapeHtml(data.phone || 'No especificado')
   const safeService = escapeHtml(data.service)
+  const safeSector = escapeHtml(data.sector || 'No especificado')
+  const safeNeed = escapeHtml(data.need || 'No especificada')
+  const safeSourcePath = escapeHtml(data.sourcePath || '/contacto')
   const safeMessage = escapeHtml(data.message).replaceAll('\n', '<br />')
 
   return `
@@ -102,6 +103,9 @@ function buildHtmlEmail(data: z.infer<typeof contactSchema>) {
                       <tr><td style="color:#64748b;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Correo</td><td style="font-size:15px;"><a href="mailto:${safeEmail}" style="color:#2563eb;text-decoration:none;">${safeEmail}</a></td></tr>
                       <tr><td style="color:#64748b;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Teléfono</td><td style="font-size:15px;">${safePhone}</td></tr>
                       <tr><td style="color:#64748b;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Servicio</td><td style="font-size:15px;"><span style="display:inline-block;padding:7px 12px;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-weight:700;">${safeService}</span></td></tr>
+                      <tr><td style="color:#64748b;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Sector</td><td style="font-size:15px;">${safeSector}</td></tr>
+                      <tr><td style="color:#64748b;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Necesidad</td><td style="font-size:15px;">${safeNeed}</td></tr>
+                      <tr><td style="color:#64748b;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Origen</td><td style="font-size:13px;color:#64748b;">${safeSourcePath}</td></tr>
                     </table>
 
                     <div style="margin-top:22px;padding-top:22px;border-top:1px solid #e2e8f0;">
@@ -130,6 +134,8 @@ function buildConfirmationTextEmail(data: z.infer<typeof contactSchema>) {
     '',
     'Recibimos correctamente tu solicitud en AGO TECH.',
     `Servicio de interés: ${data.service}`,
+    `Sector: ${data.sector || 'No especificado'}`,
+    `Necesidad: ${data.need || 'No especificada'}`,
     '',
     'Nuestro equipo revisará la información y te responderá lo antes posible.',
     '',
@@ -142,6 +148,7 @@ function buildConfirmationHtmlEmail(data: z.infer<typeof contactSchema>) {
   const safeName = escapeHtml(data.name)
   const safeService = escapeHtml(data.service)
   const safeCompany = escapeHtml(data.company)
+  const safeSector = escapeHtml(data.sector || 'No especificado')
 
   return `
     <!doctype html>
@@ -173,6 +180,7 @@ function buildConfirmationHtmlEmail(data: z.infer<typeof contactSchema>) {
                         <td style="padding:18px 20px;border-radius:16px;background:#eef2ff;border:1px solid #c7d2fe;">
                           <div style="font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#4f46e5;">Servicio de interés</div>
                           <div style="margin-top:7px;font-size:16px;font-weight:800;color:#1e1b4b;">${safeService}</div>
+                          <div style="margin-top:9px;font-size:12px;color:#6366f1;">Sector: ${safeSector}</div>
                         </td>
                       </tr>
                     </table>
@@ -260,12 +268,13 @@ export async function POST(request: Request) {
 
     const safeMailFromName = mailFromName.replace(/[\r\n"]/g, '')
     const safeCompanyHeader = parsed.data.company.replace(/[\r\n]/g, ' ').trim()
+    const safeSectorHeader = (parsed.data.sector || 'Sin sector').replace(/[\r\n]/g, ' ').trim()
 
     const internalInfo = await transporter.sendMail({
       from: `"${safeMailFromName}" <${mailFrom}>`,
       to: contactTo,
       replyTo: parsed.data.email,
-      subject: `Nuevo prospecto web · ${parsed.data.service} · ${safeCompanyHeader}`,
+      subject: `Nuevo prospecto web · ${safeSectorHeader} · ${parsed.data.service} · ${safeCompanyHeader}`,
       text: buildTextEmail(parsed.data),
       html: buildHtmlEmail(parsed.data),
     })

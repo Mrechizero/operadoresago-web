@@ -1,15 +1,15 @@
-import type { Metadata } from 'next'
 import ServiceDetailPage from '@/components/service-detail-page'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Monitoreo de hardware | Operadores AGO',
-  description:
-    'Supervisión de servidores, CPU, memoria, discos, temperatura, conectividad y dispositivos para anticipar fallas de infraestructura.',
-}
-
+  description: 'Supervisión de servidores, CPU, memoria, discos, temperatura, conectividad y dispositivos para anticipar fallas de infraestructura.',
+  path: '/servicios/monitoreo-hardware',
+})
 export default function MonitoreoHardwarePage() {
   return (
     <ServiceDetailPage
+      serviceHref="/servicios/monitoreo-hardware"
       eyebrow="Monitoreo de hardware"
       title="Conoce el estado de tu infraestructura"
       highlight="en todo momento"

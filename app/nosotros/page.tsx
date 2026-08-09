@@ -1,105 +1,48 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Blocks, Eye, Handshake, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Layers3 } from 'lucide-react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import AboutModel from '@/components/about-model'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Nosotros | Operadores AGO',
-  description:
-    'Conoce el enfoque de Operadores AGO para implementar portal cautivo, WiFi administrado, redes de datos y soluciones tecnológicas en todo México.',
-}
-
-const values = [
-  {
-    icon: Handshake,
-    title: 'Cercanía',
-    description: 'Entendemos primero la operación y hablamos con claridad sobre alcance, prioridades y costos.',
-  },
-  {
-    icon: Blocks,
-    title: 'Integración',
-    description: 'Conectamos infraestructura, software y servicios para evitar soluciones aisladas difíciles de mantener.',
-  },
-  {
-    icon: Eye,
-    title: 'Visibilidad',
-    description: 'Promovemos monitoreo, documentación y seguimiento para tomar decisiones con información.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Responsabilidad',
-    description: 'Diseñamos considerando continuidad, seguridad, mantenimiento y crecimiento futuro.',
-  },
-]
-
+  description: 'Conoce el enfoque de Operadores AGO para diagnosticar, diseñar, implementar y acompañar soluciones tecnológicas para empresas en México.',
+  path: '/nosotros',
+})
 export default function NosotrosPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
-        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
-              Sobre Operadores AGO
-            </div>
-            <h1 className="mt-7 text-4xl font-bold tracking-tight sm:text-5xl md:text-7xl">
-              Tecnología conectada con la <span className="text-primary">realidad de tu negocio</span>
-            </h1>
-            <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-xl">
-              Ayudamos a empresas de todo México a construir, conectar y administrar soluciones tecnológicas sin separar la infraestructura del software ni el soporte de la operación.
-            </p>
-          </div>
-        </section>
-
-        <section className="border-y border-border bg-white py-16 sm:py-20">
-          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
-            <div className="rounded-3xl border border-border bg-card p-7 sm:p-9">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">Nuestra misión</p>
-              <h2 className="mb-5 text-3xl font-bold">Convertir tecnología en capacidad operativa</h2>
-              <p className="leading-relaxed text-muted-foreground">
-                Diseñar e implementar soluciones confiables, escalables y comprensibles que ayuden a nuestros clientes a comunicarse mejor, automatizar procesos, proteger sus activos y mantener visibles sus servicios críticos.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-primary/20 bg-primary/5 p-7 sm:p-9">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">Nuestra visión</p>
-              <h2 className="mb-5 text-3xl font-bold">Ser un aliado tecnológico de largo plazo</h2>
-              <p className="leading-relaxed text-muted-foreground">
-                Acompañar el crecimiento de cada proyecto con una arquitectura que pueda evolucionar, integrando nuevas sucursales, usuarios, plataformas, dispositivos y necesidades sin comenzar desde cero.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">Principios</p>
-            <h2 className="text-3xl font-bold sm:text-4xl">Cómo tomamos decisiones en cada proyecto</h2>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {values.map((value) => (
-              <div key={value.title} className="rounded-3xl border border-border bg-card p-6">
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10">
-                  <value.icon className="h-5 w-5 text-primary" />
-                </div>
-                <h3 className="mb-3 text-xl font-semibold">{value.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{value.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-3xl border border-primary/20 bg-primary/5 p-7 text-center sm:p-9 lg:flex-row lg:text-left">
+      <main id="contenido-principal" tabIndex={-1} className="min-h-screen bg-slate-50 pt-18">
+        <section className="relative overflow-hidden bg-white px-4 pb-12 pt-12 sm:px-6 sm:pb-14 sm:pt-16 lg:px-8">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(59,130,246,.12),transparent_28%),radial-gradient(circle_at_85%_5%,rgba(139,92,246,.10),transparent_28%)]" />
+          <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
             <div>
-              <h2 className="mb-2 text-2xl font-bold">Conoce lo que podemos integrar para tu empresa</h2>
-              <p className="text-muted-foreground">Explora el catálogo o cuéntanos directamente el problema que quieres resolver.</p>
+              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-primary">Sobre Operadores AGO</div>
+              <h1 className="mt-5 text-4xl font-black tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-6xl">Tecnología conectada con la <span className="text-primary">realidad de tu negocio.</span></h1>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">Integramos infraestructura, conectividad, software y monitoreo alrededor de una misma pregunta: ¿qué necesita la operación para funcionar mejor y crecer sin empezar desde cero?</p>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Link href="/sectores" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-slate-950 px-5 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5"><Layers3 className="h-4 w-4" /> Ver enfoque por sector</Link>
+                <Link href="/contacto" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-bold text-slate-700 transition hover:border-primary/30 hover:text-primary">Hablemos <ArrowRight className="h-4 w-4" /></Link>
+              </div>
             </div>
-            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
-              <Link href="/servicios" className="rounded-xl border border-primary/25 bg-white px-6 py-3 font-semibold text-primary">
-                Ver servicios
-              </Link>
-              <Link href="/contacto" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-primary-foreground">
-                Hablemos <ArrowRight className="h-4 w-4" />
-              </Link>
+
+            <AboutModel />
+          </div>
+        </section>
+
+        <section className="bg-white px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2">
+            <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 sm:p-7">
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary">Misión</p>
+              <h2 className="mt-3 text-2xl font-black tracking-[-0.03em] text-slate-950">Convertir tecnología en capacidad operativa.</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-600">Diseñamos soluciones confiables, comprensibles y escalables que conecten personas, equipos y procesos con menos complejidad innecesaria.</p>
+            </div>
+            <div className="rounded-[1.75rem] border border-blue-100 bg-gradient-to-br from-blue-50 via-indigo-50 to-violet-50 p-6 sm:p-7">
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary">Visión</p>
+              <h2 className="mt-3 text-2xl font-black tracking-[-0.03em] text-slate-950">Ser un aliado tecnológico que pueda evolucionar contigo.</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-600">Buscamos que cada arquitectura pueda incorporar nuevas sedes, usuarios, plataformas y necesidades sin reconstruir todo desde cero.</p>
             </div>
           </div>
         </section>

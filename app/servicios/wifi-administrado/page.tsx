@@ -1,15 +1,15 @@
-import type { Metadata } from 'next'
 import ServiceDetailPage from '@/components/service-detail-page'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'WiFi administrado para empresas en México | Operadores AGO',
-  description:
-    'Diseño, instalación, segmentación, monitoreo y soporte de redes WiFi empresariales para comercios, restaurantes, hoteles, oficinas e industria.',
-}
-
+  description: 'Diseño, instalación, segmentación, monitoreo y soporte de redes WiFi empresariales para comercios, restaurantes, hoteles, oficinas e industria.',
+  path: '/servicios/wifi-administrado',
+})
 export default function WifiAdministradoPage() {
   return (
     <ServiceDetailPage
+      serviceHref="/servicios/wifi-administrado"
       eyebrow="WiFi administrado"
       title="Cobertura estable, control centralizado y"
       highlight="soporte continuo"

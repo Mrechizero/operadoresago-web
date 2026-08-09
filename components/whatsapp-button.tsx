@@ -38,6 +38,9 @@ export default function WhatsAppButton() {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                id="whatsapp-contact-panel"
+                role="region"
+                aria-label="Contacto por WhatsApp"
                 className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 w-72 overflow-hidden"
               >
                 {/* Header */}
@@ -50,7 +53,9 @@ export default function WhatsAppButton() {
                     <p className="text-white/80 text-xs">Atención directa por WhatsApp</p>
                   </div>
                   <button 
+                    type="button"
                     onClick={() => setIsOpen(false)}
+                    aria-label="Cerrar contacto por WhatsApp"
                     className="text-white/70 hover:text-white"
                   >
                     <X className="w-4 h-4" />
@@ -98,16 +103,18 @@ export default function WhatsAppButton() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="group relative flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-background"
-            aria-label="Contactar por WhatsApp"
+            aria-label={isOpen ? 'Cerrar contacto por WhatsApp' : 'Contactar por WhatsApp'}
+            aria-expanded={isOpen}
+            aria-controls="whatsapp-contact-panel"
           >
             {/* Efecto pulso */}
-            <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-40" />
+            <span aria-hidden="true" className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-40" />
             
             {/* Icono */}
             <MessageCircle className="w-7 h-7 text-white" />
             
             {/* Badge de notificación */}
-            <span className="absolute -top-1 -right-1 flex h-5 w-5">
+            <span aria-hidden="true" className="absolute -top-1 -right-1 flex h-5 w-5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-5 w-5 bg-red-500 text-white text-[10px] font-bold items-center justify-center">
                 1

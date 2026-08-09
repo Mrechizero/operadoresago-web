@@ -94,9 +94,56 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: clip;
   }
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+  :where(a, button, input, textarea, select, summary):focus-visible {
+    outline: 3px solid color-mix(in oklab, var(--ring) 82%, white);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 24%, white);
+  }
+  main[tabindex="-1"]:focus {
+    outline: none;
+  }
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 100;
+  transform: translateY(-180%);
+  border-radius: 0.75rem;
+  background: #0f172a;
+  color: white;
+  padding: 0.7rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.22);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

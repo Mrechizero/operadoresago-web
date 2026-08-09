@@ -71,9 +71,9 @@ const clients: ClientItem[] = [
   },
 ]
 
-function ClientPreview({ client }: { client: ClientItem }) {
+function ClientPreview({ client, compact = false }: { client: ClientItem; compact?: boolean }) {
   return (
-    <div className="relative h-36 overflow-hidden rounded-2xl border border-white/10 bg-[#080719]">
+    <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-[#080719] ${compact ? 'h-24' : 'h-36'}`}>
       <div className={`absolute -right-10 -top-12 h-32 w-32 rounded-full ${client.glow} blur-3xl`} />
       <div className="flex h-7 items-center justify-between border-b border-white/[0.07] px-3">
         <div className="flex gap-1">
@@ -107,7 +107,7 @@ function ClientPreview({ client }: { client: ClientItem }) {
   )
 }
 
-function ClientCard({ client, duplicate = false }: { client: ClientItem; duplicate?: boolean }) {
+function ClientCard({ client, duplicate = false, compact = false }: { client: ClientItem; duplicate?: boolean; compact?: boolean }) {
   return (
     <a
       href={client.href}
@@ -115,9 +115,9 @@ function ClientCard({ client, duplicate = false }: { client: ClientItem; duplica
       rel="noopener noreferrer"
       tabIndex={duplicate ? -1 : undefined}
       aria-hidden={duplicate || undefined}
-      className="group/card block w-[280px] shrink-0 rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-3 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-violet-300/30 hover:bg-white/[0.08] sm:w-[320px]"
+      className={`group/card block shrink-0 rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-3 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-violet-300/30 hover:bg-white/[0.08] ${compact ? 'w-[250px] sm:w-[280px]' : 'w-[280px] sm:w-[320px]'}`}
     >
-      <ClientPreview client={client} />
+      <ClientPreview client={client} compact={compact} />
       <div className="flex items-end justify-between gap-4 px-2 pb-2 pt-4">
         <div className="min-w-0">
           <p className="truncate text-base font-bold text-white">{client.name}</p>
@@ -133,15 +133,15 @@ function ClientCard({ client, duplicate = false }: { client: ClientItem; duplica
   )
 }
 
-export default function ClientsSection() {
+export default function ClientsSection({ compact = false }: { compact?: boolean }) {
   const shouldReduceMotion = useReducedMotion()
 
   return (
-    <section id="clientes" className="relative overflow-hidden bg-[#070615] py-20 text-white sm:py-24 lg:py-28">
+    <section id="clientes" className={`relative overflow-hidden bg-[#070615] text-white ${compact ? 'py-12 sm:py-14 lg:py-16' : 'py-20 sm:py-24 lg:py-28'}`}>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(59,130,246,.17),transparent_30%),radial-gradient(circle_at_85%_18%,rgba(168,85,247,.18),transparent_32%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.025)_1px,transparent_1px)] bg-[size:42px_42px] [mask-image:linear-gradient(to_bottom,black,transparent_82%)]" />
 
-      <div className="relative mx-auto mb-11 max-w-7xl px-4 sm:px-6 lg:mb-14 lg:px-8">
+      <div className={`relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${compact ? 'mb-7 lg:mb-8' : 'mb-11 lg:mb-14'}`}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -153,7 +153,7 @@ export default function ClientsSection() {
               <Sparkles className="h-3.5 w-3.5" />
               Trabajo que ya está en línea
             </div>
-            <h2 className="max-w-4xl text-3xl font-black tracking-[-0.035em] sm:text-4xl lg:text-5xl xl:text-6xl">
+            <h2 className={`max-w-4xl font-black tracking-[-0.035em] ${compact ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-3xl sm:text-4xl lg:text-5xl xl:text-6xl'}`}>
               Empresas y proyectos que <span className="bg-gradient-to-r from-blue-300 via-violet-300 to-fuchsia-300 bg-clip-text text-transparent">confían en nuestro trabajo.</span>
             </h2>
           </div>
@@ -181,7 +181,7 @@ export default function ClientsSection() {
           <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 sm:px-6 lg:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {clients.map((client) => (
               <div key={client.name} className="snap-center">
-                <ClientCard client={client} />
+                <ClientCard client={client} compact={compact} />
               </div>
             ))}
           </div>
@@ -189,10 +189,10 @@ export default function ClientsSection() {
           <div className="group/marquee overflow-hidden">
             <div className="flex w-max gap-4 px-2 [animation:ago-client-marquee_44s_linear_infinite] group-hover/marquee:[animation-play-state:paused]">
               {clients.map((client) => (
-                <ClientCard key={`primary-${client.name}`} client={client} />
+                <ClientCard key={`primary-${client.name}`} client={client} compact={compact} />
               ))}
               {clients.map((client) => (
-                <ClientCard key={`duplicate-${client.name}`} client={client} duplicate />
+                <ClientCard key={`duplicate-${client.name}`} client={client} duplicate compact={compact} />
               ))}
             </div>
           </div>

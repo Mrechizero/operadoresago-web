@@ -33,7 +33,7 @@ SMTP_USER=contacto@operadoresago.com
 SMTP_PASSWORD=change-me
 MAIL_FROM_NAME=AGO TECH
 MAIL_FROM=contacto@operadoresago.com
-CONTACT_TO=admin@operadoresago.com
+CONTACT_TO=contacto@operadoresago.com
 ```
 
 ## Validaciones recomendadas
@@ -62,3 +62,42 @@ docker compose ps
 docker compose logs --tail=100
 curl -I http://127.0.0.1:3005
 ```
+
+## Fase 5 — Arquitectura por sectores
+
+- Home reducido a una ruta comercial corta: hero, métricas, selector dinámico por sector, clientes y CTA.
+- Nueva navegación de Sectores en desktop y móvil.
+- Nueva ruta `/sectores` con siete verticales comerciales.
+- Nuevas páginas dinámicas `/sectores/[slug]` con diagnóstico guiado por necesidad y servicios recomendados.
+- Sectores iniciales: restaurantes, hoteles, comercio, oficinas, industria, educación y empresas multisucursal.
+- Datos centralizados en `lib/sectors-data.ts` para agregar o ajustar sectores sin duplicar páginas.
+- Sitemap actualizado con las nuevas rutas.
+- Footer reorganizado para dar acceso directo a sectores, servicios y plataformas.
+- Se conserva el formulario SMTP y el botón flotante de WhatsApp sin modificar su lógica.
+
+
+## Fase 6 — Experiencia dinámica en toda la web
+
+- `/servicios` deja de ser un catálogo vertical largo y pasa a un explorador guiado por sector y necesidad.
+- Todas las páginas principales de servicio usan una misma experiencia compacta con pestañas dinámicas para resultados, alcance y sectores relacionados.
+- `Internet empresarial` y `VPN empresarial` se integran al mismo patrón visual y comercial; sus precios/planes se conservan dentro de una pestaña dinámica para reducir scroll sin perder información.
+- El formulario de contacto conserva el contexto de sector, necesidad y servicio mediante parámetros de URL y lo incluye en el correo interno.
+- El formulario amplía las opciones de servicio para distinguir Internet, VPN, monitoreo web y monitoreo de hardware.
+- `/sectores` reutiliza el selector dinámico en lugar de una cuadrícula larga de tarjetas.
+- `/nosotros` se compacta y utiliza un modelo interactivo de diagnóstico, diseño, implementación y seguimiento.
+- Navbar incorpora acceso dinámico a Sectores y Servicios; footer se compacta para reducir scroll repetitivo.
+- Se agrega una página 404 orientada a continuar por sector, servicio o diagnóstico.
+- La lógica comercial queda centralizada en `lib/sectors-data.ts` y `lib/service-relations.ts`.
+
+## Fase 7 — Production readiness, accesibilidad y SEO técnico
+
+- Metadatos canónicos por ruta para evitar que páginas internas hereden la canonical del home.
+- Open Graph y Twitter metadata consistentes mediante `lib/seo.ts`.
+- Preferencias de movimiento respetadas globalmente con `MotionConfig` y `prefers-reduced-motion`.
+- Enlace “Saltar al contenido principal” y objetivos de foco accesibles en todas las vistas principales.
+- Navegación mejorada para teclado: cierre con Escape, cierre al perder foco y bloqueo de scroll al abrir el menú móvil.
+- Formularios con labels asociados, `autocomplete`, `aria-invalid`, mensajes de error vinculados y estados anunciables.
+- Componentes dinámicos anuncian cambios relevantes sin recargar la página.
+- WhatsApp mantiene su lógica original y añade atributos accesibles al panel y controles.
+- Limpieza de componentes antiguos que dejaron de utilizarse después de la reorganización por sectores.
+- `SITE_URL` se centraliza para metadata, robots y sitemap.
