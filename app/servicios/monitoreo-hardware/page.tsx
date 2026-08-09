@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function MonitoreoHardwarePage() {
   return (
     <ServiceDetailPage
+      serviceHref="/servicios/monitoreo-hardware"
       eyebrow="Monitoreo de hardware"
       title="Conoce el estado de tu infraestructura"
       highlight="en todo momento"

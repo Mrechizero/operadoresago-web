@@ -57,7 +57,7 @@ const organizationSchema = {
   '@type': ['Organization', 'ProfessionalService'],
   name: 'Operadores AGO',
   url: SITE_URL,
-  email: 'admin@operadoresago.com',
+  email: 'contacto@operadoresago.com',
   areaServed: {
     '@type': 'Country',
     name: 'México',

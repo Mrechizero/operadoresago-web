@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function MonitoreoWebPage() {
   return (
     <ServiceDetailPage
+      serviceHref="/servicios/monitoreo-web"
       eyebrow="Monitoreo web"
       title="Detecta problemas antes de que los vea"
       highlight="tu cliente"

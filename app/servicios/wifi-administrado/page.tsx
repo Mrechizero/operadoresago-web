@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function WifiAdministradoPage() {
   return (
     <ServiceDetailPage
+      serviceHref="/servicios/wifi-administrado"
       eyebrow="WiFi administrado"
       title="Cobertura estable, control centralizado y"
       highlight="soporte continuo"

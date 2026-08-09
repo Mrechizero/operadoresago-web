@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function RedesDatosPage() {
   return (
     <ServiceDetailPage
+      serviceHref="/servicios/redes-datos"
       eyebrow="Redes de datos"
       title="Infraestructura diseñada para operar con"
       highlight="orden, velocidad y seguridad"

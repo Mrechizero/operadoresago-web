@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function PortalCautivoPage() {
   return (
     <ServiceDetailPage
+      serviceHref="/servicios/portal-cautivo"
       eyebrow="Portal cautivo"
       title="Convierte tu WiFi en una experiencia que"
       highlight="atrae y conoce clientes"

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle2, MapPinned, ShieldCheck, Sparkles } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Layers3, MapPinned, Sparkles } from 'lucide-react'
 import HeroServiceCarousel from './hero-service-carousel'
 
 const proofPoints = [
@@ -17,7 +17,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_5%_15%,rgba(59,130,246,.16),transparent_26%),radial-gradient(circle_at_95%_10%,rgba(99,102,241,.18),transparent_28%)]" />
       <div className="absolute inset-0 opacity-45 [background-image:radial-gradient(rgba(37,99,235,.28)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
 
-      <div className="relative mx-auto grid max-w-[1480px] items-center gap-9 px-4 pb-16 pt-24 sm:gap-11 sm:px-6 sm:pb-20 sm:pt-28 lg:px-8 lg:pb-24 lg:pt-32 xl:grid-cols-[0.8fr_1.2fr] xl:gap-16 xl:pt-36 2xl:gap-20">
+      <div className="relative mx-auto grid max-w-[1480px] items-center gap-9 px-4 pb-12 pt-22 sm:gap-10 sm:px-6 sm:pb-14 sm:pt-24 lg:px-8 lg:pb-16 lg:pt-26 xl:grid-cols-[0.8fr_1.2fr] xl:gap-14 xl:pt-28 2xl:gap-18">
         <div className="mx-auto max-w-3xl text-center xl:mx-0 xl:max-w-2xl xl:text-left">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -64,11 +64,11 @@ export default function HeroSection() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
-              href="/servicios"
+              href="/sectores"
               className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-800 shadow-sm backdrop-blur-xl transition hover:border-primary/35 hover:bg-white sm:w-auto"
             >
-              Ver soluciones
-              <ShieldCheck className="h-4 w-4 text-primary" />
+              Elegir mi sector
+              <Layers3 className="h-4 w-4 text-primary" />
             </Link>
           </motion.div>
 

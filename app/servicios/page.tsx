@@ -1,98 +1,47 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ArrowRight,
-  CloudCog,
-  Code2,
-  ExternalLink,
-  Network,
-  Radar,
-  ShieldCheck,
-  Wifi,
-} from 'lucide-react'
+import { ArrowRight, Layers3, Network } from 'lucide-react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import ProcessSection from '@/components/process-section'
-import { serviceCategories } from '@/lib/site-data'
+import ServiceExplorer from '@/components/service-explorer'
 
 export const metadata: Metadata = {
   title: 'Servicios tecnológicos | Operadores AGO',
   description:
-    'Portal cautivo, WiFi administrado, redes de datos, conectividad, desarrollo de software, monitoreo y seguridad para empresas en México.',
+    'Explora portal cautivo, WiFi administrado, redes de datos, conectividad, VPN, desarrollo y monitoreo según el sector y problema que necesitas resolver.',
 }
-
-const categoryIcons = [Wifi, Network, CloudCog, Code2, Radar, ShieldCheck]
 
 export default function ServiciosPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-20">
-        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-6 inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
-              Catálogo de servicios
+      <main className="min-h-screen bg-slate-50 pt-18">
+        <section className="relative overflow-hidden bg-white px-4 pb-10 pt-12 text-center sm:px-6 sm:pb-12 sm:pt-16 lg:px-8">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(59,130,246,.12),transparent_28%),radial-gradient(circle_at_85%_5%,rgba(139,92,246,.10),transparent_28%)]" />
+          <div className="relative mx-auto max-w-4xl">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-primary">
+              <Network className="h-4 w-4" /> Catálogo guiado
             </div>
-            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Soluciones tecnológicas, <span className="text-primary">priorizadas por impacto</span>
-            </h1>
-            <p className="mx-auto max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Comenzamos por conectividad, WiFi y redes de datos; después integramos software, monitoreo, comunicaciones y seguridad según la operación.
-            </p>
+            <h1 className="text-4xl font-black tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-6xl">No recorras todo el catálogo. <span className="text-primary">Empieza por tu problema.</span></h1>
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">Elige tu sector y la necesidad más cercana a tu operación. Te mostramos primero las soluciones que tienen sentido en ese contexto.</p>
+            <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+              <Link href="/sectores" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-slate-950 px-5 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5"><Layers3 className="h-4 w-4" /> Ver sectores</Link>
+              <Link href="/contacto" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-bold text-slate-700 transition hover:border-primary/30 hover:text-primary">Solicitar diagnóstico <ArrowRight className="h-4 w-4" /></Link>
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl space-y-16 px-4 pb-20 sm:px-6 lg:px-8">
-          {serviceCategories.map((category, categoryIndex) => {
-            const Icon = categoryIcons[categoryIndex]
+        <ServiceExplorer />
 
-            return (
-              <section key={category.id} id={category.id} className="scroll-mt-28">
-                <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold sm:text-3xl">{category.title}</h2>
-                    <p className="mt-1 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">{category.description}</p>
-                  </div>
-                </div>
-
-                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                  {category.services.map((service) => {
-                    const cardClass =
-                      'group flex h-full flex-col rounded-3xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl'
-                    const content = (
-                      <>
-                        {service.featured && (
-                          <span className="mb-4 w-fit rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">Destacado</span>
-                        )}
-                        <h3 className="mb-3 text-xl font-semibold transition-colors group-hover:text-primary">{service.title}</h3>
-                        <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
-                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                          {service.external ? 'Abrir plataforma' : 'Conocer solución'}
-                          {service.external ? <ExternalLink className="h-4 w-4" /> : <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />}
-                        </span>
-                      </>
-                    )
-
-                    return service.external ? (
-                      <a key={service.title} href={service.href} target="_blank" rel="noopener noreferrer" className={cardClass}>
-                        {content}
-                      </a>
-                    ) : (
-                      <Link key={service.title} href={service.href} className={cardClass}>
-                        {content}
-                      </Link>
-                    )
-                  })}
-                </div>
-              </section>
-            )
-          })}
+        <section className="bg-white px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8">
+          <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-5 rounded-[2rem] border border-blue-100 bg-gradient-to-br from-blue-50 via-indigo-50 to-violet-50 p-7 text-center sm:p-9 lg:flex-row lg:text-left">
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary">¿No encuentras exactamente lo que buscas?</p>
+              <h2 className="mt-2 text-2xl font-black tracking-[-0.03em] text-slate-950 sm:text-3xl">Podemos combinar infraestructura, software y monitoreo en una sola ruta.</h2>
+            </div>
+            <Link href="/contacto?service=Otro%20servicio" className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5">Cuéntanos tu caso <ArrowRight className="h-4 w-4" /></Link>
+          </div>
         </section>
-
-        <ProcessSection />
       </main>
       <Footer />
     </>

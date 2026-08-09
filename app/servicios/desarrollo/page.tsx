@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function DesarrolloPage() {
   return (
     <ServiceDetailPage
+      serviceHref="/servicios/desarrollo"
       eyebrow="Desarrollo y automatización"
       title="Software diseñado alrededor de"
       highlight="tu operación"

@@ -1,10 +1,13 @@
 import type { MetadataRoute } from 'next'
+import { sectors } from '@/lib/sectors-data'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://web.operadoresago.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
+    '/sectores',
+    ...sectors.map((sector) => `/sectores/${sector.slug}`),
     '/servicios',
     '/servicios/portal-cautivo',
     '/servicios/wifi-administrado',
@@ -22,6 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: route === '' ? 'weekly' : 'monthly',
-    priority: route === '' ? 1 : route === '/servicios' ? 0.9 : 0.7,
+    priority: route === '' ? 1 : route === '/sectores' || route === '/servicios' ? 0.9 : route.startsWith('/sectores/') ? 0.8 : 0.7,
   }))
 }
