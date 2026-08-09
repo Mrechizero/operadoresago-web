@@ -75,6 +75,7 @@ export default function ServiceExplorer() {
                     key={need.id}
                     type="button"
                     onClick={() => setActiveNeedId(need.id)}
+                    aria-pressed={selected}
                     className={`flex w-full items-center gap-3 rounded-xl border p-3.5 text-left transition ${
                       selected
                         ? 'border-blue-300/30 bg-blue-400/10 text-white'
@@ -100,6 +101,7 @@ export default function ServiceExplorer() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.22 }}
+                aria-live="polite"
                 className="relative"
               >
                 <div className="flex items-center gap-3">

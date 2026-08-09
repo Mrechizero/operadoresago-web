@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
 import ServiceDetailPage from '@/components/service-detail-page'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Desarrollo web y multiplataforma | Operadores AGO',
-  description:
-    'Desarrollo de páginas, sistemas, e-commerce y aplicaciones para web, Android e iOS, con integraciones y automatización a la medida.',
-}
-
+  description: 'Desarrollo de páginas, sistemas, e-commerce y aplicaciones para web, Android e iOS, con integraciones y automatización a la medida.',
+  path: '/servicios/desarrollo',
+})
 export default function DesarrolloPage() {
   return (
     <ServiceDetailPage

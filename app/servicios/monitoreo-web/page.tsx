@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
 import ServiceDetailPage from '@/components/service-detail-page'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Monitoreo web | Operadores AGO',
-  description:
-    'Monitoreo de disponibilidad, certificados SSL, dominios, tiempos de respuesta y servicios web con alertas proactivas.',
-}
-
+  description: 'Monitoreo de disponibilidad, certificados SSL, dominios, tiempos de respuesta y servicios web con alertas proactivas.',
+  path: '/servicios/monitoreo-web',
+})
 export default function MonitoreoWebPage() {
   return (
     <ServiceDetailPage

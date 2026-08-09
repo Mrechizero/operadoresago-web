@@ -54,7 +54,7 @@ export default function ServiceDetailPage({
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-slate-50 pt-18">
+      <main id="contenido-principal" tabIndex={-1} className="min-h-screen bg-slate-50 pt-18">
         <section className="relative overflow-hidden bg-white px-4 pb-12 pt-12 sm:px-6 sm:pb-14 sm:pt-16 lg:px-8">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_5%,rgba(59,130,246,.11),transparent_26%),radial-gradient(circle_at_90%_10%,rgba(139,92,246,.10),transparent_28%)]" />
           <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
@@ -129,6 +129,7 @@ export default function ServiceDetailPage({
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
+                  aria-pressed={activeTab === tab.id}
                   className={`shrink-0 rounded-full border px-4 py-2.5 text-sm font-bold transition ${activeTab === tab.id ? 'border-slate-950 bg-slate-950 text-white shadow-lg' : 'border-slate-200 bg-white text-slate-600 hover:border-primary/30 hover:text-primary'}`}
                 >
                   {tab.label}
@@ -136,7 +137,7 @@ export default function ServiceDetailPage({
               ))}
             </div>
 
-            <div className="min-h-[330px] overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <div aria-live="polite" className="min-h-[330px] overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <AnimatePresence mode="wait">
                 {activeTab === 'benefits' && (
                   <motion.div key="benefits" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.18 }}>

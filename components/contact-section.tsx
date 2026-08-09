@@ -176,7 +176,7 @@ export default function ContactSection() {
 
         <div>
           {submitted ? (
-            <div className="rounded-[1.75rem] border border-primary/25 bg-white p-8 text-center shadow-sm sm:p-12">
+            <div role="status" aria-live="polite" className="rounded-[1.75rem] border border-primary/25 bg-white p-8 text-center shadow-sm sm:p-12">
               <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-primary" />
               <h3 className="text-2xl font-black tracking-[-0.03em] text-slate-950">¡Solicitud recibida!</h3>
               <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-slate-600">Revisaremos la información y nos comunicaremos contigo a la brevedad.</p>
@@ -190,34 +190,34 @@ export default function ContactSection() {
                 <input id="website" type="text" name="website" value={form.website} onChange={handleChange} tabIndex={-1} autoComplete="off" />
               </div>
 
-              {error && <div className="flex items-center gap-2 rounded-xl border border-destructive/30 bg-destructive/10 p-3"><AlertCircle className="h-4 w-4 text-destructive" /><p className="text-sm text-destructive">{error}</p></div>}
+              {error && <div role="alert" className="flex items-center gap-2 rounded-xl border border-destructive/30 bg-destructive/10 p-3"><AlertCircle className="h-4 w-4 text-destructive" /><p className="text-sm text-destructive">{error}</p></div>}
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Nombre completo *" error={touched.nombre ? validationErrors.nombre : ''} valid={touched.nombre && !validationErrors.nombre && Boolean(form.nombre)}>
-                  <input type="text" name="nombre" value={form.nombre} onChange={handleChange} onBlur={handleBlur} placeholder="Juan Pérez" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
+                <Field htmlFor="nombre" label="Nombre completo *" error={touched.nombre ? validationErrors.nombre : ''} valid={touched.nombre && !validationErrors.nombre && Boolean(form.nombre)}>
+                  <input id="nombre" type="text" name="nombre" autoComplete="name" value={form.nombre} onChange={handleChange} onBlur={handleBlur} aria-invalid={Boolean(touched.nombre && validationErrors.nombre)} aria-describedby={touched.nombre && validationErrors.nombre ? 'nombre-error' : undefined} placeholder="Juan Pérez" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
                 </Field>
-                <Field label="Empresa *" error={touched.empresa ? validationErrors.empresa : ''} valid={touched.empresa && !validationErrors.empresa && Boolean(form.empresa)}>
-                  <input type="text" name="empresa" value={form.empresa} onChange={handleChange} onBlur={handleBlur} placeholder="Mi Empresa S.A." className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
+                <Field htmlFor="empresa" label="Empresa *" error={touched.empresa ? validationErrors.empresa : ''} valid={touched.empresa && !validationErrors.empresa && Boolean(form.empresa)}>
+                  <input id="empresa" type="text" name="empresa" autoComplete="organization" value={form.empresa} onChange={handleChange} onBlur={handleBlur} aria-invalid={Boolean(touched.empresa && validationErrors.empresa)} aria-describedby={touched.empresa && validationErrors.empresa ? 'empresa-error' : undefined} placeholder="Mi Empresa S.A." className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
                 </Field>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Teléfono">
-                  <input type="tel" name="telefono" value={form.telefono} onChange={handleChange} placeholder="+52 (000) 000-0000" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
+                <Field htmlFor="telefono" label="Teléfono">
+                  <input id="telefono" type="tel" name="telefono" autoComplete="tel" inputMode="tel" value={form.telefono} onChange={handleChange} placeholder="+52 (000) 000-0000" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
                 </Field>
-                <Field label="Correo electrónico *" error={touched.correo ? validationErrors.correo : ''} valid={touched.correo && !validationErrors.correo && Boolean(form.correo)}>
-                  <input type="email" name="correo" value={form.correo} onChange={handleChange} onBlur={handleBlur} placeholder="juan@empresa.com" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
+                <Field htmlFor="correo" label="Correo electrónico *" error={touched.correo ? validationErrors.correo : ''} valid={touched.correo && !validationErrors.correo && Boolean(form.correo)}>
+                  <input id="correo" type="email" name="correo" autoComplete="email" inputMode="email" value={form.correo} onChange={handleChange} onBlur={handleBlur} aria-invalid={Boolean(touched.correo && validationErrors.correo)} aria-describedby={touched.correo && validationErrors.correo ? 'correo-error' : undefined} placeholder="juan@empresa.com" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
                 </Field>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Servicio de interés">
-                  <select name="servicio" value={form.servicio} onChange={handleChange} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15">
+                <Field htmlFor="servicio" label="Servicio de interés">
+                  <select id="servicio" name="servicio" value={form.servicio} onChange={handleChange} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15">
                     {contactServiceValues.map((service) => <option key={service}>{service}</option>)}
                   </select>
                 </Field>
-                <Field label="Sector">
-                  <select name="sector" value={form.sector} onChange={handleChange} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15">
+                <Field htmlFor="sector" label="Sector">
+                  <select id="sector" name="sector" value={form.sector} onChange={handleChange} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15">
                     <option>No especificado</option>
                     {sectors.map((sector) => <option key={sector.slug} value={sector.name}>{sector.name}</option>)}
                     <option>Otro sector</option>
@@ -229,12 +229,12 @@ export default function ContactSection() {
                 <div className="rounded-xl border border-blue-100 bg-blue-50 px-4 py-3 text-xs font-bold text-blue-800">Necesidad seleccionada: {form.necesidad}</div>
               )}
 
-              <Field label="Cuéntanos sobre tu proyecto *" error={touched.mensaje ? validationErrors.mensaje : ''} valid={touched.mensaje && !validationErrors.mensaje && Boolean(form.mensaje)}>
-                <textarea name="mensaje" rows={4} value={form.mensaje} onChange={handleChange} onBlur={handleBlur} placeholder="Describe qué está pasando, cuántas ubicaciones tienes, qué quieres mejorar o qué resultado esperas." className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
+              <Field htmlFor="mensaje" label="Cuéntanos sobre tu proyecto *" error={touched.mensaje ? validationErrors.mensaje : ''} valid={touched.mensaje && !validationErrors.mensaje && Boolean(form.mensaje)}>
+                <textarea id="mensaje" name="mensaje" rows={4} maxLength={500} value={form.mensaje} onChange={handleChange} onBlur={handleBlur} aria-invalid={Boolean(touched.mensaje && validationErrors.mensaje)} aria-describedby={touched.mensaje && validationErrors.mensaje ? 'mensaje-error' : undefined} placeholder="Describe qué está pasando, cuántas ubicaciones tienes, qué quieres mejorar o qué resultado esperas." className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
               </Field>
 
               <button type="submit" disabled={loading || !isFormValid()} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 font-bold text-white transition hover:bg-primary/85 disabled:cursor-not-allowed disabled:opacity-50">
-                {loading ? <><span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" /> Enviando...</> : <>Enviar solicitud <Send className="h-4 w-4" /></>}
+                {loading ? <><span aria-hidden="true" className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" /> Enviando...</> : <>Enviar solicitud <Send className="h-4 w-4" /></>}
               </button>
             </form>
           )}
@@ -244,13 +244,13 @@ export default function ContactSection() {
   )
 }
 
-function Field({ label, error, valid, children }: { label: string; error?: string; valid?: boolean; children: React.ReactNode }) {
+function Field({ htmlFor, label, error, valid, children }: { htmlFor: string; label: string; error?: string; valid?: boolean; children: React.ReactNode }) {
   return (
     <div>
-      <label className="mb-1.5 block text-[10px] font-black uppercase tracking-[0.12em] text-slate-500">{label}</label>
+      <label htmlFor={htmlFor} className="mb-1.5 block text-[10px] font-black uppercase tracking-[0.12em] text-slate-500">{label}</label>
       {children}
-      {error && <p className="mt-1 flex items-center gap-1 text-xs text-destructive"><AlertCircle className="h-3 w-3" />{error}</p>}
-      {!error && valid && <p className="mt-1 flex items-center gap-1 text-xs text-emerald-600"><CheckCircle className="h-3 w-3" />Válido</p>}
+      {error && <p id={`${htmlFor}-error`} className="mt-1 flex items-center gap-1 text-xs text-destructive"><AlertCircle aria-hidden="true" className="h-3 w-3" />{error}</p>}
+      {!error && valid && <p className="mt-1 flex items-center gap-1 text-xs text-emerald-600"><CheckCircle aria-hidden="true" className="h-3 w-3" />Válido</p>}
     </div>
   )
 }

@@ -7,8 +7,7 @@ import Footer from '@/components/footer'
 import SectorIcon from '@/components/sector-icon'
 import SectorExperience, { SectorServiceGrid } from '@/components/sector-experience'
 import { getSector, sectors } from '@/lib/sectors-data'
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://web.operadoresago.com'
+import { createPageMetadata } from '@/lib/seo'
 
 export function generateStaticParams() {
   return sectors.map((sector) => ({ slug: sector.slug }))
@@ -23,17 +22,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const title = `Tecnología para ${sector.name} | Operadores AGO`
   const description = `${sector.description} Soluciones de conectividad, infraestructura y software para ${sector.name.toLowerCase()} en México.`
 
-  return {
+  return createPageMetadata({
     title,
     description,
-    alternates: { canonical: `${SITE_URL}/sectores/${sector.slug}` },
-    openGraph: {
-      title,
-      description,
-      url: `${SITE_URL}/sectores/${sector.slug}`,
-      images: [{ url: '/social-image.avif', width: 1200, height: 630, alt: `Operadores AGO para ${sector.name}` }],
-    },
-  }
+    path: `/sectores/${sector.slug}`,
+    imageAlt: `Operadores AGO para ${sector.name}`,
+    keywords: [
+      `tecnología para ${sector.shortName.toLowerCase()}`,
+      `WiFi para ${sector.shortName.toLowerCase()}`,
+      `redes para ${sector.shortName.toLowerCase()}`,
+      'Operadores AGO',
+    ],
+  })
 }
 
 export default async function SectorPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -44,7 +44,7 @@ export default async function SectorPage({ params }: { params: Promise<{ slug: s
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background pt-18">
+      <main id="contenido-principal" tabIndex={-1} className="min-h-screen bg-background pt-18">
         <section className={`relative overflow-hidden bg-gradient-to-br ${sector.accentSoft} px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-20`}>
           <div className="absolute inset-0 opacity-45 [background-image:radial-gradient(rgba(37,99,235,.22)_1px,transparent_1px)] [background-size:26px_26px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" />
           <div className="relative mx-auto max-w-7xl">

@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { sectors } from '@/lib/sectors-data'
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://web.operadoresago.com'
+import { SITE_URL } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [

@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
 import ServiceDetailPage from '@/components/service-detail-page'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Diseño e implementación de redes de datos | Operadores AGO',
-  description:
-    'Diseño, cableado estructurado, racks, switching, WiFi, segmentación y documentación de redes empresariales en México.',
-}
-
+  description: 'Diseño, cableado estructurado, racks, switching, WiFi, segmentación y documentación de redes empresariales en México.',
+  path: '/servicios/redes-datos',
+})
 export default function RedesDatosPage() {
   return (
     <ServiceDetailPage

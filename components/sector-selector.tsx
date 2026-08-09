@@ -68,6 +68,7 @@ export default function SectorSelector({ showIntro = true, showAllLink = true }:
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.28, ease: 'easeOut' }}
+              aria-live="polite"
               className="grid lg:grid-cols-[1.05fr_.95fr]"
             >
               <div className="relative overflow-hidden p-6 sm:p-8 lg:p-10">

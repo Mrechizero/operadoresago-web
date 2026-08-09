@@ -6,12 +6,20 @@ import ImpactStrip from '@/components/impact-strip'
 import SectorSelector from '@/components/sector-selector'
 import ClientsSection from '@/components/clients-section'
 import Footer from '@/components/footer'
+import { createPageMetadata } from '@/lib/seo'
+
+export const metadata = createPageMetadata({
+  title: 'Operadores AGO | Infraestructura, WiFi, redes y software para empresas',
+  description: 'Soluciones de conectividad, portal cautivo, WiFi administrado, redes de datos, software y monitoreo organizadas por sector para empresas en México.',
+  path: '/',
+})
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <>
       <Navbar />
-      <HeroSection />
+      <main id="contenido-principal" tabIndex={-1} className="min-h-screen bg-background">
+        <HeroSection />
       <ImpactStrip />
       <SectorSelector />
       <ClientsSection compact />
@@ -32,7 +40,8 @@ export default function Home() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }

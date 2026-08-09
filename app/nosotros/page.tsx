@@ -1,21 +1,20 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Layers3 } from 'lucide-react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import AboutModel from '@/components/about-model'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Nosotros | Operadores AGO',
-  description:
-    'Conoce el enfoque de Operadores AGO para diagnosticar, diseñar, implementar y acompañar soluciones tecnológicas para empresas en México.',
-}
-
+  description: 'Conoce el enfoque de Operadores AGO para diagnosticar, diseñar, implementar y acompañar soluciones tecnológicas para empresas en México.',
+  path: '/nosotros',
+})
 export default function NosotrosPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-slate-50 pt-18">
+      <main id="contenido-principal" tabIndex={-1} className="min-h-screen bg-slate-50 pt-18">
         <section className="relative overflow-hidden bg-white px-4 pb-12 pt-12 sm:px-6 sm:pb-14 sm:pt-16 lg:px-8">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(59,130,246,.12),transparent_28%),radial-gradient(circle_at_85%_5%,rgba(139,92,246,.10),transparent_28%)]" />
           <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-center">

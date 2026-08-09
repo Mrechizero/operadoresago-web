@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
 import ServiceDetailPage from '@/components/service-detail-page'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Internet empresarial | Operadores AGO',
-  description:
-    'Soluciones de Internet empresarial, enlaces dedicados, simétricos, radio enlaces e interconexión para empresas y sucursales.',
-}
-
+  description: 'Soluciones de Internet empresarial, enlaces dedicados, simétricos, radio enlaces e interconexión para empresas y sucursales.',
+  path: '/servicios/internet',
+})
 export default function InternetPage() {
   return (
     <ServiceDetailPage

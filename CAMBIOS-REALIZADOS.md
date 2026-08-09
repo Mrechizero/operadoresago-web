@@ -88,3 +88,16 @@ curl -I http://127.0.0.1:3005
 - Navbar incorpora acceso dinámico a Sectores y Servicios; footer se compacta para reducir scroll repetitivo.
 - Se agrega una página 404 orientada a continuar por sector, servicio o diagnóstico.
 - La lógica comercial queda centralizada en `lib/sectors-data.ts` y `lib/service-relations.ts`.
+
+## Fase 7 — Production readiness, accesibilidad y SEO técnico
+
+- Metadatos canónicos por ruta para evitar que páginas internas hereden la canonical del home.
+- Open Graph y Twitter metadata consistentes mediante `lib/seo.ts`.
+- Preferencias de movimiento respetadas globalmente con `MotionConfig` y `prefers-reduced-motion`.
+- Enlace “Saltar al contenido principal” y objetivos de foco accesibles en todas las vistas principales.
+- Navegación mejorada para teclado: cierre con Escape, cierre al perder foco y bloqueo de scroll al abrir el menú móvil.
+- Formularios con labels asociados, `autocomplete`, `aria-invalid`, mensajes de error vinculados y estados anunciables.
+- Componentes dinámicos anuncian cambios relevantes sin recargar la página.
+- WhatsApp mantiene su lógica original y añade atributos accesibles al panel y controles.
+- Limpieza de componentes antiguos que dejaron de utilizarse después de la reorganización por sectores.
+- `SITE_URL` se centraliza para metadata, robots y sitemap.

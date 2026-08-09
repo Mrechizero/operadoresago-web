@@ -64,6 +64,7 @@ export default function SectorExperience({ sector }: { sector: SectorItem }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.24 }}
+                aria-live="polite"
                 className="p-6 sm:p-8 lg:p-9"
               >
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-blue-300">

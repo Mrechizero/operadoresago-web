@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <>
       <Navbar />
-      <main className="flex min-h-[78vh] items-center bg-slate-50 px-4 pb-14 pt-28 sm:px-6 lg:px-8">
+      <main id="contenido-principal" tabIndex={-1} className="flex min-h-[78vh] items-center bg-slate-50 px-4 pb-14 pt-28 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 p-7 text-white shadow-[0_28px_80px_rgba(15,23,42,.16)] sm:p-10">
           <p className="text-[10px] font-black uppercase tracking-[0.18em] text-blue-300">404 · Ruta no encontrada</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-black tracking-[-0.04em] sm:text-5xl">No necesitas volver al inicio para encontrar una solución.</h1>

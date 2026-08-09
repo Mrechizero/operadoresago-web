@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
 import ServiceDetailPage from '@/components/service-detail-page'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'VPN empresarial | Operadores AGO',
-  description:
-    'VPN empresarial para conectar sucursales, usuarios remotos y servicios internos mediante WireGuard, IPSec y tecnologías compatibles.',
-}
-
+  description: 'VPN empresarial para conectar sucursales, usuarios remotos y servicios internos mediante WireGuard, IPSec y tecnologías compatibles.',
+  path: '/servicios/vpn',
+})
 export default function VPNPage() {
   return (
     <ServiceDetailPage

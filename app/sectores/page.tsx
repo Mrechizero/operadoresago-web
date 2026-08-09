@@ -1,20 +1,20 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Layers3 } from 'lucide-react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import SectorSelector from '@/components/sector-selector'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Soluciones por sector | Operadores AGO',
   description: 'Tecnología, conectividad, WiFi, redes, monitoreo y software organizados por tipo de negocio y operación.',
-}
-
+  path: '/sectores',
+})
 export default function SectoresPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-slate-50 pt-18">
+      <main id="contenido-principal" tabIndex={-1} className="min-h-screen bg-slate-50 pt-18">
         <section className="relative overflow-hidden bg-white px-4 pb-8 pt-12 text-center sm:px-6 sm:pb-10 sm:pt-16 lg:px-8">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(59,130,246,.12),transparent_28%),radial-gradient(circle_at_90%_5%,rgba(139,92,246,.12),transparent_28%)]" />
           <div className="relative mx-auto max-w-4xl">

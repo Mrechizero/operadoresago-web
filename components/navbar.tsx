@@ -49,6 +49,30 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setMenuOpen(false)
+      setSectorMenuOpen(false)
+      setServiceMenuOpen(false)
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [menuOpen])
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -77,12 +101,13 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <div className="relative" onMouseLeave={() => setSectorMenuOpen(false)}>
+            <div className="relative" onMouseLeave={() => setSectorMenuOpen(false)} onBlur={(event) => { const nextTarget = event.relatedTarget as Node | null; if (!nextTarget || !event.currentTarget.contains(nextTarget)) setSectorMenuOpen(false) }}>
               <button
                 type="button"
                 onClick={() => { setSectorMenuOpen((open) => !open); setServiceMenuOpen(false) }}
                 onMouseEnter={() => { setSectorMenuOpen(true); setServiceMenuOpen(false) }}
                 aria-expanded={sectorMenuOpen}
+                aria-controls="sector-navigation-menu"
                 className="group relative inline-flex items-center gap-1.5 whitespace-nowrap text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Sectores
@@ -97,6 +122,8 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 6, scale: 0.98 }}
                     transition={{ duration: 0.18 }}
+                    id="sector-navigation-menu"
+                    aria-label="Sectores"
                     className="absolute left-1/2 top-full mt-4 w-[620px] -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-3 shadow-[0_25px_80px_rgba(15,23,42,.18)]"
                   >
                     <div className="grid grid-cols-2 gap-1.5">
@@ -129,12 +156,13 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            <div className="relative" onMouseLeave={() => setServiceMenuOpen(false)}>
+            <div className="relative" onMouseLeave={() => setServiceMenuOpen(false)} onBlur={(event) => { const nextTarget = event.relatedTarget as Node | null; if (!nextTarget || !event.currentTarget.contains(nextTarget)) setServiceMenuOpen(false) }}>
               <button
                 type="button"
                 onClick={() => { setServiceMenuOpen((open) => !open); setSectorMenuOpen(false) }}
                 onMouseEnter={() => { setServiceMenuOpen(true); setSectorMenuOpen(false) }}
                 aria-expanded={serviceMenuOpen}
+                aria-controls="service-navigation-menu"
                 className="group relative inline-flex items-center gap-1.5 whitespace-nowrap text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Servicios
@@ -149,6 +177,8 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 6, scale: 0.98 }}
                     transition={{ duration: 0.18 }}
+                    id="service-navigation-menu"
+                    aria-label="Servicios"
                     className="absolute left-1/2 top-full mt-4 w-[620px] -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-3 shadow-[0_25px_80px_rgba(15,23,42,.18)]"
                   >
                     <div className="grid grid-cols-2 gap-1.5">
@@ -206,6 +236,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -218,6 +249,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
+            id="mobile-navigation"
             className="overflow-hidden border-t border-slate-200 bg-white lg:hidden"
           >
             <div className="flex max-h-[calc(100vh-5rem)] flex-col gap-1 overflow-y-auto px-5 py-4">

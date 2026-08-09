@@ -56,6 +56,7 @@ export default function AboutModel() {
             key={stage.id}
             type="button"
             onClick={() => setActiveId(stage.id)}
+            aria-pressed={active.id === stage.id}
             className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-3.5 py-2.5 text-xs font-bold transition ${
               active.id === stage.id ? 'bg-white text-slate-950' : 'text-slate-400 hover:bg-white/[0.06] hover:text-white'
             }`}
@@ -73,6 +74,7 @@ export default function AboutModel() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.2 }}
+          aria-live="polite"
           className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_.72fr]"
         >
           <div>

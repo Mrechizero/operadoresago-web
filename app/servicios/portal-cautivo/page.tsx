@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
 import ServiceDetailPage from '@/components/service-detail-page'
+import { createPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Portal cautivo para negocios en México | Operadores AGO',
-  description:
-    'Portal cautivo personalizado para restaurantes, hoteles, comercios y eventos: acceso WiFi con marca, registro autorizado, analítica y campañas.',
-}
-
+export const metadata = createPageMetadata({
+  title: 'Portal cautivo para empresas | Operadores AGO',
+  description: 'Portal cautivo para restaurantes, hoteles, cafeterías, comercios y eventos: acceso WiFi con marca, registro autorizado, analítica y campañas.',
+  path: '/servicios/portal-cautivo',
+})
 export default function PortalCautivoPage() {
   return (
     <ServiceDetailPage
