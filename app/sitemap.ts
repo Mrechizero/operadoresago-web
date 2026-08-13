@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { sectors } from '@/lib/sectors-data'
+import { serviceCatalog } from '@/lib/service-relations'
 import { SITE_URL } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -8,14 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/sectores',
     ...sectors.map((sector) => `/sectores/${sector.slug}`),
     '/servicios',
-    '/servicios/portal-cautivo',
-    '/servicios/wifi-administrado',
-    '/servicios/redes-datos',
-    '/servicios/internet',
-    '/servicios/vpn',
-    '/servicios/desarrollo',
-    '/servicios/monitoreo-web',
-    '/servicios/monitoreo-hardware',
+    ...serviceCatalog.map((service) => service.href),
     '/nosotros',
     '/contacto',
   ]

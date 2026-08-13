@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import WhatsAppButton from '@/components/whatsapp-button'
 import MotionPreferences from '@/components/motion-preferences'
+import RouteScrollManager from '@/components/route-scroll-manager'
 import { SITE_URL } from '@/lib/seo'
 
 export const metadata: Metadata = {
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <MotionPreferences>
+          <RouteScrollManager />
           {children}
           <WhatsAppButton />
         </MotionPreferences>

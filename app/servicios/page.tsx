@@ -7,7 +7,7 @@ import { createPageMetadata } from '@/lib/seo'
 
 export const metadata = createPageMetadata({
   title: 'Servicios tecnológicos | Operadores AGO',
-  description: 'Explora portal cautivo, WiFi administrado, redes de datos, conectividad, VPN, desarrollo y monitoreo según el sector y problema que necesitas resolver.',
+  description: 'Explora WiFi, redes, Internet empresarial y residencial, comunicaciones, software, cloud, monitoreo y seguridad según el problema que necesitas resolver.',
   path: '/servicios',
 })
 export default function ServiciosPage() {
@@ -19,10 +19,10 @@ export default function ServiciosPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(59,130,246,.12),transparent_28%),radial-gradient(circle_at_85%_5%,rgba(139,92,246,.10),transparent_28%)]" />
           <div className="relative mx-auto max-w-4xl">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-primary">
-              <Network className="h-4 w-4" /> Catálogo guiado
+              <Network className="h-4 w-4" /> Catálogo completo
             </div>
-            <h1 className="text-4xl font-black tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-6xl">No recorras todo el catálogo. <span className="text-primary">Empieza por tu problema.</span></h1>
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">Elige tu sector y la necesidad más cercana a tu operación. Te mostramos primero las soluciones que tienen sentido en ese contexto.</p>
+            <h1 className="text-4xl font-black tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-6xl">Todo el catálogo, organizado para que <span className="text-primary">encuentres la solución correcta.</span></h1>
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">Empieza por tu sector y necesidad, o abre directamente una familia de servicios. Internet empresarial y residencial quedan separados para evitar mezclar soluciones a la medida con planes para hogar.</p>
             <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
               <Link href="/sectores" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-slate-950 px-5 py-2.5 text-sm font-bold text-white transition hover:-translate-y-0.5"><Layers3 className="h-4 w-4" /> Ver sectores</Link>
               <Link href="/contacto" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-bold text-slate-700 transition hover:border-primary/30 hover:text-primary">Solicitar diagnóstico <ArrowRight className="h-4 w-4" /></Link>

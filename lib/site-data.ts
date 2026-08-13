@@ -147,7 +147,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         title: 'Internet empresarial',
         description: 'Enlaces dedicados, simétricos y soluciones de conectividad según cobertura.',
-        href: '/servicios/internet',
+        href: '/servicios/internet-empresarial',
       },
       {
         title: 'VPN empresarial',
@@ -157,7 +157,12 @@ export const serviceCategories: ServiceCategory[] = [
       {
         title: 'Radio enlaces y LAN to LAN',
         description: 'Interconexión entre sedes cuando la fibra no es viable o se requiere una red privada.',
-        href: '/contacto',
+        href: '/servicios/radio-enlaces',
+      },
+      {
+        title: 'Internet residencial',
+        description: 'Planes para hogar con opciones de velocidad publicadas y validación de cobertura.',
+        href: '/servicios/internet-residencial',
       },
     ],
   },
@@ -170,18 +175,18 @@ export const serviceCategories: ServiceCategory[] = [
       {
         title: 'PBX IP',
         description: 'Telefonía IP con extensiones, IVR, grabación y administración centralizada.',
-        href: '/contacto',
+        href: '/servicios/pbx-ip',
         featured: true,
       },
       {
         title: 'Call Center',
         description: 'Soluciones para atención, ventas, seguimiento y control de llamadas.',
-        href: '/contacto',
+        href: '/servicios/call-center',
       },
       {
         title: 'SMS y notificaciones',
         description: 'Mensajes para campañas, alertas operativas y comunicación con clientes.',
-        href: '/contacto',
+        href: '/servicios/sms-notificaciones',
       },
     ],
   },
@@ -205,12 +210,12 @@ export const serviceCategories: ServiceCategory[] = [
       {
         title: 'Cloud VPS y hosting',
         description: 'Infraestructura administrada para alojar sitios y aplicaciones críticas.',
-        href: '/contacto',
+        href: '/servicios/cloud-hosting',
       },
       {
         title: 'Correo corporativo',
         description: 'Cuentas empresariales administradas con dominio propio.',
-        href: '/contacto',
+        href: '/servicios/correo-corporativo',
       },
     ],
   },
@@ -235,7 +240,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         title: 'Respaldos y recuperación',
         description: 'Estrategias de respaldo y continuidad para servicios e información crítica.',
-        href: '/contacto',
+        href: '/servicios/respaldos',
       },
     ],
   },
@@ -248,23 +253,23 @@ export const serviceCategories: ServiceCategory[] = [
       {
         title: 'Ciberseguridad',
         description: 'Hardening, firewalls, revisión de exposición y mejora de seguridad web.',
-        href: '/contacto',
+        href: '/servicios/ciberseguridad',
         featured: true,
       },
       {
         title: 'Videovigilancia',
         description: 'CCTV y visualización remota para hogares, comercios y empresas.',
-        href: '/contacto',
+        href: '/servicios/videovigilancia',
       },
       {
         title: 'Control de acceso',
         description: 'Gestión de entradas, personal, visitantes y áreas restringidas.',
-        href: '/contacto',
+        href: '/servicios/control-acceso',
       },
       {
         title: 'Domótica e IoT',
         description: 'Automatización de iluminación, clima, sensores, accesos y alertas.',
-        href: '/contacto',
+        href: '/servicios/domotica-iot',
       },
     ],
   },

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, CheckCircle2, Layers3, Network, Sparkles } from 'lucide-react'
 import Navbar from '@/components/navbar'
@@ -37,9 +37,10 @@ export default function ServiceDetailPage({
 }: ServiceDetailPageProps) {
   const [activeTab, setActiveTab] = useState<DetailTab>('benefits')
   const guide = getServiceGuide(serviceHref)
-  const relatedSectors = useMemo(
-    () => sectors.filter((sector) => sector.services.some((service) => service.href === serviceHref) || sector.needs.some((need) => need.serviceHrefs.includes(serviceHref))),
-    [serviceHref],
+  const relatedSectors = sectors.filter((sector) =>
+    guide?.sectorSlugs?.includes(sector.slug)
+    || sector.services.some((service) => service.href === serviceHref)
+    || sector.needs.some((need) => need.serviceHrefs.includes(serviceHref)),
   )
   const contactValue = guide?.contactValue ?? 'Otro servicio'
   const contactHref = `/contacto?service=${encodeURIComponent(contactValue)}&source=${encodeURIComponent(serviceHref)}`

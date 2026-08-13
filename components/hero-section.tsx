@@ -17,7 +17,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_5%_15%,rgba(59,130,246,.16),transparent_26%),radial-gradient(circle_at_95%_10%,rgba(99,102,241,.18),transparent_28%)]" />
       <div className="absolute inset-0 opacity-45 [background-image:radial-gradient(rgba(37,99,235,.28)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
 
-      <div className="relative mx-auto grid max-w-[1480px] items-center gap-9 px-4 pb-12 pt-22 sm:gap-10 sm:px-6 sm:pb-14 sm:pt-24 lg:px-8 lg:pb-16 lg:pt-26 xl:grid-cols-[0.8fr_1.2fr] xl:gap-14 xl:pt-28 2xl:gap-18">
+      <div className="relative mx-auto grid max-w-[1480px] items-center gap-9 px-4 pb-12 pt-22 sm:gap-10 sm:px-6 sm:pb-14 sm:pt-24 lg:px-8 lg:pb-16 lg:pt-26 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-10 xl:pb-10 xl:pt-24 2xl:gap-16 2xl:pb-16 2xl:pt-28">
         <div className="mx-auto max-w-3xl text-center xl:mx-0 xl:max-w-2xl xl:text-left">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -33,7 +33,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.08 }}
-            className="text-balance text-[2.35rem] font-bold leading-[1.04] tracking-[-0.04em] text-slate-950 sm:text-5xl md:text-[3.5rem] xl:text-[3.75rem] 2xl:text-[4.25rem]"
+            className="text-balance text-[2.35rem] font-bold leading-[1.04] tracking-[-0.04em] text-slate-950 sm:text-5xl md:text-[3.5rem] xl:text-[3.45rem] 2xl:text-[4.25rem]"
           >
             Conectamos tu negocio.
             <span className="mt-2 block bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
@@ -45,7 +45,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
-            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg xl:mx-0"
+            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg xl:mx-0 xl:mt-5"
           >
             Portal cautivo, WiFi administrado, redes de datos, monitoreo y plataformas digitales para empresas que necesitan operar mejor.
           </motion.p>
@@ -54,7 +54,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.24 }}
-            className="mt-8 flex flex-col justify-center gap-3 sm:flex-row xl:justify-start"
+            className="mt-8 flex flex-col justify-center gap-3 sm:flex-row xl:mt-7 xl:justify-start"
           >
             <Link
               href="/contacto"
@@ -76,10 +76,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.32 }}
-            className="mt-8 grid gap-3 text-left sm:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-3"
+            className="mt-8 grid gap-3 text-left sm:grid-cols-3 xl:mt-6 xl:grid-cols-3 xl:gap-2 2xl:gap-3"
           >
             {proofPoints.map((point, index) => (
-              <div key={point} className="flex items-center justify-center gap-2 rounded-xl border border-white/70 bg-white/60 px-3 py-3 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-lg xl:justify-start 2xl:justify-center">
+              <div key={point} className="flex items-center justify-center gap-2 rounded-xl border border-white/70 bg-white/60 px-3 py-3 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-lg xl:min-h-14 xl:px-2 xl:py-2.5 xl:text-center xl:text-[11px] 2xl:min-h-0 2xl:px-3 2xl:py-3 2xl:text-xs">
                 {index === 0 ? <MapPinned className="h-4 w-4 shrink-0 text-primary" /> : <CheckCircle2 className="h-4 w-4 shrink-0 text-blue-500" />}
                 <span>{point}</span>
               </div>

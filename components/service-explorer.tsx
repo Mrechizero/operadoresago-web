@@ -6,10 +6,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, CheckCircle2, Network, Sparkles } from 'lucide-react'
 import SectorIcon from '@/components/sector-icon'
 import { sectors } from '@/lib/sectors-data'
-import { getContactServiceFromHref, serviceCatalog } from '@/lib/service-relations'
+import { getContactServiceFromHref, getServicesByGroup, serviceCatalog, serviceGroups } from '@/lib/service-relations'
 
 export default function ServiceExplorer() {
   const [activeSectorSlug, setActiveSectorSlug] = useState(sectors[0].slug)
+  const [activeGroupId, setActiveGroupId] = useState(serviceGroups[0].id)
   const activeSector = useMemo(
     () => sectors.find((sector) => sector.slug === activeSectorSlug) ?? sectors[0],
     [activeSectorSlug],
@@ -144,15 +145,49 @@ export default function ServiceExplorer() {
           </div>
         </div>
 
-        <div className="mt-7">
-          <p className="mb-3 text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Acceso directo al catálogo técnico</p>
-          <div className="flex gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {serviceCatalog.map((service) => (
-              <Link key={service.href} href={service.href} className="shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-primary/30 hover:text-primary">
-                {service.shortTitle}
-              </Link>
+        <div className="mt-8 rounded-[1.75rem] border border-slate-200 bg-slate-50 p-4 sm:p-5">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-[0.16em] text-primary">Catálogo técnico completo</p>
+              <h2 className="mt-1 text-xl font-black tracking-[-0.025em] text-slate-950">Explora por familia de solución.</h2>
+            </div>
+            <p className="max-w-xl text-xs leading-5 text-slate-500">El selector cambia el catálogo sin enviarte a otra zona de la página. Abre únicamente la solución que quieras revisar.</p>
+          </div>
+
+          <div className="mt-4 flex gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {serviceGroups.map((group) => (
+              <button
+                key={group.id}
+                type="button"
+                onClick={() => setActiveGroupId(group.id)}
+                aria-pressed={activeGroupId === group.id}
+                className={`shrink-0 rounded-full border px-4 py-2 text-xs font-bold transition ${activeGroupId === group.id ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-200 bg-white text-slate-600 hover:border-primary/30 hover:text-primary'}`}
+              >
+                {group.shortTitle}
+              </button>
             ))}
           </div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeGroupId}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.16 }}
+              className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3"
+              aria-live="polite"
+            >
+              {getServicesByGroup(activeGroupId).map((service) => (
+                <Link key={service.href} href={service.href} scroll className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md">
+                  <p className="text-[9px] font-black uppercase tracking-[0.14em] text-primary">{service.category}</p>
+                  <h3 className="mt-1.5 text-sm font-black text-slate-950">{service.shortTitle}</h3>
+                  <p className="mt-2 text-xs leading-5 text-slate-500">{service.description}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-primary">Abrir solución <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" /></span>
+                </Link>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

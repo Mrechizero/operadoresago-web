@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-slate-200 pt-5 text-[11px] text-slate-400 sm:flex-row">
           <p>© {year} Operadores AGO. Todos los derechos reservados.</p>
-          <p>Tecnología e infraestructura para empresas en México.</p>
+          <p>Tecnología, conectividad e infraestructura en México.</p>
         </div>
       </div>
     </footer>
