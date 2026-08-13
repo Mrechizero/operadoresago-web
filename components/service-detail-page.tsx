@@ -89,7 +89,7 @@ export default function ServiceDetailPage({
                     <p className="text-[9px] font-black uppercase tracking-[0.18em] text-blue-300">Arquitectura de solución</p>
                     <p className="mt-1 text-lg font-black text-white">{guide?.shortTitle ?? eyebrow}</p>
                   </div>
-                  <span className="rounded-full border border-emerald-300/15 bg-emerald-400/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-wider text-emerald-300">AGO TECH</span>
+                  <span className="rounded-full border border-violet-300/15 bg-violet-400/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-wider text-violet-200">AGO TECH</span>
                 </div>
 
                 <div className="mt-6 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
@@ -101,7 +101,7 @@ export default function ServiceDetailPage({
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-blue-300/20 bg-blue-400/10 text-blue-300"><Network className="h-5 w-5" /></span>
                   <div className="space-y-2">
                     {['Diseño', 'Implementación', 'Seguimiento'].map((label) => (
-                      <div key={label} className="flex items-center gap-2 rounded-lg border border-white/[0.07] bg-white/[0.04] px-3 py-2 text-[10px] font-bold text-white/70"><CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />{label}</div>
+                      <div key={label} className="flex items-center gap-2 rounded-lg border border-white/[0.07] bg-white/[0.04] px-3 py-2 text-[10px] font-bold text-white/70"><CheckCircle2 className="h-3.5 w-3.5 text-blue-300" />{label}</div>
                     ))}
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export default function ServiceDetailPage({
                     <div className="grid gap-3 md:grid-cols-2">
                       {benefits.map((benefit) => (
                         <div key={benefit} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-7 text-slate-600">
-                          <CheckCircle2 className="mt-1 h-4.5 w-4.5 shrink-0 text-emerald-500" />
+                          <CheckCircle2 className="mt-1 h-4.5 w-4.5 shrink-0 text-blue-500" />
                           {benefit}
                         </div>
                       ))}
@@ -198,7 +198,7 @@ export default function ServiceDetailPage({
                           <p className="mt-3 text-3xl font-black tracking-[-0.03em] text-primary">{plan.price}<span className="ml-1 text-xs font-bold text-slate-400">/mes</span></p>
                           {plan.description && <p className="mt-2 text-xs font-bold text-slate-500">{plan.description}</p>}
                           <ul className="mt-4 space-y-2">
-                            {plan.features.map((feature) => <li key={feature} className="flex items-start gap-2 text-xs leading-5 text-slate-600"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-500" />{feature}</li>)}
+                            {plan.features.map((feature) => <li key={feature} className="flex items-start gap-2 text-xs leading-5 text-slate-600"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-blue-500" />{feature}</li>)}
                           </ul>
                         </div>
                       ))}

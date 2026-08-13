@@ -95,7 +95,7 @@ export default function SectorExperience({ sector }: { sector: SectorItem }) {
 
                 <div className="mt-7 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
                   <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                    <CheckCircle2 className="h-4 w-4 text-blue-500" />
                     La solución final se ajusta después de revisar tu operación.
                   </div>
                   <Link href={contactHref} className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5">

@@ -22,6 +22,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
+import { AGO_BRAND_GLOW, AGO_BRAND_GRADIENT_MEDIUM } from '@/lib/brand'
 
 interface ServiceSlide {
   id: string
@@ -46,8 +47,8 @@ const slides: ServiceSlide[] = [
     cta: 'Conocer portal cautivo',
     icon: RadioTower,
     visual: 'portal',
-    accent: 'from-blue-500 via-indigo-500 to-violet-500',
-    glow: 'bg-blue-500/30',
+    accent: AGO_BRAND_GRADIENT_MEDIUM,
+    glow: AGO_BRAND_GLOW,
   },
   {
     id: 'wifi',
@@ -58,8 +59,8 @@ const slides: ServiceSlide[] = [
     cta: 'Explorar WiFi administrado',
     icon: Wifi,
     visual: 'wifi',
-    accent: 'from-cyan-500 via-blue-500 to-indigo-600',
-    glow: 'bg-cyan-400/30',
+    accent: AGO_BRAND_GRADIENT_MEDIUM,
+    glow: AGO_BRAND_GLOW,
   },
   {
     id: 'redes',
@@ -70,8 +71,8 @@ const slides: ServiceSlide[] = [
     cta: 'Ver soluciones de red',
     icon: Network,
     visual: 'network',
-    accent: 'from-sky-500 via-cyan-500 to-emerald-500',
-    glow: 'bg-emerald-400/25',
+    accent: AGO_BRAND_GRADIENT_MEDIUM,
+    glow: AGO_BRAND_GLOW,
   },
   {
     id: 'monitoreo',
@@ -82,8 +83,8 @@ const slides: ServiceSlide[] = [
     cta: 'Conocer monitoreo web',
     icon: Activity,
     visual: 'monitoring',
-    accent: 'from-emerald-500 via-teal-500 to-cyan-500',
-    glow: 'bg-emerald-400/25',
+    accent: AGO_BRAND_GRADIENT_MEDIUM,
+    glow: AGO_BRAND_GLOW,
   },
   {
     id: 'hardware',
@@ -94,8 +95,8 @@ const slides: ServiceSlide[] = [
     cta: 'Ver monitoreo de hardware',
     icon: ServerCog,
     visual: 'hardware',
-    accent: 'from-orange-500 via-amber-500 to-yellow-400',
-    glow: 'bg-orange-400/25',
+    accent: AGO_BRAND_GRADIENT_MEDIUM,
+    glow: AGO_BRAND_GLOW,
   },
   {
     id: 'software',
@@ -106,8 +107,8 @@ const slides: ServiceSlide[] = [
     cta: 'Explorar desarrollo',
     icon: AppWindow,
     visual: 'software',
-    accent: 'from-fuchsia-500 via-violet-500 to-indigo-500',
-    glow: 'bg-fuchsia-400/25',
+    accent: AGO_BRAND_GRADIENT_MEDIUM,
+    glow: AGO_BRAND_GLOW,
   },
 ]
 
@@ -116,13 +117,13 @@ function PortalVisual() {
     <div className="relative flex h-full items-center justify-center px-4 py-6 sm:px-8 sm:py-8">
       <div className="absolute left-5 top-9 hidden w-40 rounded-2xl border border-white/10 bg-white/[0.08] p-4 shadow-2xl backdrop-blur-xl sm:block">
         <div className="mb-3 flex items-center gap-2 text-xs text-white/70">
-          <Users className="h-4 w-4 text-cyan-300" />
+          <Users className="h-4 w-4 text-blue-300" />
           Nuevos registros
         </div>
         <p className="text-3xl font-bold text-white">+128</p>
         <div className="mt-3 flex h-10 items-end gap-1">
           {[35, 55, 44, 74, 62, 88, 76].map((height, index) => (
-            <span key={index} className="flex-1 rounded-t bg-cyan-300/70" style={{ height: `${height}%` }} />
+            <span key={index} className="flex-1 rounded-t bg-blue-300/70" style={{ height: `${height}%` }} />
           ))}
         </div>
       </div>
@@ -150,9 +151,9 @@ function PortalVisual() {
         </div>
       </div>
 
-      <div className="absolute bottom-24 right-4 hidden w-40 sm:bottom-12 sm:right-7 sm:block sm:w-44 rounded-2xl border border-emerald-300/20 bg-slate-950/75 p-4 shadow-2xl backdrop-blur-xl">
+      <div className="absolute bottom-24 right-4 hidden w-40 sm:bottom-12 sm:right-7 sm:block sm:w-44 rounded-2xl border border-blue-300/20 bg-slate-950/75 p-4 shadow-2xl backdrop-blur-xl">
         <div className="flex items-center gap-2 text-xs text-white/70">
-          <CheckCircle2 className="h-4 w-4 text-emerald-300" />
+          <CheckCircle2 className="h-4 w-4 text-blue-300" />
           Acceso autorizado
         </div>
         <p className="mt-2 text-xs text-white/50">Portal personalizado activo</p>
@@ -167,15 +168,15 @@ function WifiVisual() {
       <div className="w-full max-w-xl overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 shadow-2xl backdrop-blur-xl">
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
           <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-400/15">
-              <Wifi className="h-5 w-5 text-cyan-300" />
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-400/15">
+              <Wifi className="h-5 w-5 text-blue-300" />
             </span>
             <div>
               <p className="text-sm font-semibold text-white">Red empresarial</p>
               <p className="text-[10px] text-white/45">Administración centralizada</p>
             </div>
           </div>
-          <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-[10px] font-semibold text-emerald-300">Operativa</span>
+          <span className="rounded-full bg-indigo-400/15 px-3 py-1 text-[10px] font-semibold text-blue-300">Operativa</span>
         </div>
         <div className="grid grid-cols-3 gap-2 p-3 sm:gap-3 sm:p-5">
           {[
@@ -193,11 +194,11 @@ function WifiVisual() {
           <div className="rounded-xl border border-white/10 bg-white/[0.05] p-2.5 sm:rounded-2xl sm:p-4">
             <div className="mb-5 flex items-center justify-between">
               <p className="text-xs font-medium text-white/70">Tráfico de red</p>
-              <BarChart3 className="h-4 w-4 text-cyan-300" />
+              <BarChart3 className="h-4 w-4 text-blue-300" />
             </div>
             <div className="flex h-24 items-end gap-2">
               {[44, 68, 52, 82, 64, 92, 74, 88].map((height, index) => (
-                <span key={index} className="flex-1 rounded-t-md bg-gradient-to-t from-blue-600 to-cyan-300" style={{ height: `${height}%` }} />
+                <span key={index} className="flex-1 rounded-t-md bg-gradient-to-t from-blue-600 to-violet-300" style={{ height: `${height}%` }} />
               ))}
             </div>
           </div>
@@ -205,7 +206,7 @@ function WifiVisual() {
             {['Lobby', 'Terraza', 'Oficinas'].map((zone, index) => (
               <div key={zone} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-3 py-3">
                 <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-emerald-300" />
+                  <span className="h-2 w-2 rounded-full bg-blue-300" />
                   <span className="text-[11px] text-white/70">{zone}</span>
                 </div>
                 <span className="text-[10px] text-white/35">AP {index + 1}</span>
@@ -233,9 +234,9 @@ function NetworkVisual() {
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 600 430" aria-hidden="true">
         <defs>
           <linearGradient id="network-line" x1="0" x2="1">
-            <stop offset="0" stopColor="rgba(56,189,248,.15)" />
-            <stop offset=".5" stopColor="rgba(110,231,183,.9)" />
-            <stop offset="1" stopColor="rgba(56,189,248,.15)" />
+            <stop offset="0" stopColor="rgba(59,130,246,.15)" />
+            <stop offset=".5" stopColor="rgba(139,92,246,.9)" />
+            <stop offset="1" stopColor="rgba(59,130,246,.15)" />
           </linearGradient>
         </defs>
         <path d="M300 75 L300 145 L300 235" stroke="url(#network-line)" strokeWidth="3" fill="none" />
@@ -250,7 +251,7 @@ function NetworkVisual() {
       {nodes.map(({ label, icon: Icon, className }) => (
         <div key={label} className={`absolute ${className}`}>
           <div className="flex min-w-[4.5rem] flex-col items-center rounded-xl sm:min-w-24 sm:rounded-2xl border border-white/10 bg-slate-950/75 px-2.5 py-2.5 shadow-xl sm:px-4 sm:py-3 backdrop-blur-xl">
-            <Icon className="mb-1.5 h-5 w-5 text-emerald-300" />
+            <Icon className="mb-1.5 h-5 w-5 text-blue-300" />
             <span className="text-[10px] font-medium text-white/70">{label}</span>
           </div>
         </div>
@@ -268,8 +269,8 @@ function MonitoringVisual() {
             <p className="text-sm font-semibold text-white">Estado de servicios</p>
             <p className="text-[10px] text-white/45">Actualización en tiempo real</p>
           </div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-400/15 px-3 py-1.5 text-[10px] font-semibold text-emerald-300">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-300" /> Todos operativos
+          <span className="inline-flex items-center gap-2 rounded-full bg-indigo-400/15 px-3 py-1.5 text-[10px] font-semibold text-blue-300">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-blue-300" /> Todos operativos
           </span>
         </div>
         <div className="mb-4 grid grid-cols-3 gap-2 sm:gap-3">
@@ -287,7 +288,7 @@ function MonitoringVisual() {
         <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
           <div className="mb-4 flex items-center justify-between">
             <p className="text-xs text-white/65">Disponibilidad — últimas 24 h</p>
-            <Activity className="h-4 w-4 text-emerald-300" />
+            <Activity className="h-4 w-4 text-blue-300" />
           </div>
           <svg viewBox="0 0 520 130" className="h-32 w-full" aria-hidden="true">
             <defs>
@@ -321,7 +322,7 @@ function HardwareVisual() {
                 <span className="font-semibold text-white">{value}</span>
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
-                <div className="h-full rounded-full bg-gradient-to-r from-amber-300 to-orange-500" style={{ width: `${progress}%` }} />
+                <div className="h-full rounded-full bg-gradient-to-r from-blue-400 to-violet-500" style={{ width: `${progress}%` }} />
               </div>
             </div>
           ))}
@@ -332,10 +333,10 @@ function HardwareVisual() {
               <p className="text-sm font-semibold text-white">Servidor principal</p>
               <p className="text-[10px] text-white/40">Salud del equipo</p>
             </div>
-            <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-[10px] text-emerald-300">Estable</span>
+            <span className="rounded-full bg-indigo-400/15 px-3 py-1 text-[10px] text-blue-300">Estable</span>
           </div>
           <div className="relative mx-auto mb-5 flex h-28 w-28 sm:h-36 sm:w-36 items-center justify-center rounded-full border-[9px] sm:border-[12px] border-white/10">
-            <div className="absolute inset-[-9px] rounded-full border-[9px] sm:inset-[-12px] sm:border-[12px] border-transparent border-r-orange-400 border-t-amber-300" />
+            <div className="absolute inset-[-9px] rounded-full border-[9px] sm:inset-[-12px] sm:border-[12px] border-transparent border-r-violet-400 border-t-blue-300" />
             <div className="text-center">
               <p className="text-3xl font-bold text-white">92</p>
               <p className="text-[9px] uppercase tracking-wider text-white/40">Salud</p>
@@ -363,7 +364,7 @@ function SoftwareVisual() {
       name: 'ReservaBella',
       label: 'SaaS · Reservas',
       short: 'RB',
-      gradient: 'from-fuchsia-500 via-pink-500 to-rose-400',
+      gradient: 'from-blue-500 via-indigo-500 to-violet-500',
       className: 'left-[2%] top-[9%] z-20 w-[76%] sm:left-[4%] sm:top-[8%] sm:w-[72%]',
       delay: 0,
     },
@@ -371,7 +372,7 @@ function SoftwareVisual() {
       name: 'Shoopper.me',
       label: 'E-commerce',
       short: 'SH',
-      gradient: 'from-violet-500 via-fuchsia-500 to-pink-500',
+      gradient: 'from-blue-500 via-indigo-500 to-violet-500',
       className: 'right-[1%] top-[33%] z-30 w-[68%] sm:right-[2%] sm:top-[31%] sm:w-[64%]',
       delay: 0.35,
     },
@@ -379,7 +380,7 @@ function SoftwareVisual() {
       name: 'Ago WiFi',
       label: 'Conectividad',
       short: 'WF',
-      gradient: 'from-cyan-400 via-blue-500 to-indigo-600',
+      gradient: 'from-blue-500 via-indigo-500 to-violet-500',
       className: 'bottom-[10%] left-[8%] z-40 w-[72%] sm:bottom-[8%] sm:left-[12%] sm:w-[68%]',
       delay: 0.7,
     },
@@ -387,7 +388,7 @@ function SoftwareVisual() {
 
   return (
     <div className="relative h-full min-h-[330px] overflow-hidden px-3 py-5 sm:min-h-[440px] sm:px-6 sm:py-7">
-      <div className="absolute left-[8%] top-[8%] h-44 w-44 rounded-full bg-fuchsia-500/15 blur-3xl sm:h-60 sm:w-60" />
+      <div className="absolute left-[8%] top-[8%] h-44 w-44 rounded-full bg-violet-500/15 blur-3xl sm:h-60 sm:w-60" />
       <div className="absolute bottom-[6%] right-[4%] h-48 w-48 rounded-full bg-indigo-500/20 blur-3xl sm:h-64 sm:w-64" />
 
       <div className="absolute left-3 top-4 z-50 hidden flex-col gap-2 sm:flex">

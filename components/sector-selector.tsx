@@ -123,7 +123,7 @@ export default function SectorSelector({ showIntro = true, showAllLink = true }:
                         <p className="text-[10px] uppercase tracking-[0.15em] text-white/35">{active.visualLabel}</p>
                       </div>
                     </div>
-                    <span className="rounded-full border border-emerald-300/15 bg-emerald-400/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-emerald-300">Operación</span>
+                    <span className="rounded-full border border-violet-300/15 bg-violet-400/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-violet-200">Operación</span>
                   </div>
 
                   <div className="my-6 grid grid-cols-[1fr_auto_1fr] items-center gap-3">

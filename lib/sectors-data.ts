@@ -1,3 +1,5 @@
+import { AGO_BRAND_GRADIENT, AGO_BRAND_GRADIENT_SOFT } from '@/lib/brand'
+
 export type SectorIconKey =
   | 'restaurant'
   | 'hotel'
@@ -49,8 +51,8 @@ export const sectors: SectorItem[] = [
     hero: 'Conectividad que atiende al cliente sin detener la operación.',
     description:
       'Separamos la experiencia de tus invitados de la red operativa y conectamos POS, equipos, colaboradores y servicios digitales con una arquitectura pensada para el ritmo del negocio.',
-    accent: 'from-orange-500 via-rose-500 to-violet-600',
-    accentSoft: 'from-orange-50 via-rose-50 to-violet-50',
+    accent: AGO_BRAND_GRADIENT,
+    accentSoft: AGO_BRAND_GRADIENT_SOFT,
     visualLabel: 'Experiencia + operación',
     stats: [
       { value: 'WiFi', label: 'para invitados' },
@@ -79,8 +81,8 @@ export const sectors: SectorItem[] = [
     hero: 'Una experiencia WiFi consistente desde recepción hasta la última habitación.',
     description:
       'Diseñamos cobertura por zonas, acceso para huéspedes, redes separadas para personal y servicios, y una operación que puede administrarse desde un solo punto.',
-    accent: 'from-sky-500 via-blue-600 to-indigo-700',
-    accentSoft: 'from-sky-50 via-blue-50 to-indigo-50',
+    accent: AGO_BRAND_GRADIENT,
+    accentSoft: AGO_BRAND_GRADIENT_SOFT,
     visualLabel: 'Cobertura por zonas',
     stats: [
       { value: 'Guest', label: 'acceso controlado' },
@@ -109,8 +111,8 @@ export const sectors: SectorItem[] = [
     hero: 'Conecta ventas, clientes y dispositivos sin mezclar lo que debe permanecer separado.',
     description:
       'Diseñamos redes para terminales, cámaras, equipos internos y WiFi de clientes, con opciones para conectar sucursales y monitorear componentes críticos.',
-    accent: 'from-emerald-500 via-cyan-500 to-blue-600',
-    accentSoft: 'from-emerald-50 via-cyan-50 to-blue-50',
+    accent: AGO_BRAND_GRADIENT,
+    accentSoft: AGO_BRAND_GRADIENT_SOFT,
     visualLabel: 'POS + clientes + seguridad',
     stats: [
       { value: 'POS', label: 'red operativa' },
@@ -139,8 +141,8 @@ export const sectors: SectorItem[] = [
     hero: 'Una red ordenada para equipos que dependen de estar conectados todo el día.',
     description:
       'Integramos conectividad cableada e inalámbrica, acceso remoto, monitoreo y segmentación para que usuarios, servicios y dispositivos compartan infraestructura sin perder control.',
-    accent: 'from-blue-600 via-indigo-600 to-violet-700',
-    accentSoft: 'from-blue-50 via-indigo-50 to-violet-50',
+    accent: AGO_BRAND_GRADIENT,
+    accentSoft: AGO_BRAND_GRADIENT_SOFT,
     visualLabel: 'Usuarios + servicios + sedes',
     stats: [
       { value: 'LAN', label: 'documentada' },
@@ -169,8 +171,8 @@ export const sectors: SectorItem[] = [
     hero: 'Infraestructura digital para entornos donde una desconexión sí impacta la operación.',
     description:
       'Conectamos equipos, áreas, usuarios y servicios con redes documentadas, monitoreo de hardware, enlaces entre sedes y desarrollos adaptados al proceso.',
-    accent: 'from-cyan-500 via-blue-600 to-slate-800',
-    accentSoft: 'from-cyan-50 via-blue-50 to-slate-100',
+    accent: AGO_BRAND_GRADIENT,
+    accentSoft: AGO_BRAND_GRADIENT_SOFT,
     visualLabel: 'Red + monitoreo + proceso',
     stats: [
       { value: 'LAN', label: 'industrial' },
@@ -199,8 +201,8 @@ export const sectors: SectorItem[] = [
     hero: 'Conectividad preparada para muchos usuarios y distintos niveles de acceso.',
     description:
       'Diseñamos WiFi, segmentación, políticas de acceso e infraestructura para espacios donde la densidad de usuarios y dispositivos cambia a lo largo del día.',
-    accent: 'from-violet-500 via-indigo-600 to-blue-600',
-    accentSoft: 'from-violet-50 via-indigo-50 to-blue-50',
+    accent: AGO_BRAND_GRADIENT,
+    accentSoft: AGO_BRAND_GRADIENT_SOFT,
     visualLabel: 'Alta densidad + control',
     stats: [
       { value: 'SSID', label: 'por perfil' },
@@ -229,8 +231,8 @@ export const sectors: SectorItem[] = [
     hero: 'Una sola estrategia tecnológica para todas tus ubicaciones.',
     description:
       'Estandarizamos conectividad, acceso, monitoreo y herramientas digitales para reducir diferencias entre sedes y facilitar la administración central.',
-    accent: 'from-fuchsia-500 via-violet-600 to-blue-700',
-    accentSoft: 'from-fuchsia-50 via-violet-50 to-blue-50',
+    accent: AGO_BRAND_GRADIENT,
+    accentSoft: AGO_BRAND_GRADIENT_SOFT,
     visualLabel: 'Control central + sedes',
     stats: [
       { value: 'HQ', label: 'control central' },

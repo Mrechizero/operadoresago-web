@@ -2,6 +2,15 @@ import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { z } from 'zod'
 import { isContactServiceValue } from '@/lib/service-relations'
+import {
+  checkContactRateLimit,
+  createContactFingerprint,
+  evaluateContactSpam,
+  getClientFingerprint,
+  isAllowedContactOrigin,
+  rememberSuccessfulSubmission,
+  wasRecentlySubmitted,
+} from '@/lib/contact-antispam'
 
 export const runtime = 'nodejs'
 
@@ -21,7 +30,8 @@ const contactSchema = z.object({
   need: z.string().trim().max(120).optional().default(''),
   sourcePath: z.string().trim().max(240).optional().default('/contacto'),
   message: z.string().trim().min(10).max(1500),
-  website: z.string().max(0).optional().default(''),
+  startedAt: z.number().int().positive(),
+  website: z.string().trim().max(200).optional().default(''),
 }).strict()
 
 type RequiredSmtpVariable =
@@ -210,6 +220,22 @@ function buildConfirmationHtmlEmail(data: z.infer<typeof contactSchema>) {
 }
 
 export async function POST(request: Request) {
+  const contentType = request.headers.get('content-type') || ''
+  const contentLength = Number(request.headers.get('content-length') || '0')
+
+  if (!contentType.toLowerCase().includes('application/json')) {
+    return NextResponse.json({ error: 'Tipo de solicitud no permitido.' }, { status: 415 })
+  }
+
+  if (Number.isFinite(contentLength) && contentLength > 16_384) {
+    return NextResponse.json({ error: 'Solicitud demasiado grande.' }, { status: 413 })
+  }
+
+  if (!isAllowedContactOrigin(request)) {
+    console.warn('[contact] Solicitud descartada por origen no permitido:', getClientFingerprint(request))
+    return NextResponse.json({ ok: true, confirmationSent: false })
+  }
+
   let body: unknown
 
   try {
@@ -227,10 +253,38 @@ export async function POST(request: Request) {
     )
   }
 
-  // Honeypot: los usuarios reales nunca completan este campo oculto.
-  // A los bots se les responde OK sin enviar correo para no revelar la protección.
+  // Honeypot: un usuario real nunca completa este campo oculto.
+  // Se responde OK para no revelar al bot que fue detectado.
   if (parsed.data.website) {
-    return NextResponse.json({ ok: true })
+    console.info('[contact] Solicitud descartada por honeypot:', getClientFingerprint(request))
+    return NextResponse.json({ ok: true, confirmationSent: false })
+  }
+
+  const rateLimit = checkContactRateLimit(request, parsed.data.email)
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      { error: 'Demasiados intentos. Espera unos minutos antes de volver a enviar.' },
+      {
+        status: 429,
+        headers: { 'Retry-After': String(rateLimit.retryAfterSeconds) },
+      },
+    )
+  }
+
+  const spamDecision = evaluateContactSpam(parsed.data)
+  if (spamDecision.block) {
+    console.info('[contact] Solicitud descartada por filtro anti-spam:', {
+      client: getClientFingerprint(request),
+      score: spamDecision.score,
+      reasons: spamDecision.reasons,
+    })
+    return NextResponse.json({ ok: true, confirmationSent: false })
+  }
+
+  const submissionFingerprint = createContactFingerprint(parsed.data)
+  if (wasRecentlySubmitted(submissionFingerprint)) {
+    console.info('[contact] Solicitud duplicada descartada:', getClientFingerprint(request))
+    return NextResponse.json({ ok: true, confirmationSent: false })
   }
 
   try {
@@ -280,6 +334,7 @@ export async function POST(request: Request) {
     })
 
     console.info('[contact] Prospecto aceptado por SMTP:', internalInfo.messageId)
+    rememberSuccessfulSubmission(submissionFingerprint)
 
     let confirmationSent = false
 

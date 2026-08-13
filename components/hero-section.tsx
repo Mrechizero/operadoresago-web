@@ -80,7 +80,7 @@ export default function HeroSection() {
           >
             {proofPoints.map((point, index) => (
               <div key={point} className="flex items-center justify-center gap-2 rounded-xl border border-white/70 bg-white/60 px-3 py-3 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-lg xl:justify-start 2xl:justify-center">
-                {index === 0 ? <MapPinned className="h-4 w-4 shrink-0 text-primary" /> : <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />}
+                {index === 0 ? <MapPinned className="h-4 w-4 shrink-0 text-primary" /> : <CheckCircle2 className="h-4 w-4 shrink-0 text-blue-500" />}
                 <span>{point}</span>
               </div>
             ))}
