@@ -2,14 +2,13 @@
 
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight, Building2, Sparkles } from 'lucide-react'
+import { AGO_BRAND_GRADIENT_MEDIUM } from '@/lib/brand'
 
 interface ClientItem {
   name: string
   shortName: string
   sector: string
   href: string
-  gradient: string
-  glow: string
 }
 
 const clients: ClientItem[] = [
@@ -18,63 +17,49 @@ const clients: ClientItem[] = [
     shortName: '4J',
     sector: 'Global sourcing',
     href: 'https://4jc-enterprises.com/',
-    gradient: 'from-blue-500 via-indigo-500 to-violet-500',
-    glow: 'bg-blue-500/20',
   },
   {
     name: 'SUKOI',
     shortName: 'SK',
     sector: 'Gastronomía',
     href: 'https://www.sukoi.mx/',
-    gradient: 'from-amber-400 via-orange-500 to-rose-500',
-    glow: 'bg-orange-500/20',
   },
   {
     name: 'CEAS Industrial',
     shortName: 'CI',
     sector: 'Industria y automatización',
     href: 'https://electronica-industrial.operadoresago.com/',
-    gradient: 'from-cyan-400 via-blue-500 to-indigo-600',
-    glow: 'bg-cyan-500/20',
   },
   {
     name: 'ReservaBella',
     shortName: 'RB',
     sector: 'SaaS · Reservas',
     href: 'https://reservabella.com/',
-    gradient: 'from-fuchsia-500 via-pink-500 to-rose-400',
-    glow: 'bg-fuchsia-500/20',
   },
   {
     name: 'Shoopper.me',
     shortName: 'SH',
     sector: 'E-commerce',
     href: 'https://shoopper.me/',
-    gradient: 'from-violet-500 via-fuchsia-500 to-pink-500',
-    glow: 'bg-violet-500/20',
   },
   {
     name: 'Inside LED',
     shortName: 'IL',
     sector: 'Proyecto web',
     href: 'https://insideled.com.mx/',
-    gradient: 'from-emerald-400 via-cyan-400 to-blue-500',
-    glow: 'bg-emerald-500/20',
   },
   {
     name: 'Diseño y Carpintería Pachuca',
     shortName: 'DC',
     sector: 'Diseño y carpintería',
     href: 'https://disenoycarpinteriapachuca.com/',
-    gradient: 'from-amber-500 via-yellow-500 to-orange-500',
-    glow: 'bg-amber-500/20',
   },
 ]
 
 function ClientPreview({ client, compact = false }: { client: ClientItem; compact?: boolean }) {
   return (
     <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-[#080719] ${compact ? 'h-24' : 'h-36'}`}>
-      <div className={`absolute -right-10 -top-12 h-32 w-32 rounded-full ${client.glow} blur-3xl`} />
+      <div className={`absolute -right-10 -top-12 h-32 w-32 rounded-full bg-blue-500/20 blur-3xl`} />
       <div className="flex h-7 items-center justify-between border-b border-white/[0.07] px-3">
         <div className="flex gap-1">
           <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
@@ -86,7 +71,7 @@ function ClientPreview({ client, compact = false }: { client: ClientItem; compac
 
       <div className="grid h-[calc(100%-1.75rem)] grid-cols-[.85fr_1.15fr] gap-3 p-3">
         <div className="flex flex-col justify-between rounded-xl border border-white/[0.06] bg-white/[0.035] p-3">
-          <span className={`flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br ${client.gradient} text-[10px] font-black text-white shadow-lg`}>
+          <span className={`flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br ${AGO_BRAND_GRADIENT_MEDIUM} text-[10px] font-black text-white shadow-lg`}>
             {client.shortName}
           </span>
           <div>
@@ -95,7 +80,7 @@ function ClientPreview({ client, compact = false }: { client: ClientItem; compac
           </div>
         </div>
         <div className="relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.035] p-3">
-          <div className={`absolute inset-x-3 top-3 h-12 rounded-lg bg-gradient-to-br ${client.gradient} opacity-80`} />
+          <div className={`absolute inset-x-3 top-3 h-12 rounded-lg bg-gradient-to-br ${AGO_BRAND_GRADIENT_MEDIUM} opacity-80`} />
           <div className="absolute inset-x-3 bottom-3 grid grid-cols-3 gap-1.5">
             <span className="h-7 rounded-md bg-white/[0.08]" />
             <span className="h-7 rounded-md bg-white/[0.06]" />
@@ -154,7 +139,7 @@ export default function ClientsSection({ compact = false }: { compact?: boolean 
               Trabajo que ya está en línea
             </div>
             <h2 className={`max-w-4xl font-black tracking-[-0.035em] ${compact ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-3xl sm:text-4xl lg:text-5xl xl:text-6xl'}`}>
-              Empresas y proyectos que <span className="bg-gradient-to-r from-blue-300 via-violet-300 to-fuchsia-300 bg-clip-text text-transparent">confían en nuestro trabajo.</span>
+              Empresas y proyectos que <span className="bg-gradient-to-r from-blue-300 via-indigo-300 to-violet-300 bg-clip-text text-transparent">confían en nuestro trabajo.</span>
             </h2>
           </div>
           <div className="lg:pb-1 lg:text-right">

@@ -115,7 +115,7 @@ export default function ServiceExplorer() {
                 </div>
 
                 <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-300 sm:text-base">{activeNeed.description}</p>
-                <div className="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-300/15 bg-emerald-400/10 px-3 py-2 text-xs font-bold text-emerald-300">
+                <div className="mt-4 inline-flex items-center gap-2 rounded-xl border border-violet-300/15 bg-violet-400/10 px-3 py-2 text-xs font-bold text-violet-200">
                   <CheckCircle2 className="h-4 w-4" /> {activeNeed.outcome}
                 </div>
 

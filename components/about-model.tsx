@@ -83,7 +83,7 @@ export default function AboutModel() {
             </span>
             <h2 className="mt-5 text-2xl font-black tracking-[-0.03em] text-white sm:text-3xl">{active.title}</h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">{active.description}</p>
-            <div className="mt-5 rounded-xl border border-emerald-300/15 bg-emerald-400/10 px-4 py-3 text-xs font-bold leading-6 text-emerald-300">{active.proof}</div>
+            <div className="mt-5 rounded-xl border border-violet-300/15 bg-violet-400/10 px-4 py-3 text-xs font-bold leading-6 text-violet-200">{active.proof}</div>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">

@@ -98,7 +98,7 @@ export default async function SectorPage({ params }: { params: Promise<{ slug: s
                           <p className="truncate text-xs font-bold text-white">{service.title}</p>
                           <p className="mt-0.5 text-[9px] uppercase tracking-[0.12em] text-white/30">{service.label}</p>
                         </div>
-                        <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-300" />
                       </div>
                     ))}
                   </div>

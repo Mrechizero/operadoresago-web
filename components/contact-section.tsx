@@ -29,6 +29,7 @@ export default function ContactSection() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [sourcePath, setSourcePath] = useState('/contacto')
+  const [formStartedAt, setFormStartedAt] = useState(() => Date.now())
   const [touched, setTouched] = useState({ nombre: false, empresa: false, correo: false, mensaje: false })
   const [form, setForm] = useState(defaultForm)
 
@@ -108,6 +109,7 @@ export default function ContactSection() {
           need: form.necesidad.trim(),
           sourcePath,
           message: form.mensaje.trim(),
+          startedAt: formStartedAt,
           website: form.website,
         }),
       })
@@ -127,9 +129,10 @@ export default function ContactSection() {
         website: '',
       }))
       setTouched({ nombre: false, empresa: false, correo: false, mensaje: false })
+      setFormStartedAt(Date.now())
     } catch (submitError) {
       console.error('Error:', submitError)
-      setError('Error al enviar. Intenta de nuevo.')
+      setError(submitError instanceof Error ? submitError.message : 'Error al enviar. Intenta de nuevo.')
     } finally {
       setLoading(false)
     }
@@ -139,6 +142,7 @@ export default function ContactSection() {
     setSubmitted(false)
     setConfirmationSent(false)
     setError('')
+    setFormStartedAt(Date.now())
   }
 
   const hasContext = form.sector !== 'No especificado' || Boolean(form.necesidad)

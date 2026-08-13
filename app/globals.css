@@ -22,7 +22,7 @@
   --muted: oklch(0.96 0.005 240);
   --muted-foreground: oklch(0.50 0.02 240);
 
-  --accent: oklch(0.75 0.17 70);
+  --accent: oklch(0.61 0.22 292);
   --accent-foreground: oklch(1 0 0);
 
   --destructive: oklch(0.62 0.24 25);
@@ -36,6 +36,8 @@
 
   --brand-blue: oklch(0.60 0.19 255);
   --brand-blue-light: oklch(0.74 0.12 240);
+  --brand-indigo: oklch(0.56 0.20 275);
+  --brand-violet: oklch(0.60 0.22 292);
   --brand-blue-glow: rgba(37, 99, 235, 0.12);
 
   --brand-surface: rgba(255,255,255,0.9);
