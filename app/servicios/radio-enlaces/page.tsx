@@ -1,0 +1,8 @@
+import ServiceDetailPage from '@/components/service-detail-page'
+import { createPageMetadata } from '@/lib/seo'
+
+export const metadata = createPageMetadata({ title: 'Radio enlaces y LAN to LAN | Operadores AGO', description: 'Interconexión inalámbrica y privada entre ubicaciones cuando la fibra no es viable o se requiere unir redes entre puntos.', path: '/servicios/radio-enlaces' })
+
+export default function RadioEnlacesPage() {
+  return <ServiceDetailPage serviceHref="/servicios/radio-enlaces" eyebrow="Radio enlaces y LAN to LAN" title="Interconecta ubicaciones cuando necesitas" highlight="una ruta dedicada" description="Diseñamos enlaces punto a punto y alternativas LAN to LAN para comunicar edificios, oficinas o instalaciones cuando la topología y factibilidad lo permiten." benefits={['Conexión entre ubicaciones sin depender de una red WiFi de usuarios.', 'Diseño basado en distancia, línea de vista, capacidad y condiciones del sitio.', 'Integración con VLAN, routing y políticas de red existentes.', 'Documentación del enlace y de los puntos que forman parte de la solución.']} idealFor={['Industria', 'Oficinas', 'Almacenes', 'Campus', 'Sucursales', 'Edificios separados']} includes={[{ title: 'Levantamiento', description: 'Revisamos ubicaciones, trayecto, línea de vista y requerimientos de capacidad.' }, { title: 'Diseño del enlace', description: 'Definimos topología, equipos y configuración según el escenario.' }, { title: 'Integración de red', description: 'Conectamos el enlace con switching, VLAN, routing o servicios existentes.' }, { title: 'Pruebas', description: 'Validamos conectividad y comportamiento antes de cerrar la implementación.' }]} />
+}

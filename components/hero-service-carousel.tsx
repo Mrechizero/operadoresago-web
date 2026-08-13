@@ -526,7 +526,7 @@ export default function HeroServiceCarousel() {
         if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setPaused(false)
       }}
     >
-      <div className="relative min-h-[400px] overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950 shadow-[0_30px_100px_rgba(15,23,42,0.36)] sm:min-h-[500px] md:min-h-[540px] xl:min-h-[560px]">
+      <div className="relative min-h-[380px] overflow-hidden rounded-[1.6rem] border border-white/10 bg-slate-950 shadow-[0_30px_100px_rgba(15,23,42,0.36)] sm:min-h-[460px] sm:rounded-[2rem] md:min-h-[500px] xl:h-[clamp(430px,calc(100svh-10rem),520px)] xl:min-h-0 2xl:h-[clamp(460px,calc(100svh-10rem),540px)]">
         <div className={`absolute -right-16 -top-16 h-64 w-64 rounded-full ${activeSlide.glow} blur-3xl transition-colors duration-700`} />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] bg-[size:34px_34px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" />
 
@@ -554,6 +554,9 @@ export default function HeroServiceCarousel() {
                 {activeSlide.eyebrow}
               </div>
               <h2 className="text-xl font-bold text-white sm:text-2xl">{activeSlide.title}</h2>
+              <p className="mt-2 hidden max-w-lg text-xs leading-5 text-white/55 md:block">
+                {activeSlide.description}
+              </p>
               <Link
                 href={activeSlide.href}
                 className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-xl transition hover:bg-white/20 sm:hidden"
@@ -590,7 +593,7 @@ export default function HeroServiceCarousel() {
         </button>
       </div>
 
-      <div className="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:grid-cols-6">
+      <div className="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:grid-cols-6 xl:mt-3">
         {visibleTabs.map(({ id, title, icon: Icon }, index) => {
           const isActive = activeIndex === index
 
@@ -599,7 +602,7 @@ export default function HeroServiceCarousel() {
               key={id}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`group relative min-w-0 overflow-hidden rounded-2xl border px-2 py-3 text-center transition sm:px-3 ${
+              className={`group relative min-w-0 overflow-hidden rounded-xl border px-2 py-2.5 text-center transition sm:rounded-2xl sm:px-3 sm:py-3 xl:py-2.5 ${
                 isActive
                   ? 'border-primary/40 bg-primary/10 text-primary shadow-sm'
                   : 'border-slate-200 bg-white/75 text-slate-500 hover:border-primary/25 hover:text-slate-800'

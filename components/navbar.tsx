@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown, EarthLockIcon, Menu, Network, X } from 'lucide-react'
 import { sectors } from '@/lib/sectors-data'
 import SectorIcon from '@/components/sector-icon'
-import { serviceCatalog } from '@/lib/service-relations'
+import { getServicesByGroup, serviceGroups } from '@/lib/service-relations'
 
 const navLinks = [
   { label: 'Inicio', href: '/' },
@@ -124,33 +124,37 @@ export default function Navbar() {
                     transition={{ duration: 0.18 }}
                     id="sector-navigation-menu"
                     aria-label="Sectores"
-                    className="absolute left-1/2 top-full mt-4 w-[620px] -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-3 shadow-[0_25px_80px_rgba(15,23,42,.18)]"
+                    className="absolute left-1/2 top-full z-[70] w-[620px] max-w-[calc(100vw-2rem)] -translate-x-1/2 pt-3"
                   >
-                    <div className="grid grid-cols-2 gap-1.5">
-                      {sectors.map((sector) => (
-                        <Link
-                          key={sector.slug}
-                          href={`/sectores/${sector.slug}`}
-                          onClick={() => setSectorMenuOpen(false)}
-                          className="group/sector flex items-center gap-3 rounded-2xl p-3 transition hover:bg-slate-50"
-                        >
-                          <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${sector.accent} text-white shadow-sm`}>
-                            <SectorIcon icon={sector.icon} className="h-4 w-4" />
-                          </span>
-                          <span className="min-w-0">
-                            <span className="block truncate text-sm font-bold text-slate-900">{sector.shortName}</span>
-                            <span className="mt-0.5 block truncate text-[10px] text-slate-500">{sector.visualLabel}</span>
-                          </span>
-                        </Link>
-                      ))}
+                    <div className="rounded-3xl border border-slate-200 bg-white p-3 shadow-[0_25px_80px_rgba(15,23,42,.18)]">
+                      <div className="grid grid-cols-2 gap-1.5">
+                        {sectors.map((sector) => (
+                          <Link
+                            key={sector.slug}
+                            href={`/sectores/${sector.slug}`}
+                            scroll
+                            onClick={() => setSectorMenuOpen(false)}
+                            className="group/sector flex items-center gap-3 rounded-2xl p-3 transition hover:bg-slate-50"
+                          >
+                            <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${sector.accent} text-white shadow-sm`}>
+                              <SectorIcon icon={sector.icon} className="h-4 w-4" />
+                            </span>
+                            <span className="min-w-0">
+                              <span className="block truncate text-sm font-bold text-slate-900">{sector.shortName}</span>
+                              <span className="mt-0.5 block truncate text-[10px] text-slate-500">{sector.visualLabel}</span>
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                      <Link
+                        href="/sectores"
+                        scroll
+                        onClick={() => setSectorMenuOpen(false)}
+                        className="mt-2 flex items-center justify-center rounded-2xl bg-slate-950 px-4 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
+                      >
+                        Ver todos los sectores
+                      </Link>
                     </div>
-                    <Link
-                      href="/sectores"
-                      onClick={() => setSectorMenuOpen(false)}
-                      className="mt-2 flex items-center justify-center rounded-2xl bg-slate-950 px-4 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
-                    >
-                      Ver todos los sectores
-                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -179,33 +183,47 @@ export default function Navbar() {
                     transition={{ duration: 0.18 }}
                     id="service-navigation-menu"
                     aria-label="Servicios"
-                    className="absolute left-1/2 top-full mt-4 w-[620px] -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-3 shadow-[0_25px_80px_rgba(15,23,42,.18)]"
+                    className="absolute left-1/2 top-full z-[70] w-[960px] max-w-[calc(100vw-2rem)] -translate-x-1/2 pt-3"
                   >
-                    <div className="grid grid-cols-2 gap-1.5">
-                      {serviceCatalog.map((service) => (
-                        <Link
-                          key={service.href}
-                          href={service.href}
-                          onClick={() => setServiceMenuOpen(false)}
-                          className="group/service flex items-start gap-3 rounded-2xl p-3 transition hover:bg-slate-50"
-                        >
-                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                            <Network className="h-4 w-4" />
-                          </span>
-                          <span className="min-w-0">
-                            <span className="block truncate text-sm font-bold text-slate-900">{service.shortTitle}</span>
-                            <span className="mt-0.5 block text-[10px] leading-4 text-slate-500">{service.category}</span>
-                          </span>
-                        </Link>
-                      ))}
+                    <div className="max-h-[calc(100vh-6rem)] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-4 shadow-[0_25px_80px_rgba(15,23,42,.18)]">
+                      <div className="grid gap-3 lg:grid-cols-3">
+                        {serviceGroups.map((group) => (
+                          <div key={group.id} className="rounded-2xl border border-slate-100 bg-slate-50/60 p-2.5">
+                            <div className="px-2 pb-2 pt-1">
+                              <p className="text-[9px] font-black uppercase tracking-[0.16em] text-primary">{group.shortTitle}</p>
+                              <p className="mt-1 text-[10px] leading-4 text-slate-500">{group.description}</p>
+                            </div>
+                            <div className="space-y-0.5">
+                              {getServicesByGroup(group.id).map((service) => (
+                                <Link
+                                  key={service.href}
+                                  href={service.href}
+                                  scroll
+                                  onClick={() => setServiceMenuOpen(false)}
+                                  className="group/service flex items-center gap-2.5 rounded-xl px-2.5 py-2 transition hover:bg-white hover:shadow-sm"
+                                >
+                                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                    <Network className="h-3.5 w-3.5" />
+                                  </span>
+                                  <span className="min-w-0">
+                                    <span className="block truncate text-xs font-bold text-slate-900">{service.shortTitle}</span>
+                                    <span className="block truncate text-[9px] text-slate-400">{service.category}</span>
+                                  </span>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <Link
+                        href="/servicios"
+                        scroll
+                        onClick={() => setServiceMenuOpen(false)}
+                        className="mt-3 flex items-center justify-center rounded-2xl bg-slate-950 px-4 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
+                      >
+                        Abrir catálogo completo
+                      </Link>
                     </div>
-                    <Link
-                      href="/servicios"
-                      onClick={() => setServiceMenuOpen(false)}
-                      className="mt-2 flex items-center justify-center rounded-2xl bg-slate-950 px-4 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
-                    >
-                      Abrir catálogo guiado
-                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -273,14 +291,21 @@ export default function Navbar() {
 
               <div className="my-2 border-t border-slate-100" />
               <div className="px-3 pb-1 pt-2 text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Servicios</div>
-              <div className="grid grid-cols-2 gap-1.5">
-                {serviceCatalog.slice(0, 6).map((service) => (
-                  <Link key={service.href} href={service.href} onClick={() => setMenuOpen(false)} className="rounded-xl border border-slate-100 bg-slate-50/70 px-3 py-2.5 text-xs font-semibold text-slate-700">
-                    {service.shortTitle}
-                  </Link>
+              <div className="space-y-3">
+                {serviceGroups.map((group) => (
+                  <div key={group.id}>
+                    <p className="px-3 pb-1 text-[9px] font-black uppercase tracking-[0.14em] text-primary">{group.shortTitle}</p>
+                    <div className="grid grid-cols-2 gap-1.5">
+                      {getServicesByGroup(group.id).map((service) => (
+                        <Link key={service.href} href={service.href} scroll onClick={() => setMenuOpen(false)} className="rounded-xl border border-slate-100 bg-slate-50/70 px-3 py-2.5 text-xs font-semibold text-slate-700">
+                          {service.shortTitle}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
-              <Link href="/servicios" onClick={() => setMenuOpen(false)} className="mt-1 rounded-lg px-3 py-3 text-sm font-semibold text-primary">Abrir catálogo guiado</Link>
+              <Link href="/servicios" scroll onClick={() => setMenuOpen(false)} className="mt-1 rounded-lg px-3 py-3 text-sm font-semibold text-primary">Abrir catálogo completo</Link>
 
               <div className="my-2 border-t border-slate-100" />
               {navLinks.slice(2).map((link) => (

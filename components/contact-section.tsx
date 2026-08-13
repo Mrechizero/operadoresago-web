@@ -61,7 +61,7 @@ export default function ContactSection() {
     else if (form.nombre.trim().length < 2) validation.nombre = 'Mínimo 2 caracteres'
     else if (form.nombre.trim().length > 50) validation.nombre = 'Máximo 50 caracteres'
 
-    if (!form.empresa.trim()) validation.empresa = 'La empresa es requerida'
+    if (!form.empresa.trim()) validation.empresa = 'Indica empresa, negocio o referencia del hogar'
     else if (form.empresa.trim().length < 2) validation.empresa = 'Mínimo 2 caracteres'
 
     if (!form.correo.trim()) validation.correo = 'El correo es requerido'
@@ -200,8 +200,8 @@ export default function ContactSection() {
                 <Field htmlFor="nombre" label="Nombre completo *" error={touched.nombre ? validationErrors.nombre : ''} valid={touched.nombre && !validationErrors.nombre && Boolean(form.nombre)}>
                   <input id="nombre" type="text" name="nombre" autoComplete="name" value={form.nombre} onChange={handleChange} onBlur={handleBlur} aria-invalid={Boolean(touched.nombre && validationErrors.nombre)} aria-describedby={touched.nombre && validationErrors.nombre ? 'nombre-error' : undefined} placeholder="Juan Pérez" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
                 </Field>
-                <Field htmlFor="empresa" label="Empresa *" error={touched.empresa ? validationErrors.empresa : ''} valid={touched.empresa && !validationErrors.empresa && Boolean(form.empresa)}>
-                  <input id="empresa" type="text" name="empresa" autoComplete="organization" value={form.empresa} onChange={handleChange} onBlur={handleBlur} aria-invalid={Boolean(touched.empresa && validationErrors.empresa)} aria-describedby={touched.empresa && validationErrors.empresa ? 'empresa-error' : undefined} placeholder="Mi Empresa S.A." className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
+                <Field htmlFor="empresa" label={form.servicio === 'Internet residencial' ? 'Nombre o referencia del hogar *' : 'Empresa / negocio *'} error={touched.empresa ? validationErrors.empresa : ''} valid={touched.empresa && !validationErrors.empresa && Boolean(form.empresa)}>
+                  <input id="empresa" type="text" name="empresa" autoComplete="organization" value={form.empresa} onChange={handleChange} onBlur={handleBlur} aria-invalid={Boolean(touched.empresa && validationErrors.empresa)} aria-describedby={touched.empresa && validationErrors.empresa ? 'empresa-error' : undefined} placeholder={form.servicio === 'Internet residencial' ? 'Familia Pérez / Casa Centro' : 'Mi Empresa S.A.'} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-primary/35 focus:ring-2 focus:ring-primary/15" />
                 </Field>
               </div>
 
