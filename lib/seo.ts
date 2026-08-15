@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 const DEFAULT_SITE_URL = 'https://web.operadoresago.com'
-const SOCIAL_IMAGE = '/social-image.avif'
+const SOCIAL_IMAGE = '/social-image.webp'
 
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL).replace(/\/+$/, '')
 

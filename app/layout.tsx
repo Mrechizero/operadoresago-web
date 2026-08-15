@@ -34,13 +34,13 @@ export const metadata: Metadata = {
     locale: 'es_MX',
     url: SITE_URL,
     siteName: 'Operadores AGO',
-    images: [{ url: '/social-image.avif', width: 1200, height: 630, alt: 'Operadores AGO' }],
+    images: [{ url: '/social-image.webp', width: 1200, height: 630, alt: 'Operadores AGO' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Operadores AGO | Portal cautivo, WiFi administrado y redes de datos',
     description: 'Soluciones de conectividad e infraestructura para empresas en todo México.',
-    images: ['/social-image.avif'],
+    images: ['/social-image.webp'],
   },
 }
 
