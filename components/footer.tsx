@@ -52,6 +52,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               <li><Link href="/" className="text-sm text-slate-600 transition hover:text-primary">Inicio</Link></li>
               <li><Link href="/nosotros" className="text-sm text-slate-600 transition hover:text-primary">Nosotros</Link></li>
+              <li><Link href="/energia" className="text-sm text-slate-600 transition hover:text-primary">Energia</Link></li>
               <li><Link href="/contacto" className="text-sm text-slate-600 transition hover:text-primary">Contacto</Link></li>
               <li><a href="mailto:contacto@operadoresago.com" className="text-sm text-slate-600 transition hover:text-primary">contacto@operadoresago.com</a></li>
             </ul>

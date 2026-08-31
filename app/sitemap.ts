@@ -12,6 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...serviceCatalog.map((service) => service.href),
     '/nosotros',
     '/contacto',
+    '/energia',
+    '/energia/privacidad',
+    '/energia/eliminar-cuenta',
   ]
 
   return routes.map((route) => ({
